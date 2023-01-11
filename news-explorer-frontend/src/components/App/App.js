@@ -3,12 +3,16 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
+import Header from '../Header/Header';
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/saved-news" element={<SavedNews />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/saved-news" element={<SavedNews />} />
+      </Routes>
+    </>
   );
 }

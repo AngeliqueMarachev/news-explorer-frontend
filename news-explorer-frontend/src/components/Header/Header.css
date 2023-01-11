@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  background-image: url(../../images/hero.png);
+  color: white;
+}
+
+.header__title {
+  font-family: "Roboto Slab";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header__navbar {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+}
+
+.header__button_home {
+    margin-right: 50px;
+}
