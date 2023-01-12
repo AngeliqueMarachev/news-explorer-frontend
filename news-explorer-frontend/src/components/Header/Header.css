@@ -1,28 +1,76 @@
 .header {
   width: 100%;
   display: flex;
+  flex-direction: column;
   margin: auto;
   align-items: center;
-  justify-content: space-between;
   margin: auto;
-  background-image: url(../../images/hero.png);
+  /* background-image: url(../../images/hero.png); */
   color: white;
+  height: 576px;
+  border-bottom: 1px #ffffff solid;
+}
+
+.header__container {
+  max-width: 608px;
+  padding-top: 80px;
 }
 
 .header__title {
   font-family: "Roboto Slab";
-  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+}
+
+.header__paragraph {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* .header__logo {
+  max-width: 200px;
+  min-height: 26px;
+  font-family: "Roboto Slab";
+  font-style: normal;
   font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+} */
+
+/* .header__navbar {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+} */
+
+/* .header__button {
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
 }
 
-.header__navbar {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    display: flex;
+.header__button_active {
+  border-bottom: 3px #ffffff solid;
 }
 
-.header__button_home {
-    margin-right: 50px;
+.header__home-button {
+  margin-right: 50px;
+  height: 100%;
 }
+
+.header__signin-button {
+  border: 1px #ffffff solid;
+  border-radius: 100px;
+  width: 180px;
+  height: 50px;
+  text-align: center;
+} */

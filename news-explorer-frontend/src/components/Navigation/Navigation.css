@@ -1,0 +1,29 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    /* background: transparent; */
+    /* color: transparent; */
+    padding: 30px 104px 30px 104px;
+  }
+  
+  .navbar__logo {
+   height: 24px;
+  }
+  
+  .navbar__container {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      display: flex;
+      padding-right: 104px;
+  }
+  
+  .navbar__button_home {
+      margin-right: 50px;
+  }
+  

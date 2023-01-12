@@ -1,8 +1,6 @@
 .content {
-  max-width: 1440px;
-  min-width: 320px;
-  height: auto;
-  background-color: white;
-  display: flex;
-  justify-content: center;
+position: relative;
+max-width: 1440px;
+margin: 0 auto;
+height: 100vh;
 }
