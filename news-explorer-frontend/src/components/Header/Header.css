@@ -5,10 +5,7 @@
   margin: auto;
   align-items: center;
   margin: auto;
-  /* background-image: url(../../images/hero.png); */
   color: white;
-  height: 576px;
-  border-bottom: 1px #ffffff solid;
 }
 
 .header__container {
@@ -31,46 +28,3 @@
   font-size: 18px;
   line-height: 24px;
 }
-
-/* .header__logo {
-  max-width: 200px;
-  min-height: 26px;
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-} */
-
-/* .header__navbar {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-} */
-
-/* .header__button {
-  cursor: pointer;
-  color: white;
-  background-color: transparent;
-}
-
-.header__button_active {
-  border-bottom: 3px #ffffff solid;
-}
-
-.header__home-button {
-  margin-right: 50px;
-  height: 100%;
-}
-
-.header__signin-button {
-  border: 1px #ffffff solid;
-  border-radius: 100px;
-  width: 180px;
-  height: 50px;
-  text-align: center;
-} */

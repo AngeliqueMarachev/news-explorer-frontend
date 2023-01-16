@@ -1,0 +1,46 @@
+.search__form-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  position: absolute;
+  width: 608px;
+  height: 64px;
+  left: 416px;
+  top: 432px;
+  background: #ffffff;
+  backdrop-filter: blur(4px);
+  border-radius: 100px;
+  margin-top: 88px;
+}
+
+.search__form-input {
+  width: 376px;
+  height: 22px;
+  left: 440px;
+  top: 453px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+  display: flex;
+  align-self: center;
+  border: none;
+}
+
+.search__form-submit {
+    background: #2F71E5;
+    border-radius: 100px;
+    width: 168px;
+    height: 64px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}

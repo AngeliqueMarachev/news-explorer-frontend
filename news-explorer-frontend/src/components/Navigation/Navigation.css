@@ -5,13 +5,14 @@
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    /* background: transparent; */
-    /* color: transparent; */
-    padding: 30px 104px 30px 104px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ffffff;
   }
   
   .navbar__logo {
    height: 24px;
+   padding-left: 104px;
   }
   
   .navbar__container {
@@ -23,7 +24,27 @@
       padding-right: 104px;
   }
   
-  .navbar__button_home {
+  .navbar__home-button {
       margin-right: 50px;
+      color: white;
+      background-color: transparent;
+      border-style: none;
+  }
+
+  .navbar__signin-button {
+    color: white;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    width: 180px;
+    height: 50px;
+  }
+
+  .navbar__button {
+    cursor: pointer;
+  }
+
+  .navbar__button_active {
+    border-bottom: 3px solid #ffffff;
   }
   

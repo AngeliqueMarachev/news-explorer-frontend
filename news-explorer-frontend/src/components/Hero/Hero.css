@@ -3,4 +3,6 @@
     background-image: url(../../images/hero.png);
     top: 0;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
