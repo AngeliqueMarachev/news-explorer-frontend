@@ -1,0 +1,31 @@
+.footer {
+    font-family: "Roboto";
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__text {
+    font-size: 16px;
+    font-weight: 400px;
+    text-align: left;
+    color: #b6bcbf;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25%;
+}
+
+.footer__link_text {
+    cursor: pointer;
+    text-decoration: none;
+    color: #1a1b22;
+}
+
+.footer__icon {
+    height: 20px;
+    width: 20px;
+}
