@@ -23,12 +23,37 @@
       display: flex;
       padding-right: 104px;
   }
-  
-  .navbar__home-button {
-      margin-right: 50px;
+
+  .navbar__button {
+    cursor: pointer;
+    margin-right: 50px;
       color: white;
+      /* background-color: #b6bcbf; */
       background-color: transparent;
       border-style: none;
+      transition: 0.1s;
+  }
+
+  .navbar__button:hover {
+    background-color: #b6bcbf;
+    opacity: 0.6;
+  }
+  
+  .navbar__button-home {
+     
+  }
+
+  .navbar__button-home:active {
+    opacity: 0.6;
+  }
+
+  .navbar__button-saved {
+   
+  }
+
+  .navbar__button_active {
+    border-bottom: 3px solid #ffffff;
+    color: #ffffff;
   }
 
   .navbar__signin-button {
@@ -38,13 +63,11 @@
     border-radius: 100px;
     width: 180px;
     height: 50px;
+    transition: 0.1s;
   }
 
-  .navbar__button {
-    cursor: pointer;
+  .navbar__signin-button:hover {
+    background: #ffffff21;
   }
 
-  .navbar__button_active {
-    border-bottom: 3px solid #ffffff;
-  }
   
