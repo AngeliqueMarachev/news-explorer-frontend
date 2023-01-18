@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Hero from "../Hero/Hero";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
-import Hero from "../Hero/Hero";
 import Footer from "../Footer/Footer";
 
 export default function App() {
   return (
-    <section className="content">
+    <section className="content"> 
       <Hero />
       <Routes>
         <Route path="/" element={<Main />} />

@@ -1,0 +1,15 @@
+.news-list {
+   padding-top: 80px;
+   padding-left: 104px;
+   padding-right: 104px;
+
+}
+
+.news-list__title {
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0 0 64px 0;
+    color: #1a1b22;
+}
