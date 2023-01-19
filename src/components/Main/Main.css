@@ -1,0 +1,12 @@
+.main {
+    background-color: #f5f6f7;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: normal;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: 0px;
+    position: relative;
+    max-width: 1440px;
+    min-height: 974px;
+  }
