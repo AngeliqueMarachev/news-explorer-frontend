@@ -1,9 +1,11 @@
 .news-list {
-  padding-top: 80px;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 auto;
+  width: calc(100% - 208px);
+  padding: 0;
   min-height: 974px;
+
 }
 
 .news-list__title {
@@ -13,14 +15,16 @@
   font-size: 40px;
   margin: 0 0 64px 0;
   color: #1a1b22;
+  padding-top: 80px;
 }
 
 .news-list__articles {
   display: grid;
   grid-template-columns: repeat(3, auto);
   row-gap: 50px;
-  column-gap: 25px;
+  column-gap: 16px;
   min-height: 576px;
+  max-width: 400px;
 }
 
 .new-list__more {
