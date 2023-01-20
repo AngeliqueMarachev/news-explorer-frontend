@@ -57,6 +57,10 @@
   max-width: 352px;
   max-height: 110px;
   text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .news-card__source {

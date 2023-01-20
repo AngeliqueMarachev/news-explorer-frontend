@@ -1,5 +1,5 @@
 import React from "react";
-// import { Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "../Hero/Hero";
 import Main from "../Main/Main";
@@ -14,10 +14,16 @@ export default function App() {
       <Footer />
     </section>
     
-      // <Routes>
-      //   <Route path="/" element={<Main />} />
+      // <Router>
+      // <Hero />
+   
+      //   <Route exact path="/" element={<Main />} />
+      //   <Main />
       //   <Route path="/saved-news" element={<SavedNews />} />
-      // </Routes>
+      //   <SavedNews />
+    
+      //  <Footer />
+      // </Router>
    
   );
 }
