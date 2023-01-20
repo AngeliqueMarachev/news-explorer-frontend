@@ -1,5 +1,6 @@
 .hero {
-    height: 100vh;
+    /* height: 100vh; */
+    min-height: 576px;
     background-image: url(../../images/hero.png);
     top: 0;
     background-repeat: no-repeat;
