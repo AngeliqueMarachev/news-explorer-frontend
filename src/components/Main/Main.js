@@ -1,9 +1,9 @@
 import React from "react";
 import "./Main.css";
 import About from "../About/About";
-import NewsCardList from "../NewsCardList/NewsCardList";
+// import NewsCardList from "../NewsCardList/NewsCardList";
 // import Preloader from "../Preloader/Preloader";
-import NotFound from "../NotFound/Notfound";
+// import NotFound from "../NotFound/Notfound";
 
 
 export default function Main() {
@@ -11,8 +11,8 @@ export default function Main() {
     <>
       <main className="main">
         {/* <Preloader /> */}
-        <NotFound />
-        <NewsCardList />
+        {/* <NotFound /> */}
+        {/* <NewsCardList /> */}
         <About />
       </main>
     </>

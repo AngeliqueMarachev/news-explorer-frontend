@@ -12,5 +12,6 @@ export default function Hero() {
       <SearchForm />
     </div>
   );
+
 }
 

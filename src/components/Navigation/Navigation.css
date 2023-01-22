@@ -1,73 +1,74 @@
 .navbar {
-    width: 100%;
-    display: flex;
-    margin: auto;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ffffff;
-  }
+  width: 100%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.navbar_white {
+  color: black;
+  background-color: white;
+}
+
+.navbar__logo {
+  height: 24px;
+  padding-left: 104px;
+}
+
+.navbar__container {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  padding-right: 104px;
+}
+
+.navbar__button {
+  cursor: pointer;
+  margin-right: 50px;
+  color: white;
+  background-color: transparent;
+  border-style: none;
+  transition: 0.1s;
+}
+
+.navbar__button:hover {
+  opacity: 0.6;
+}
+
+.navbar__button-home {
+}
+
+.navbar__button-home:active {
+  opacity: 0.6;
+}
+
+.navbar__button-saved {
+  display: none;
+}
+
+.navbar__button_active {
   
-  .navbar__logo {
-   height: 24px;
-   padding-left: 104px;
-  }
-  
-  .navbar__container {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      display: flex;
-      padding-right: 104px;
-  }
+  border-bottom: 3px solid #ffffff;
+  color: #ffffff;
+}
 
-  .navbar__button {
-    cursor: pointer;
-    margin-right: 50px;
-      color: white;
-      /* background-color: #b6bcbf; */
-      background-color: transparent;
-      border-style: none;
-      transition: 0.1s;
-  }
+.navbar__signin-button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  width: 180px;
+  height: 50px;
+  transition: 0.1s;
+}
 
-  .navbar__button:hover {
-    background-color: #b6bcbf;
-    opacity: 0.6;
-  }
-  
-  .navbar__button-home {
-     
-  }
-
-  .navbar__button-home:active {
-    opacity: 0.6;
-  }
-
-  .navbar__button-saved {
-   
-  }
-
-  .navbar__button_active {
-    border-bottom: 3px solid #ffffff;
-    color: #ffffff;
-  }
-
-  .navbar__signin-button {
-    color: white;
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    border-radius: 100px;
-    width: 180px;
-    height: 50px;
-    transition: 0.1s;
-  }
-
-  .navbar__signin-button:hover {
-    background: #ffffff21;
-  }
-
-  
+.navbar__signin-button:hover {
+  background: #ffffff21;
+}
