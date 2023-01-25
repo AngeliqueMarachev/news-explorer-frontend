@@ -1,22 +1,30 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "../Hero/Hero";
-import Main from "../Main/Main";
-import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import NewsCardList from "../NewsCardList/NewsCardList";
+import Preloader from "../Preloader/Preloader";
+import NotFound from "../NotFound/Notfound";
+import About from "../About/About";
+import Popup from "../Popup/Popup";
+
+// import NewsCard from '../NewsCard/NewsCard';
+// import Main from "../Main/Main";
+// import SavedNews from "../SavedNews/SavedNews";
 
 export default function App() {
   return (
     <div className="app">
-      <Hero />
-      <PopupWithForm />
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-        <Route path="/saved-news" element={<SavedNews />} />
-      </Routes>
-      <Footer />
+      <>
+        <Hero />
+        <Preloader />
+        <NotFound />
+        <NewsCardList />
+        <About />
+        <Footer />
+        <Popup  name="Sign in" isOpen="true" />
+      
+      </>
     </div>
   );
 }

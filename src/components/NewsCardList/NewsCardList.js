@@ -50,11 +50,10 @@ export default function NewsCardList() {
         </div>
       </ul>
       <div className="new-list__more">
-      <button className="news-list__more-button" type="button">
-        Show more
-      </button>
+        <button className="news-list__more-button" type="button">
+          Show more
+        </button>
       </div>
-     
     </>
   );
 }

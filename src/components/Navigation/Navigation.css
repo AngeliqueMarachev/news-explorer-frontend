@@ -36,6 +36,7 @@
   background-color: transparent;
   border-style: none;
   transition: 0.1s;
+  text-decoration: none;
 }
 
 .navbar__button:hover {

@@ -19,6 +19,61 @@
   object-fit: cover;
 }
 
+.news-card__save {
+  background: url("../../images/bookmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  max-width: 40px;
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  cursor: pointer;
+}
+
+.news-card__save:hover {
+  background: url("../../images/bookmark_hover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+}
+
+.news-card__label {
+  position: absolute;
+  top: 24px;
+  right: 70px;
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  min-height: 40px;
+  /* display: none;
+  visibility: hidden; */
+}
+
+/* .news-card__label_visible {
+  visibility: visible;
+  display: flex;
+  align-items: center;
+} */
+
+.news-card__signin-text {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  padding: 13px 20px 11px 20px;
+}
+
 .news-card__main {
   padding: 0 24px;
   background-color: #ffffff;

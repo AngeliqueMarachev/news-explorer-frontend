@@ -12,6 +12,10 @@ export default function NewsCard({
   return (
     <div className="news-card">
       <img className="news-card__image " src={image} alt={title} />
+      <button className="news-card__save" />
+      <div className="news-card__label">
+        <p className="news-card__signin-text">Sign in to save articles</p>
+      </div>
       <div className="news-card__main">
         <p className="news-card__date">{date}</p>
         <h3 className="news-card__title">{title}</h3>
@@ -21,3 +25,4 @@ export default function NewsCard({
     </div>
   );
 }
+

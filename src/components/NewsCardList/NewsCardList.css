@@ -5,7 +5,6 @@
   width: calc(100% - 208px);
   padding: 0;
   min-height: 974px;
-
 }
 
 .news-list__title {
@@ -54,5 +53,5 @@
 }
 
 .news-list__more-button:hover {
-    background: #e8e8e8;
+  background: #e8e8e8;
 }
