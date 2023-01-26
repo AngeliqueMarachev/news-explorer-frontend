@@ -1,75 +1,83 @@
 .navbar {
-  width: 100%;
+  padding: 30px 104px 26px;
   display: flex;
-  margin: auto;
   align-items: center;
   justify-content: space-between;
-  margin: auto;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #ffffff;
-}
-
-.navbar_white {
-  color: black;
-  background-color: white;
+  border-bottom: 1px solid #C4C4C4;
 }
 
 .navbar__logo {
-  height: 24px;
-  padding-left: 104px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  /* color: #fff; */
+  color: #000;
+  margin: 0;
+  padding-bottom: 6px;
+} 
+
+.navbar__logo_saved {
+  color: #000;
 }
 
-.navbar__container {
-  font-family: "Roboto";
-  font-style: normal;
+.navbar__links {
+  display: flex;
+  align-items: center;
+  column-gap: 42px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  /* color: #fff; */
+  color: #000;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
-  display: flex;
-  padding-right: 104px;
+  line-height: 1.3;
 }
 
-.navbar__button {
+.navbar__link_saved {
+  color: #000;
+}
+
+.navbar__header-button {
+  padding: 12px 60px;
+  background: none;
+  /* color: #fff; */
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  border-radius: 1000px;
+  border: 1px solid #fff;
   cursor: pointer;
-  margin-right: 50px;
-  color: white;
-  background-color: transparent;
-  border-style: none;
-  transition: 0.1s;
-  text-decoration: none;
 }
 
-.navbar__button:hover {
-  opacity: 0.6;
+.navbar__header-button_saved {
+  border-color: #000;
+  color: #000;
 }
 
-.navbar__button-home {
+.navbar__header-button_logout {
+  display: flex;
+  column-gap: 15px;
+  padding: 12px 15px 12px 19px;
 }
 
-.navbar__button-home:active {
-  opacity: 0.6;
-}
-
-.navbar__button-saved {
-  display: none;
-}
-
-.navbar__button_active {
-  
-  border-bottom: 3px solid #ffffff;
-  color: #ffffff;
-}
-
-.navbar__signin-button {
-  color: white;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 100px;
-  width: 180px;
-  height: 50px;
-  transition: 0.1s;
-}
-
-.navbar__signin-button:hover {
-  background: #ffffff21;
+.navbar__logout-button {
+  padding: 12px 60px;
+  background: none;
+  /* color: #fff; */
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  border-radius: 1000px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  column-gap: 15px;
 }
