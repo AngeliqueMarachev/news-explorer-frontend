@@ -14,6 +14,7 @@ import "./App.css";
 // import SuccessPopup from '../SuccessPopup/SuccessPopup';
 // import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
+// import Navigation from "../Navigation/Navigation";
 
 // export default function App() {
 //   return (
@@ -38,13 +39,17 @@ import SavedNews from "../SavedNews/SavedNews";
 //   return (
 //     <div className="app">
 //       <Hero />
+
 //       <SavedNews />
+//       <NewsCardList />
 //       </div>
 //   )
 // }
 
 export default function App() {
   return (
-      <SavedNews />
+    <>
+    <SavedNews />
+      </>
   )
 }

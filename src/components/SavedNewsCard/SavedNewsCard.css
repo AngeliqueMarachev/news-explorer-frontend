@@ -1,0 +1,136 @@
+.news-card {
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 0 0 rgba(8, 29, 45, 0.1);
+  margin-bottom: 126px;
+  width: 400px;
+}
+
+.news-card__image {
+  width: 400px;
+  height: 272px;
+  max-height: 272px;
+  border-radius: 16px 16px 0 0;
+  object-fit: cover;
+}
+
+.news-card__main {
+  margin-top: 20px;
+  padding: 0 24px;
+  /* display: flex;
+  flex-direction: column; */
+  row-gap: 16px;
+  display: grid;
+  grid-template-rows: 54px 95px 173px 62px;
+}
+
+.news-card__title {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  color: #1a1b22;
+  margin: 12px 0 16px 0;
+}
+
+.news-card__text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1a1b22;
+  margin-bottom: 18px;
+  display: inline;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.news-card__source {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+}
+
+.news-card__delete {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-card__delete-icon {
+  cursor: pointer;
+}
+
+.news-card__delete-icon_saved {
+  background: #2f71e5;
+}
+
+/* .news-card__save {
+    background: url("../../images/bookmark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+    max-width: 40px;
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+  }
+  
+  .news-card__save:hover {
+    background: url("../../images/bookmark_hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+  } */
+
+.news-card__label {
+  position: absolute;
+  top: 24px;
+  right: 235px;
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 40px;
+  /* display: none;
+    visibility: hidden; */
+}
+
+.news-card__keyword-text {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  padding: 13px 20px 11px 20px;
+}
+

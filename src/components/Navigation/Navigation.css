@@ -11,8 +11,8 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
-  /* color: #fff; */
-  color: #000;
+  color: #fff;
+  /* color: #000; */
   margin: 0;
   padding-bottom: 6px;
 } 
@@ -29,8 +29,8 @@
 
 .navbar__link {
   text-decoration: none;
-  /* color: #fff; */
-  color: #000;
+  color: #fff;
+  /* color: #000; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -44,8 +44,8 @@
 .navbar__header-button {
   padding: 12px 60px;
   background: none;
-  /* color: #fff; */
-  color: #000;
+  color: #fff;
+  /* color: #000; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -69,8 +69,8 @@
 .navbar__logout-button {
   padding: 12px 60px;
   background: none;
-  /* color: #fff; */
-  color: #000;
+  color: #fff;
+  /* color: #000; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;

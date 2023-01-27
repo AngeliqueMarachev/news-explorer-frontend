@@ -7,7 +7,7 @@ import SearchForm from "../SearchForm/SearchForm";
 export default function Hero() {
   return (
     <div className="hero">
-      <Navigation isLoggedIn={true} userName='Elise'/>
+      <Navigation isLoggedIn={true} username='Elise'/>
       {/* <Header /> */}
       <SearchForm />
     </div>

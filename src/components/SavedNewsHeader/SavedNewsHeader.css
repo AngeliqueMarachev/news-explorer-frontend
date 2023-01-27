@@ -1,0 +1,60 @@
+.saved-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 80px;
+  color: #1a1b22;
+  border-bottom: #1a1b22 1px solid;
+}
+
+.saved-header__title {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.saved-header__nav {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #1a1b22;
+}
+
+.saved-header__button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.saved-header__button-nav {
+  margin-right: 50px;
+  height: 100%;
+  color: #1a1b22;
+  text-align: center;
+}
+
+.saved-header__signin-button {
+    border: #1a1b22 1px solid;
+    width: 180px;
+    height: 50px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.saved-header__button_active {
+    border-bottom: #1a1b22 3px solid;
+}
+
+a {
+  color: transparent;
+  text-decoration: none;
+}
