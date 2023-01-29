@@ -37,6 +37,7 @@
     justify-content: space-between;
     border: none;
     color: #000;
+    z-index: 1;
   }
   
   .popup__header {

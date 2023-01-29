@@ -39,8 +39,12 @@
 
 .saved-news__articles {
     background: #f5f6f7;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 5%; */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
     padding: 5%;
 }

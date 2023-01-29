@@ -1,4 +1,4 @@
-.news-card {
+.saved-card {
   position: relative;
   border-radius: 16px;
   display: flex;
@@ -9,7 +9,7 @@
   width: 400px;
 }
 
-.news-card__image {
+.saved-card__image {
   width: 400px;
   height: 272px;
   max-height: 272px;
@@ -17,7 +17,7 @@
   object-fit: cover;
 }
 
-.news-card__main {
+.saved-card__main {
   margin-top: 20px;
   padding: 0 24px;
   /* display: flex;
@@ -25,9 +25,10 @@
   row-gap: 16px;
   display: grid;
   grid-template-rows: 54px 95px 173px 62px;
+  /* grid-template-rows: repeat(3, auto); */
 }
 
-.news-card__title {
+.saved-card__title {
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 400;
@@ -36,7 +37,7 @@
   margin: 12px 0 16px 0;
 }
 
-.news-card__text {
+.saved-card__text {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -53,7 +54,7 @@
   word-wrap: break-word;
 }
 
-.news-card__source {
+.saved-card__source {
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
@@ -64,7 +65,7 @@
   color: #b6bcbf;
 }
 
-.news-card__delete {
+.saved-card__delete {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -77,15 +78,16 @@
   align-items: center;
 }
 
-.news-card__delete-icon {
+.saved-card__delete-icon {
   cursor: pointer;
 }
 
-.news-card__delete-icon_saved {
+.saved-card__delete-icon_saved {
   background: #2f71e5;
+  background-size: contain;
 }
 
-/* .news-card__save {
+/* .saved-card__save {
     background: url("../../images/bookmark.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -101,14 +103,14 @@
     cursor: pointer;
   }
   
-  .news-card__save:hover {
+  .saved-card__save:hover {
     background: url("../../images/bookmark_hover.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: #ffffff;
   } */
 
-.news-card__label {
+ /* .saved-card__label {
   position: absolute;
   top: 24px;
   right: 235px;
@@ -116,12 +118,12 @@
   background-color: #ffffff;
   border-radius: 10px;
   height: 40px;
-  /* display: none;
-    visibility: hidden; */
-}
+   display: none;
+    visibility: hidden; 
+}  */
 
-.news-card__keyword-text {
-  margin: 0;
+.saved-card__keyword-text {
+  /* margin: 0;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -131,6 +133,21 @@
   align-items: center;
   text-align: center;
   color: #000000;
-  padding: 13px 20px 11px 20px;
+  padding: 13px 20px 11px 20px; */
+  position: absolute;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  left: 24px;
+  top: 15px;
+  padding: 0 22px;
+  height: 40px;
 }
 

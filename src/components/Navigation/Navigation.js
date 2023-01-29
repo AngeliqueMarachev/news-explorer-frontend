@@ -1,8 +1,11 @@
 import React from "react";
 import "./Navigation.css";
 import { NavLink, useLocation } from "react-router-dom";
+// import { useState } from "react";
+// import Login from '../Login/Login';
 
-// import logo from '../../images/logo.svg';
+
+//  import logo from '../../images/logo.svg';
 // import logoBlack from '../../images/logo_black.svg';
 
 import logout_black from "../../images/logout_black.svg";
@@ -49,3 +52,4 @@ export default function Navigation({ isLoggedIn, username }) {
     </div>
   );
 }
+

@@ -12,7 +12,7 @@ import "./App.css";
 // import Login from "../Login/Login";
 // import Register from "../Register/Register";
 // import SuccessPopup from '../SuccessPopup/SuccessPopup';
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
 // import Navigation from "../Navigation/Navigation";
 
@@ -39,9 +39,11 @@ import SavedNews from "../SavedNews/SavedNews";
 //   return (
 //     <div className="app">
 //       <Hero />
+//       <About />
+//       <Footer />
 
-//       <SavedNews />
-//       <NewsCardList />
+//       {/* <SavedNews /> */}
+//       {/* <NewsCardList /> */}
 //       </div>
 //   )
 // }
@@ -49,7 +51,8 @@ import SavedNews from "../SavedNews/SavedNews";
 export default function App() {
   return (
     <>
-    <SavedNews />
+      <SavedNews />
+      <Footer />
       </>
   )
 }
