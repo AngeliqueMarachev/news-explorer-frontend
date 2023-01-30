@@ -51,6 +51,8 @@ import SavedNews from "../SavedNews/SavedNews";
 export default function App() {
   return (
     <>
+       {/* <Hero />
+      <About /> */}
       <SavedNews />
       <Footer />
       </>
