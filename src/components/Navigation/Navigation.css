@@ -1,24 +1,24 @@
-.navbar {
+.navbar { 
   padding: 30px 104px 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #C4C4C4;
+ 
 }
 
-.navbar__logo {
+.navbar__logo { 
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   color: #fff;
-  /* color: #000; */
   margin: 0;
   padding-bottom: 6px;
 } 
 
 .navbar__logo_saved {
-  /* color: #000; */
+  color: #000;
 }
 
 .navbar__links {
@@ -27,37 +27,23 @@
   column-gap: 42px;
 }
 
-.navbar__link {
+.navbar__link { 
   text-decoration: none;
   color: #fff;
-  /* color: #000; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
 }
 
-.navbar__link-nav {
-  margin-right: 50px;
-  height: 100%;
-  color: green;
-  text-align: center;
-}
-
-.navbar__link_active {
-   color: #ffffff;
-   border-bottom: #ffffff 3px solid;
-}
-
 .navbar__link_saved {
-  /* color: #000; */
+  color: #000;
 }
 
 .navbar__header-button {
   padding: 12px 60px;
   background: none;
   color: #fff;
-  /* color: #000; */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -68,8 +54,8 @@
 }
 
 .navbar__header-button_saved {
-  /* border-color: #000;
-  color: #000; */
+  border-color: #000;
+  color: #000;
 }
 
 .navbar__header-button_logout {
@@ -81,8 +67,7 @@
 .navbar__logout-button {
   padding: 12px 60px;
   background: none;
-  /* color: #fff; */
-  color: #000;
+  color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;

@@ -1,11 +1,12 @@
 import React from "react";
 import './SavedNewsHeader.css';
 import { Link } from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
 
-export default function SavedNewsHeader() { 
+export default function SavedNewsHeader({userName}) { 
     return (
         <header className="saved-header">
-            <h1 className="saved-header__title">NewsExplorer</h1>
+            {/* <h1 className="saved-header__title">NewsExplorer</h1>
             <nav className="saved-header__nav">
                 <Link 
                     to={'/'}
@@ -22,7 +23,8 @@ export default function SavedNewsHeader() {
                     className="saved-header__button saved-header__signin-button">
                     Sign in
                 </button>
-            </nav>
+            </nav> */}
+            <Navigation isLoggedIn={true} userName='Elise' />
         </header>
     )
 }

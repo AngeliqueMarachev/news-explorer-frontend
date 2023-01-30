@@ -9,7 +9,7 @@ import { news } from "../../utils/temp_articles.js";
 export default function SavedNews() {
   return (
     <>
-      <SavedNewsHeader username="Elise" />
+          <SavedNewsHeader isLoggedIn={true} username="Elise" />
       <section className="saved-news">
         <div className="saved-news__text">
           <h4 className="saved-news__title">Saved articles</h4>

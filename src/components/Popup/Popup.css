@@ -24,7 +24,6 @@
   
   .popup__content {
     max-width: 430px;
-    min-height: 380px;
     width: 100%;
     position: relative;
     cursor: default;

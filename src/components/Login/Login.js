@@ -37,7 +37,7 @@ export default function Login({ isOpen, handleCloseClick, onSubmit }) {
         value={password} 
         onChange={(e) => setPassword(e.target.value)} 
       ></input>
-      <button onSubmit={handleSubmit} type="submit" className="popup__close-button" onClick={handleCloseClick} />
+      <button onSubmit={handleSubmit} className="popup__close-button" onClick={handleCloseClick} />
       
     </PopupWithForm>
   );

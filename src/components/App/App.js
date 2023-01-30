@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-// import Hero from "../Hero/Hero";
-// import Main from "../Main/Main";
+import Hero from "../Hero/Hero";
 // import About from "../About/About";
+// import Footer from "../Footer/Footer";
+
+import Main from "../Main/Main";
+
 // import NewsCard from "../NewsCard/NewsCard";
 // import NewsCardList from "../NewsCardList/NewsCardList";
 // import Preloader from "../Preloader/Preloader";
@@ -12,49 +15,25 @@ import "./App.css";
 // import Login from "../Login/Login";
 // import Register from "../Register/Register";
 // import SuccessPopup from '../SuccessPopup/SuccessPopup';
-import Footer from "../Footer/Footer";
-import SavedNews from "../SavedNews/SavedNews";
 // import Navigation from "../Navigation/Navigation";
+import SavedNews from "../SavedNews/SavedNews";
 
-// export default function App() {
-//   return (
-//     <div className="app">
-      
-//         {/* <Hero />
-//         <Preloader />
-//         <NotFound />
-//         <NewsCardList />
-//         <About />
-//         <Footer />
-//         <Popup />
-//         <PopupWithForm />
-//         <Register />
-//         <Login />  */}
-//         <SavedNews />
-//     </div>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <div className="app">
-//       <Hero />
-//       <About />
-//       <Footer />
-
-//       {/* <SavedNews /> */}
-//       {/* <NewsCardList /> */}
-//       </div>
-//   )
-// }
 
 export default function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [userName, setUsername] = useState('Elise');
+
   return (
     <>
-       {/* <Hero />
-      <About /> */}
+      <Hero isLoggedIn={isLoggedIn} userName={userName}/>
+      <Main isLoggedIn={isLoggedIn} userName={userName}/>
       <SavedNews />
-      <Footer />
+      {/* <Popup /> */}
+      {/* <PopupWithForm /> */}
+      {/* <Login name='Sign in' isOpen={true} /> */}
+      {/* <Register name='Sign up' isOpen={true} /> */}
+      {/* <SuccessPopup name="Registration successfully completed!" isOpen={true} /> */}
       </>
   )
 }

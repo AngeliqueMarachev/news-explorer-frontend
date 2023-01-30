@@ -5,8 +5,8 @@
     font-weight: normal;
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: antialiased;
-    margin: 0px;
+    margin: 0 auto;
     position: relative;
-    max-width: 1440px;
-    /* min-height: 974px; */
+    /* max-width: 1440px; */
+    width: 100vw;
   }

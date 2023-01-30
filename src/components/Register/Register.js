@@ -30,7 +30,8 @@ export default function Register({ isOpen, handleCloseClick }) {
         value={email || ""}
         onChange={(e) => setEmail(e.target.value)}
       ></input>
-      <span className="form__error"></span>
+
+      <span className="form__error">Houston, we have a problem</span>
 
       <label className="form__label">Password</label>
       <input
@@ -49,7 +50,7 @@ export default function Register({ isOpen, handleCloseClick }) {
         value={username || ""}
         onChange={(e) => setUsername(e.target.value)}
       ></input>
-            <button onSubmit={handleSubmit} type="submit" className="form__close-button" onClick={handleCloseClick} />
+            <button onSubmit={handleSubmit} className="popup__close-button" onClick={handleCloseClick} />
 
     </PopupWithForm>
   );
