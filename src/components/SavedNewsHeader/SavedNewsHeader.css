@@ -1,19 +1,21 @@
 .saved-header {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
   height: 80px;
   color: #1a1b22;
-  border-bottom: #1a1b22 1px solid;
+  border-bottom: #1a1b22 1px solid; */
+  padding: 0 0 0 104px;
 }
 
 .saved-header__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
 }
 
 .saved-header__nav {
@@ -26,6 +28,33 @@
   height: 100%;
   color: #1a1b22;
 }
+
+.saved-header__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding: 0 5% 5% 5%;
+}
+
+.saved-header__description {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
+}
+
+
+.saved-header__keywords {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+}
+
 
 .saved-header__button {
   cursor: pointer;

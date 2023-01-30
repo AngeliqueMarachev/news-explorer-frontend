@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <>
-      <Hero isLoggedIn={isLoggedIn} userName={userName}/>
+      {/* <Hero isLoggedIn={isLoggedIn} userName={userName}/> */}
       <Main isLoggedIn={isLoggedIn} userName={userName}/>
       <SavedNews />
       {/* <Popup /> */}

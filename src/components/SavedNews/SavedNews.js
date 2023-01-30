@@ -4,23 +4,15 @@ import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 // import NewsCard from "../NewsCard/NewsCard";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import { news } from "../../utils/temp_articles.js";
+import Navigation from "../Navigation/Navigation";
 // import NewsCard from "../NewsCard/NewsCard";
 
 export default function SavedNews() {
   return (
     <>
-          <SavedNewsHeader isLoggedIn={true} username="Elise" />
+      <SavedNewsHeader username="Elise" news={news} />
+
       <section className="saved-news">
-        <div className="saved-news__text">
-          <h4 className="saved-news__title">Saved articles</h4>
-          <h2 className="saved-news__description">
-            Elise, you have 5 saved articles
-          </h2>
-          <p className="saved-news__keywords">
-            By keywords: {""}
-            <strong>Nature, Yellowstone, and 2 others</strong>
-          </p>
-        </div>
         <div className="saved-news__articles">
           {news.map((article, index) => {
             return (
