@@ -7,10 +7,10 @@ import { news } from "../../utils/temp_articles.js";
 import Navigation from "../Navigation/Navigation";
 // import NewsCard from "../NewsCard/NewsCard";
 
-export default function SavedNews() {
+export default function SavedNews({userName}) {
   return (
     <>
-      <SavedNewsHeader username="Elise" news={news} />
+      <SavedNewsHeader userName={userName} news={news} />
 
       <section className="saved-news">
         <div className="saved-news__articles">

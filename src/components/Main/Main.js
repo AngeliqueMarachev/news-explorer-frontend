@@ -10,7 +10,7 @@ export default function Main({isLoggedIn, userName}) {
   return (
     <>
       <main className="main">
-      <Hero isLoggedIn={isLoggedIn} userName={userName}/>
+      <Hero isLoggedIn={false} userName={userName}/>
         <NewsCardList news={news} />
         <About />
         <Footer />
