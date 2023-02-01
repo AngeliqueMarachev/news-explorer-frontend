@@ -41,6 +41,13 @@
   background-color: #ffffff;
 }
 
+.news-card__delete {
+  background: url('../../images/trash.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+}
+
 .news-card__label {
   position: absolute;
   top: 24px;
@@ -51,6 +58,23 @@
   min-height: 40px;
   /* display: none;
   visibility: hidden; */
+}
+
+.news-card__label_keyword {
+position: absolute;
+top: 24px;
+left: 24px;
+display: flex;
+align-items: center;
+}
+
+.news-card__label_text {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .news-card__label_visible {
