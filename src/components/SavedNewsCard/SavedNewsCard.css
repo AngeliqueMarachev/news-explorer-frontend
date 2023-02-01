@@ -28,6 +28,17 @@
   /* grid-template-rows: repeat(3, auto); */
 }
 
+.saved-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: minmax(620px, auto);
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
 .saved-card__title {
   font-family: "Roboto Slab";
   font-style: normal;

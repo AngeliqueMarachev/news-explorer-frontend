@@ -1,7 +1,7 @@
 import React from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
-import { news } from '../../utils/temp_articles.js'
+import { news } from '../../utils/temp_articles.js';
 
 // import cardPath1 from "../../images/card1.jpg";
 // import cardPath2 from "../../images/card2.jpg";

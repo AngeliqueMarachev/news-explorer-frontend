@@ -1,42 +1,43 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import "./App.css";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
+// import "./App.css";
+import "../../index.css"
 
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
+// import Login from "../Login/Login";
+// import Register from "../Register/Register";
+// import SuccessPopup from '../SuccessPopup/SuccessPopup';
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [userName, setUsername] = useState("Elise");
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // const [userName, setUsername] = useState("Elise");
 
-     return (
-      <>
-        <Main isLoggedIn={isLoggedIn} userName={userName}/>
-        <SavedNews />
-        </>
-    )
-  }
+  //    return (
+  //     <>
+  //       <Main isLoggedIn={true} userName={userName} />
+  //       <SavedNews />
+  //       </>
+  //   )
+  // }
 
-//   return (
-//     <div className="page">
-//       <Routes>
-//         <Route
-//           path="/"
-//           element={<Main isLoggedIn={isLoggedIn} userName={userName} />}
-//         />
-//         <Route
-//           path="/saved-news"
-//           element={
-//             <ProtectedRoute isLoggedIn={isLoggedIn}>
-//               <SavedNews />
-//             </ProtectedRoute>
-//           }
-//         />
-//       </Routes>
-//     </div>
-//   );
-// }
+  
+  return (
+    <div className="page">
+      <Routes>
+        <Route
+          path="/"
+          element={<Main />}
+        />
+        <Route
+          path="/saved-news"
+          element={<SavedNews />}
+        />
+      </Routes>
+    </div>
+  );
+}
 
 // import Hero from "../Hero/Hero";
 // import About from "../About/About";

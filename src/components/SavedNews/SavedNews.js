@@ -1,11 +1,10 @@
 import React from "react";
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-// import NewsCard from "../NewsCard/NewsCard";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
+import Footer from "../Footer/Footer";
 import { news } from "../../utils/temp_articles.js";
-import Navigation from "../Navigation/Navigation";
-// import NewsCard from "../NewsCard/NewsCard";
+
 
 export default function SavedNews({userName}) {
   return (
@@ -30,6 +29,7 @@ export default function SavedNews({userName}) {
           })}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

@@ -1,18 +1,19 @@
 .navbar { 
-  padding: 30px 104px 26px;
+  padding: 19px 104px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #C4C4C4;
- 
+  color: #fff;
 }
+
 
 .navbar__logo { 
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
-  color: #fff;
+  /* color: #fff; */
   margin: 0;
   padding-bottom: 6px;
 } 
@@ -36,9 +37,15 @@
   line-height: 1.3;
 }
 
-.navbar__link_saved {
-  color: #000;
+.navbar__link_active {
+  text-decoration: underline;
+  text-underline-offset: 31px;
+  text-decoration-thickness: 3px;
 }
+
+/* .navbar__link_saved {
+  color: #000;
+} */
 
 .navbar__header-button {
   padding: 12px 60px;
@@ -77,4 +84,59 @@
   cursor: pointer;
   display: flex;
   column-gap: 15px;
+}
+
+@media screen and (max-width: 786px) {
+  .navbar {
+    padding: 14px 40px 12px;
+  }
+
+  .navbar__link {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .navbar__link_active {
+    text-underline-offset: 26px;
+  }
+
+  .navbar__header-button {
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding: 16px 16px 16px 0;
+    position: relative;
+  }
+
+  .navbar__logo {
+    padding-left: 16px;
+  }
+
+  .navbar__link {
+    font-size: 18px;
+  }
+
+  .navbar__links {
+    display: none;
+    visibility: hidden;
+  }
+
+  .navbar__link_active {
+    background-color: #000;
+    width: calc(100% - 32px);
+    padding: 32px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .navbar__header-button {
+    width: calc(100% - 24px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    justify-content: center;
+  }
 }
