@@ -8,7 +8,6 @@
     position: fixed;
     right: 0;
     top: 0;
-    transition: visibility 0s linear .5s,opacity .5s linear;
     width: 100%;
     visibility: hidden;
     opacity: 0;

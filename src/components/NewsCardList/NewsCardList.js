@@ -34,8 +34,9 @@ import { news } from '../../utils/temp_articles.js';
 export default function NewsCardList() {
   return (
     <>
-      <ul className="news-list">
+      <section className="news-list">
         <h4 className="news-list__title">Search results</h4>
+       
         <div className="news-list__articles">
           {news.map((article, index) => {
             return (
@@ -49,8 +50,9 @@ export default function NewsCardList() {
               />
             );
           })}
-        </div>
-      </ul>
+          </div>
+      
+      </section>
       <div className="new-list__more">
         <button className="news-list__more-button" type="button">
           Show more

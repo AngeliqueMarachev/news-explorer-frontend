@@ -1,25 +1,23 @@
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-export default function Login({ isOpen, handleCloseClick, onSubmit }) {
+export default function Login({ isOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const userData = {
-      email,
-      password,
-    };
-    onSubmit(userData);
-  };
-
-  // if (show) {
-  //   return null;
-  // }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     email,
+  //     password,
+  //   };
+  //   onSubmit(userData);
+  // };
 
   return (
-    <PopupWithForm name="Sign in" isOpen={isOpen}>
+    <PopupWithForm
+      name="Sign in"
+      isOpen={isOpen}>
       <label className="form__label">Email</label>
       <input
         className="form__input"
@@ -34,11 +32,10 @@ export default function Login({ isOpen, handleCloseClick, onSubmit }) {
         className="form__input"
         placeholder="Password"
         type="password"
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       ></input>
-      <button onSubmit={handleSubmit} className="popup__close-button" onClick={handleCloseClick} />
-      
+      {/* <button type="button" className="popup__close-button" /> */}
     </PopupWithForm>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Navigation.css";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import Login from "../Login/Login";
 import logout_black from "../../images/logout_black.svg";
 import logout_white from "../../images/logout_white.svg";
 
@@ -95,7 +96,7 @@ export default function Navigation() {
           className="navbar__header-button navbar__header-login"
           type="button">
           Sign in
-          </button>
+        </button>
       </nav>
     </div>
   )

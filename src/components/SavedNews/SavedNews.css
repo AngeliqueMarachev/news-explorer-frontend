@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 16px;
-  padding: 10%;
-  row-gap: 50px;
+  padding: 62px 10% 10% 10%;
   min-height: 576px;
 }
