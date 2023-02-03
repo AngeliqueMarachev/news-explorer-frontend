@@ -1,54 +1,54 @@
+// REACT
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
-// import "./App.css";
-import "../../index.css"
 
+// ELEMENTS
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
-// import Login from "../Login/Login";
-// import Register from "../Register/Register";
-// import SuccessPopup from '../SuccessPopup/SuccessPopup';
+
+// POPUPS
+import Login from "../Login/Login";
+import Register from "../Register/Register";
+import SuccessPopup from "../SuccessPopup/SuccessPopup";
+
+// import "./App.css";
+import "../../index.css";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 
 export default function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [userName, setUsername] = useState("Elise");
 
-  //    return (
-  //     <>
-  //       <Main isLoggedIn={true} userName={userName} />
-  //       <SavedNews />
-  //       </>
-  //   )
-  // }
+  const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
+  const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
 
-  
+  const closeAllPopups = () => {
+    setIsLoginPopupOpen(false);
+    setIsRegisterPopupOpen(false);
+    setIsSuccessPopupOpen(false);
+  };
+
   return (
     <div className="page">
       <Routes>
         <Route
           path="/"
-          element={<Main />}
+          element={
+            <Main
+              isLoggedIn={isLoggedIn}
+              setIsLoginPopupOpen={setIsLoginPopupOpen}
+              setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+              setIsSuccessPopupOpen={setIsSuccessPopupOpen}
+            />
+          }
         />
-        <Route
-          path="/saved-news"
-          element={<SavedNews />}
-        />
+        <Route path="/saved-news" element={<SavedNews />} />
       </Routes>
+
+      <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} />
+      <Register isOpen={isRegisterPopupOpen} onClose={closeAllPopups} />
+      <SuccessPopup isOpen={isSuccessPopupOpen} onClose={closeAllPopups} />
     </div>
   );
 }
-
-// import Hero from "../Hero/Hero";
-// import About from "../About/About";
-// import NewsCard from "../NewsCard/NewsCard";
-// import NewsCardList from "../NewsCardList/NewsCardList";
-// import Preloader from "../Preloader/Preloader";
-// import NotFound from "../NotFound/Notfound";
-// import Popup from "../Popup/Popup";
-// import PopupWithForm from "../PopupWithForm/PopupWithForm";
-// import Login from "../Login/Login";
-// import Register from "../Register/Register";
-// import SuccessPopup from '../SuccessPopup/SuccessPopup';
-// import Footer from "../Footer/Footer";
-// import Navigation from "../Navigation/Navigation"

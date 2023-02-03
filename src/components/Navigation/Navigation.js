@@ -67,7 +67,7 @@ import logout_white from "../../images/logout_white.svg";
 //   );
 // }
 
-export default function Navigation() {
+export default function Navigation({ setIsLoginPopupOpen }) {
   const [activeNav, setActiveNav] = useState('home');
 
   return (
@@ -94,7 +94,9 @@ export default function Navigation() {
 
         <button 
           className="navbar__header-button navbar__header-login"
-          type="button">
+          type="button"
+          onClick={() => setIsLoginPopupOpen(true)}
+        >
           Sign in
         </button>
       </nav>

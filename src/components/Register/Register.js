@@ -2,7 +2,7 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Register({ isOpen, handleCloseClick }) {
+export default function Register({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -21,7 +21,7 @@ export default function Register({ isOpen, handleCloseClick }) {
   };
 
   return (
-    <PopupWithForm name="Sign up" isOpen={isOpen}>
+    <PopupWithForm name="Sign up" isOpen={isOpen} onClose={onClose}>
       <label className="form__label">Email</label>
       <input
         className="form__input"
@@ -50,8 +50,6 @@ export default function Register({ isOpen, handleCloseClick }) {
         value={username || ""}
         onChange={(e) => setUsername(e.target.value)}
       ></input>
-            <button onSubmit={handleSubmit} className="popup__close-button" onClick={handleCloseClick} />
-
     </PopupWithForm>
   );
 }

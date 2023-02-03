@@ -2,11 +2,12 @@ import "./PopupWithForm.css";
 import Popup from "../Popup/Popup";
 import { NavLink } from "react-router-dom";
 
-export default function PopupWithForm({ name, children, isOpen }) {
+export default function PopupWithForm({ name, children, isOpen, onClose }) {
   return (
     <Popup
       name={name}
-      isOpen={isOpen}>
+      isOpen={isOpen}
+      onClose={onClose}>
       <form className="form" autoComplete="off">
         {children}
         <button className="form__submit">{name}</button>

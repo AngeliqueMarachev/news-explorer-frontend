@@ -11,6 +11,7 @@ export default function NewsCard({
   source,
   keyword,
   isSaved,
+
 }) {
 
 //   const [tempIsSaved, setTempIsSaved] = useState(false);
@@ -51,7 +52,7 @@ export default function NewsCard({
 
   
       {location.pathname === "/" ? (
-       <button className="news-card__save" />
+        <button className={`news-card__save  ${isSaved && 'news-card__save_saved'}`} />
       ) : (
         <button className="news-card__delete" />
       )}
