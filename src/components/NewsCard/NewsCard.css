@@ -18,7 +18,11 @@
   object-fit: cover;
 }
 
-.news-card__button {
+.news-card__save {
+  background: url("../../images/bookmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
   max-width: 40px;
   width: 100%;
   min-height: 40px;
@@ -30,36 +34,19 @@
   cursor: pointer;
 }
 
-.news-card__button_type_save {
-  background: url("../../images/bookmark.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff;
-}
-
-.news-card__button_type_saved {
+.news-card__save_saved {
   background: url("../../images/bookmark_blue.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff;
 }
 
-.news-card__button_type_save:hover {
+.news-card__save:hover {
   background: url("../../images/bookmark_hover.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
 }
 
-.news-card__button_type_delete {
+.news-card__delete {
   background: url('../../images/trash.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff;
-}
-
-.news-card__button_type_delete:hover {
-  background: url("../../images/trash_black.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
