@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navigation.css";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -8,6 +8,7 @@ import logout_white from "../../images/logout_white.svg";
 export default function Navigation({ isLoggedIn, userName, setIsLoginPopupOpen }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
+  const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
 
   return (
     <div className="navbar">
