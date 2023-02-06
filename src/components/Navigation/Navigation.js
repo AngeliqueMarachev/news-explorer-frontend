@@ -66,7 +66,7 @@ export default function Navigation({
             </NavLink>
             <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
               userName={userName}>Elise
-              <img src={location.pathname === '/' ? logout_white : logout_black} />
+              <img src={location.pathname === '/' ? logout_white : logout_black} alt="logout logo"/>
             </button>
           </>
         ) : (
@@ -82,31 +82,3 @@ export default function Navigation({
     </div>
   )
 }
-//       {isLoggedIn ? (
-//           <NavLink to='/' className="navbar__logo_saved">NewsExplorer</NavLink>
-//       ) : (
-//         <NavLink to='/' className="navbar__logo">NewsExplorer</NavLink>
-//       )}
-
-//       <nav className="navbar__links">
-//         <NavLink to='/' className={`navbar__link navbar__link` + navClass}>Home</NavLink>
-//         <NavLink to='/saved-news' className={`navbar__link navbar__link` + navClass}>Saved articles</NavLink>
-
-//         {isLoggedIn ? (
-//           <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
-//             userName={userName}>Elise
-//             <img src={location.pathname === '/' ? logout_white : logout_black} />
-//           </button>
-//         ) : (
-//           <button
-//           className={`navbar__header-button navbar__header-login navbar__header-button` + navClass}
-//           type="button"
-//           onClick={() => setIsLoginPopupOpen(true)}
-//         >
-//           Sign in
-//         </button>
-//         )}
-//       </nav>
-//     </div>
-//   );
-// }

@@ -17,7 +17,6 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUsername] = useState("Elise");
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);

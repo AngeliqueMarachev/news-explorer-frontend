@@ -16,7 +16,7 @@ export default function Main({isLoggedIn, userName, setIsLoginPopupOpen, setIsRe
           setIsSuccessPopupOpen={setIsSuccessPopupOpen}
           isLoggedIn={isLoggedIn}
           userName={userName} />
-        {/* <NewsCardList news={news} /> */}
+        <NewsCardList news={news} />
         <About />
         <Footer />
       </main>
