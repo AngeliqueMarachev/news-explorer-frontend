@@ -54,9 +54,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
-  /* text-decoration: underline;
-  text-underline-offset: 31px;
-  text-decoration-thickness: 3px; */
 }
 
 .navbar__header-button {
@@ -98,6 +95,11 @@
   column-gap: 15px;
 }
 
+.navbar__mobile_menu {
+  display: none;
+  visibility: hidden;
+}
+
 @media screen and (max-width: 786px) {
   .navbar {
     padding: 14px 40px 12px;
@@ -119,7 +121,6 @@
   .navbar__mobile_menu {
     display: none;
     visibility: visible;
-    /* visibility: hidden; */
   }
 }
 

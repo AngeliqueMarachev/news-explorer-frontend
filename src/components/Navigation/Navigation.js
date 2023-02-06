@@ -5,39 +5,108 @@ import { NavLink, useLocation } from "react-router-dom";
 import logout_black from "../../images/logout_black.svg";
 import logout_white from "../../images/logout_white.svg";
 
-export default function Navigation({ isLoggedIn, userName, setIsLoginPopupOpen }) {
+export default function Navigation({
+  isLoggedIn,
+  userName,
+  setIsLoginPopupOpen }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
 
   return (
     <div className="navbar">
-      {isLoggedIn ? (
-        <>
-          <NavLink to='/' className="navbar__logo_saved">NewsExplorer</NavLink>
-        </>
+      {isBurgerMenuActive ? (
+        <div className="navbar__mobile">
+          <div className="navbar__top">
+            <NavLink className={'navbar__logo'}>NewsExplorer</NavLink>
+            <button className="navbar__close=menu" />
+          </div>
+
+          <div className="navbar__link_active">
+          <NavLink to='/' className='navbar__link'>Home</NavLink>
+          
+            {isLoggedIn ? (
+              <>
+                 <NavLink to='/saved-news' className='navbar__link'>Saved articles</NavLink>
+                <button className={`navbar__header-button navbar__header-button_logout`}>
+                  <img src={logout_white} alt="logout logo" />
+                </button>
+              </>
+            ) : (
+                <button
+                  className={`navbar__header-button navbar__header-login`}
+                  type="button"
+                  onClick={() => setIsLoginPopupOpen(true)}
+                >
+                  Sign in
+                </button>
+            )}
+          </div>
+        </div>
       ) : (
-        <NavLink to='/' className="navbar__logo">NewsExplorer</NavLink>
+        <>
+           <p className={`navbar__logo navbar__logo` + navClass}>NewsExplorer</p>
+          <button className={`navbar__mobile_menu navbar__mobile_menu` + navClass} />
+        </>
       )}
 
       <nav className="navbar__links">
-        <NavLink to='/' className={`navbar__link navbar__link` + navClass}>Home</NavLink>
-        <NavLink to='/saved-news' className={`navbar__link navbar__link` + navClass}>Saved articles</NavLink>
+        <NavLink
+          to='/'
+          className={`${navClass === '' && 'navbar__link_active'} navbar__link navbar__link` + navClass}>
+          Home
+        </NavLink>
+
         {isLoggedIn ? (
-          <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}>
-            Elise
-            <img src={location.pathname === '/' ? logout_white : logout_black} />
-          </button>
+          <>
+            <NavLink
+              to='/saved-news'
+              className={`${navClass === '_saved' && 'navbar__link_active'} navbar__link navbar__link` + navClass}>
+              Saved articles
+            </NavLink>
+            <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
+              userName={userName}>Elise
+              <img src={location.pathname === '/' ? logout_white : logout_black} />
+            </button>
+          </>
         ) : (
           <button
-          className={`navbar__header-button navbar__header-login navbar__header-button` + navClass}
-          type="button"
-          onClick={() => setIsLoginPopupOpen(true)}
-        >
-          Sign in
-        </button>
+            className={`navbar__header-button navbar__header-login navbar__header-button` + navClass}
+            type="button"
+            onClick={() => setIsLoginPopupOpen(true)}
+          >
+            Sign in
+          </button>
         )}
       </nav>
     </div>
-  );
+  )
 }
+//       {isLoggedIn ? (
+//           <NavLink to='/' className="navbar__logo_saved">NewsExplorer</NavLink>
+//       ) : (
+//         <NavLink to='/' className="navbar__logo">NewsExplorer</NavLink>
+//       )}
+
+//       <nav className="navbar__links">
+//         <NavLink to='/' className={`navbar__link navbar__link` + navClass}>Home</NavLink>
+//         <NavLink to='/saved-news' className={`navbar__link navbar__link` + navClass}>Saved articles</NavLink>
+
+//         {isLoggedIn ? (
+//           <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
+//             userName={userName}>Elise
+//             <img src={location.pathname === '/' ? logout_white : logout_black} />
+//           </button>
+//         ) : (
+//           <button
+//           className={`navbar__header-button navbar__header-login navbar__header-button` + navClass}
+//           type="button"
+//           onClick={() => setIsLoginPopupOpen(true)}
+//         >
+//           Sign in
+//         </button>
+//         )}
+//       </nav>
+//     </div>
+//   );
+// }
