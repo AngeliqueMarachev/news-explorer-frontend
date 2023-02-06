@@ -1,15 +1,10 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-// import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Register({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-
-  // if (!show) {
-  //   return null;
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,9 +25,7 @@ export default function Register({ isOpen, onClose }) {
         value={email || ""}
         onChange={(e) => setEmail(e.target.value)}
       ></input>
-
-      <span className="form__error">Houston, we have a problem</span>
-
+      {/* <span className="form__error">Invalid email</span> */}
       <label className="form__label">Password</label>
       <input
         className="form__input"
@@ -41,7 +34,7 @@ export default function Register({ isOpen, onClose }) {
         value={password || ""}
         onChange={(e) => setPassword(e.target.value)}
       ></input>
-
+      {/* <span className="form__error">Invalid password</span> */}
       <label className="form__label">Username</label>
       <input
         className="form__input"
@@ -50,6 +43,10 @@ export default function Register({ isOpen, onClose }) {
         value={username || ""}
         onChange={(e) => setUsername(e.target.value)}
       ></input>
+      {/* <span className="form__error">Invalid username</span> */}
+      <span className="form__error form__error_general">
+        This email is not available
+      </span>
     </PopupWithForm>
   );
 }

@@ -48,7 +48,8 @@
   }
   
   .popup__close-button {
-    background: url(../../images/close_icon.svg) no-repeat;
+    background: url(../../images/close_icon.svg);
+    background-repeat: no-repeat;
     width: 40px;
     height: 40px;
     border: none;
@@ -59,4 +60,17 @@
     cursor: pointer;
   }
 
-  
+  @media screen and (max-width: 500px) {
+    .popup__content {
+      max-width: 100%;
+      height: calc(100vh - 150px);
+    }
+
+    .popup__close-button {
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      top: -40px;
+      right: 8px;
+    }
+  }

@@ -29,15 +29,16 @@ export default function Login({ isOpen, onClose, setIsRegisterPopupOpen }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       ></input>
-      <span className="form__error"></span>
+      <span className="form__error">Invalid email address</span>
       <label className="form__label">Password</label>
       <input
         className="form__input"
-        placeholder="Password"
+        placeholder="Enter Password"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       ></input>
+       <span className="form__error">Invalid password</span>
     </PopupWithForm>
   );
 }
