@@ -10,7 +10,7 @@
   
   .search__form-container {
     width: 100%;
-    background-color: white;
+    background-color: none;
     justify-content: space-between;
     margin: 0;
     flex-direction: row;
@@ -56,3 +56,28 @@
       background: #2a65cc;
   }
   
+
+  @media screen and (max-width: 320px) {
+   .search__form {
+    width: 288px; 
+    padding-top: 139px;
+    padding-bottom: 17px;
+   }
+
+   .search__form-container {
+    /* max-height: 56px;
+    max-width: 288px; */
+    display: inline;
+  
+   }
+
+   .search__form-input {
+    width: 256px;
+   }
+
+   .search__form-submit {
+    min-width: 288px;
+    margin-top: 16px;
+    max-height: 56px;
+   }
+    }

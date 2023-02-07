@@ -18,7 +18,7 @@ export default function Navigation({
       {isBurgerMenuActive ? (
         <div className="navbar__mobile">
           <div className="navbar__top">
-            <NavLink className={'navbar__logo'}>NewsExplorer</NavLink>
+            <NavLink to='/' className={'navbar__logo'}>NewsExplorer</NavLink>
             <button className="navbar__close=menu" />
           </div>
 
@@ -45,7 +45,7 @@ export default function Navigation({
         </div>
       ) : (
         <>
-           <p className={`navbar__logo navbar__logo` + navClass}>NewsExplorer</p>
+           <NavLink to='/' className={`navbar__logo navbar__logo` + navClass}>NewsExplorer</NavLink>
           <button className={`navbar__mobile_menu navbar__mobile_menu` + navClass} />
         </>
       )}

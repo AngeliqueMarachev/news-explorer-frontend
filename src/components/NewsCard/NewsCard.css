@@ -1,13 +1,8 @@
 .news-card {
-  position: relative;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  box-shadow: 0 0 rgba(8, 29, 45, 0.1);
-  margin-bottom: 126px;
+  max-height: 100%;
   width: 400px;
-  /* height: 272px; */
+  cursor: pointer;
+  position: relative;
 }
 
 .news-card__image {
@@ -46,7 +41,7 @@
 }
 
 .news-card__delete {
-  background: url('../../images/trash.svg');
+  background: url("../../images/trash.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
@@ -60,16 +55,16 @@
   background-color: #ffffff;
   border-radius: 10px;
   min-height: 40px;
-  /* display: none;
-  visibility: hidden; */
+  display: none;
+  visibility: hidden;
 }
 
 .news-card__label_keyword {
-position: absolute;
-top: 24px;
-left: 24px;
-display: flex;
-align-items: center;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .news-card__label_text {
@@ -127,9 +122,11 @@ align-items: center;
   font-size: 26px;
   line-height: 30px;
   color: #1a1b22;
+  margin: 0;
 }
 
 .news-card__text {
+  margin: 0;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -154,4 +151,61 @@ align-items: center;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .news-card {
+    width: 224px;
+  }
+
+  .news-card__main {
+    max-width: 224px;
+    height: 420px;
+  }
+
+  .news-card__text {
+    -webkit-line-clamp: 5;
+  }
+
+  .news-card__image {
+    width: 224px;
+    max-height: 150px;
+  }
+
+  .news-card__title {
+    font-size: 22px;
+  }
+
+  .news-card__source {
+    max-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (max-width: 320px) {
+.news-card {
+  min-width: 288px;
+}
+
+.news-card__main {
+ margin: 0;
+}
+
+.news-card__image {
+  min-width: 288px;
+}
+
+.news-card__main {
+min-width: 240px;
+}
+
+.news-card__text {
+  -webkit-line-clamp: 4;
+  max-width: 288px;
+}
 }

@@ -10,39 +10,8 @@ export default function NewsCard({
   text,
   source,
   keyword,
-  isSaved,
 }) {
 
-//   const [tempIsSaved, setTempIsSaved] = useState(false);
-
-//   return (
-//     <div className="news-card">
-//       <img className="news-card__image" src={image} alt={title} />
-//       <div className="news-card__main">
-//         <p className="news-card__date">{date}</p>
-//         <h3 className="news-card__title">{title}</h3>
-//         <p className="news-card__text">{text}</p>
-//         <p className="news-card__source">{source}</p>
-//       </div>
-
-//       <span className="news-card__save-button">
-//       <button 
-//         onClick={() => setTempIsSaved(!tempIsSaved)}
-//         type="button"
-//         className={`${ 
-//           tempIsSaved
-//           ? "news-card__save-button_saved"
-//           : "news-card__save-button"
-//           }`}
-//         />
-//       </span>
-
-    
-//     </div>
-//   );
-// }
-
-// PREVIOUS
   const location = useLocation();
 
   return (
