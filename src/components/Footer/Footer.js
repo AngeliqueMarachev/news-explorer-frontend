@@ -14,10 +14,10 @@ export default function Footer() {
             Practicum
           </a>
           <a className="footer__link footer__link_image" href="#practicum">
-            <img className="footer_icon" src={githubPath} alt="github" />
+            <img className="footer__icon" src={githubPath} alt="github" />
           </a>
           <a className="footer__link footer__link_image" href="#practicum">
-            <img className="footer_icon" src={facebookPath} alt="facebook" />
+            <img className="footer__icon" src={facebookPath} alt="facebook" />
           </a>
         </div>
       </nav>
