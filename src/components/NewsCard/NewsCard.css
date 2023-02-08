@@ -190,6 +190,7 @@
 @media screen and (max-width: 320px) {
 .news-card {
   min-width: 288px;
+  grid-template-rows: 54px 95px 170px 50px;
 }
 
 .news-card__main {
@@ -207,5 +208,16 @@ min-width: 240px;
 .news-card__text {
   -webkit-line-clamp: 4;
   max-width: 288px;
+}
+
+.news-card__source {
+  overflow: visible;
+  display: block;
+  letter-spacing: 0;
+}
+
+.news-card__save {
+  top: 16px;
+  right: 16px;
 }
 }

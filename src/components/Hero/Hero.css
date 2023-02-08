@@ -6,3 +6,9 @@
     background-position: center;
     background-size: cover;
 }
+
+@media screen and (max-width: 768px) {
+    .hero {
+        max-height: 400px;
+    }
+}

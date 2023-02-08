@@ -92,4 +92,9 @@
     margin: 10%;
     padding: 0;
   }
+
+  .new-list__more {
+    padding-top: 21px;
+    padding-bottom: 24px;
+  }
 }

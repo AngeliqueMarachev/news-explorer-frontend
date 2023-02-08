@@ -81,7 +81,7 @@
 
 @media screen and (max-width: 768px) {
   .about__container {
-    padding: 40px 40px 61px;
+    padding: 0;
   }
 
   .about__image {
@@ -113,6 +113,18 @@
   max-height: 272px;
   max-width: 272px;
   margin: 24px;
+ }
+
+ .about__container {
+  margin: 0 16px;
+ }
+
+ .about__title {
+
+ }
+
+ .about__text {
+  margin: 0;
  }
 }
   

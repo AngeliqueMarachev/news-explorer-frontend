@@ -61,7 +61,7 @@ export default function Navigation({
           <>
             <NavLink
               to='/saved-news'
-              className={`${navClass === '_saved' && 'navbar__link_active'} navbar__link navbar__link` + navClass}>
+              className={`${navClass === '_saved' && 'navbar__link_active' && 'navbar__link_saved_active'} navbar__link navbar__link` + navClass}>
               Saved articles
             </NavLink>
             <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}

@@ -10,7 +10,7 @@
   
   .search__form-container {
     width: 100%;
-    background-color: none;
+    background-color: white;
     justify-content: space-between;
     margin: 0;
     flex-direction: row;
@@ -65,19 +65,20 @@
    }
 
    .search__form-container {
-    /* max-height: 56px;
-    max-width: 288px; */
+    background-color: red;
     display: inline;
   
    }
 
    .search__form-input {
     width: 256px;
+    padding: 17px 16px;
    }
 
    .search__form-submit {
     min-width: 288px;
     margin-top: 16px;
+    margin-bottom: 32px;
     max-height: 56px;
    }
     }
