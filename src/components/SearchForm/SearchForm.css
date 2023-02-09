@@ -84,13 +84,13 @@
 @media screen and (max-width: 320px) {
   .search__form {
     width: 288px;
-    padding-top: 139px;
-    padding-bottom: 17px;
+    padding-bottom: 32px;
+    margin: 0 auto;
   }
 
   .search__form-container {
-    background-color: none;
     display: inline;
+    background-color: transparent;
   }
 
   .search__form-input {

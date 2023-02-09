@@ -16,6 +16,7 @@ export default function About() {
           You can also talk about your experience with Practicum, what you
           learned there, and how you can help potential customers.
         </p>
+
       </div>
     </section>
   );
