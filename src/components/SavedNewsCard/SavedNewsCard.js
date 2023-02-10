@@ -24,7 +24,6 @@ export default function SavedNewsCard({
           type="button"
           className="saved-card__delete-icon"
         />
-     
       <p className="saved-card__label">
         Remove from saved
         </p>
