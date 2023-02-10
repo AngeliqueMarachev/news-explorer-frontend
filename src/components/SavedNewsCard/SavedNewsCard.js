@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./SavedNewsCard.css";
 
 export default function SavedNewsCard({
@@ -9,8 +8,6 @@ export default function SavedNewsCard({
   source,
   keyword,
 }) {
-
-  const [removeLabel, setRemoveLabel] = useState('false')
 
   return (
     <div className="saved-card">
@@ -24,21 +21,14 @@ export default function SavedNewsCard({
       </div>
       <span className="saved-card__trash-container">
         <button
-          onClick={() => setRemoveLabel(!removeLabel)}
           type="button"
-          className={`${
-            removeLabel
-            ? "saved-card__delete-icon"
-            : "saved-card__remove"
-              }
-          }`}/>
-      </span>
-
-      <p className={`saved-card__label ${removeLabel && 'saved-card__label'
-        }`}>
+          className="saved-card__delete-icon"
+        />
+     
+      <p className="saved-card__label">
         Remove from saved
-      </p>
+        </p>
+        </span>
     </div>
   );
 }
-

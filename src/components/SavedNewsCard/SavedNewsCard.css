@@ -124,6 +124,31 @@ color: #b6bcbf;
   background-position: center;
 }
 
+.saved-card__delete-icon:hover + .saved-card__label { 
+  visibility: visible;
+  opacity: 1;
+}
+
+.saved-card__label {
+  cursor: pointer;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 500;
+  width: 158px;
+  right: 50px;
+  height: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
 .saved-card__remove {
   cursor: pointer;
     position: absolute;
@@ -141,7 +166,7 @@ color: #b6bcbf;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s;
-}
+} */
 
 .saved-card__keyword {
   position: absolute;
@@ -159,31 +184,6 @@ color: #b6bcbf;
   top: 15px;
   padding: 0 22px;
   height: 40px;
-}
-
-.saved-card__label {
-  cursor: pointer;
-  position: absolute;
-  background: #ffffff;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: 500;
-  top: 12px;
-  right: 69px;
-  height: 40px;
-  padding: 0 26px;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s;
-}
-
-.saved-card__delete-icon:hover + .saved-card__label { 
-  visibility: visible;
-  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

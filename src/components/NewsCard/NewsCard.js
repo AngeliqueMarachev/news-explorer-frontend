@@ -1,7 +1,6 @@
 import React from "react";
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
 
 export default function NewsCard({
   image,
@@ -10,40 +9,44 @@ export default function NewsCard({
   text,
   source,
   keyword,
+  isLoggedIn
 }) {
 
   const location = useLocation();
 
   return (
-    <div className="news-card">
-      <img className="news-card__image" src={image} alt={title} />
+    <div className="card">
+      <img className="card__image" src={image} alt={title} />
 
-  
+
       {location.pathname === "/" ? (
-       <button className="news-card__save" />
+       <button className="card__button card__button_type_save" />
       ) : (
-        <button className="news-card__delete" />
+        <button className="card__button card__button_type_delete" />
       )}
      
-      <div className="news-card__label">
-        <p className="news-card__signin-text">
-          {location.pathname === "/" ? (
-          "Sign in to save articles"
-          ) : (
-            "Remove from saved"
-          )}
-          </p>
-      </div>
+     {((location.pathname === '/' && !isLoggedIn) || location.pathname === '/saved-news') && (
+          <div className="card__label card__label_type_sign-in">
+            <p className="card__label-text">
+              {location.pathname === '/' ? (
+                'Sign to save articles'
+              ) : (
+                'Remove from saved'
+              )}
+            </p>
+          </div>
+        )}
+
       {location.pathname === '/saved-news' && (
-        <div className="news-card__label news-card__label_keyword">
-          <p className="news-card__label news-card__label_text">{keyword}</p>
+        <div className="card__label card__label_type_keyword">
+          <p className="card__label-text">{keyword}</p>
           </div>
       )}
-      <div className="news-card__main">
-        <p className="news-card__date">{date}</p>
-        <h3 className="news-card__title">{title}</h3>
-        <p className="news-card__text">{text}</p>
-        <p className="news-card__source">{source}</p>
+      <div className="card__description">
+        <p className="card__date">{date}</p>
+        <h3 className="card__title">{title}</h3>
+        <p className="card__text">{text}</p>
+        <p className="card__source">{source}</p>
       </div>
     </div>
   );
