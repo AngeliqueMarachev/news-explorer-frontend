@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-export default function Login({ isOpen, onClose, setIsRegisterPopupOpen }) {
+export default function Login({ isOpen, onClose, onRegisterClick, setIsRegisterPopupOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,7 +19,8 @@ export default function Login({ isOpen, onClose, setIsRegisterPopupOpen }) {
       name="Sign in"
       isOpen={isOpen}
       onClose={onClose}
-      setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+      onRegisterClick={onRegisterClick}
+      // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
     >
       <label className="form__label">Email</label>
       <input

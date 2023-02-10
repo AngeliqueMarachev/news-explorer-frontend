@@ -1,22 +1,26 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useState } from "react";
 
-export default function Register({ isOpen, onClose }) {
+export default function Register({ isOpen, onClose, onSigninClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const userData = {
-      email,
-      password,
-    };
-    handleSubmit(userData);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     email,
+  //     password,
+  //   };
+  //   handleSubmit(userData);
+  // };
 
   return (
-    <PopupWithForm name="Sign up" isOpen={isOpen} onClose={onClose}>
+    <PopupWithForm
+      name="Sign up"
+      isOpen={isOpen}
+      onSigninClick={onSigninClick}
+      onClose={onClose}>
       <label className="form__label">Email</label>
       <input
         className="form__input"

@@ -20,12 +20,9 @@
 .saved-card__main {
   margin-top: 20px;
   padding: 0 24px;
-  /* display: flex;
-  flex-direction: column; */
   row-gap: 16px;
   display: grid;
   grid-template-rows: 54px 95px 173px 62px;
-  /* grid-template-rows: repeat(3, auto); */
 }
 
 .saved-card__list {
@@ -46,6 +43,12 @@
   font-size: 26px;
   color: #1a1b22;
   margin: 12px 0 16px 0;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
 }
 
 .saved-card__text {
@@ -65,8 +68,17 @@
   word-wrap: break-word;
 }
 
+.saved-card__date {
+  font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+color: #b6bcbf;
+}
+
 .saved-card__source {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -74,9 +86,12 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.saved-card__delete {
+.saved-card__trash-container {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -99,7 +114,7 @@
   background-position: center;
 }
 
-.saved-card__delete-icon_save {
+.saved-card__delete-icon:hover {
   cursor: pointer;
   background: url('../../images/trash_black.svg');
   width: 18px;
@@ -109,18 +124,26 @@
   background-position: center;
 }
 
+.saved-card__remove {
+  cursor: pointer;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    right: 45px;
+    height: 40px;
+    width: 130px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
 .saved-card__keyword {
-  /* margin: 0;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-  padding: 13px 20px 11px 20px; */
   position: absolute;
   background: #ffffff;
   border-radius: 10px;
@@ -138,7 +161,7 @@
   height: 40px;
 }
 
-.saved-card__remove-card {
+.saved-card__label {
   cursor: pointer;
   position: absolute;
   background: #ffffff;
@@ -158,7 +181,77 @@
   transition: 0.2s;
 }
 
-.saved-card__remove-card_open { 
+.saved-card__delete-icon:hover + .saved-card__label { 
   visibility: visible;
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .saved-card {
+    max-width: 224px;
+    min-height: 420px;
+    margin-bottom: 32px;
+  }
+
+  .saved-card__image {
+    height: 150px;
+    width: 224px;
+  }
+
+  .saved-card__main {
+    grid-template-rows: 54px 105px 123px 62px;
+  }
+
+  .saved-card__title {
+    font-size: 22px;
+  }
+
+  .saved-card__text {
+    margin-top: 0;
+    -webkit-line-clamp: 3;
+    height: 88px;
+  }
+
+  .saved-card__delete {
+    top: 12px;
+    right: 12px;
+  }
+
+  .saved-card__keyword {
+    top: 0;
+  }
+
+  .saved-card__remove {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .saved-card {
+    max-width: 300px;
+    height: 440px;
+    width: 100%;
+  }
+
+  .saved-card__image {
+    height: 196px;
+  }
+
+  .saved-card__main {
+    grid-template-rows: 54px 105px 123px 62px;
+  }
+
+  .saved-card__title {
+    font-size: 22px;
+    margin: 10px 0 14px 0;
+  }
+
+  .saved-card__text {
+    margin: 0 0 8px 0;
+    -webkit-line-clamp: 3;
+  }
+
+  .saved-card__remove {
+    display: none;
+  }
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./SavedNewsCard.css";
-// import trashIcon from "../../images/trash.svg";
 
 export default function SavedNewsCard({
   image,
@@ -23,19 +22,19 @@ export default function SavedNewsCard({
         <p className="saved-card__text">{text}</p>
         <p className="saved-card__source">{source}</p>
       </div>
-      <span className="saved-card__delete">
+      <span className="saved-card__trash-container">
         <button
           onClick={() => setRemoveLabel(!removeLabel)}
           type="button"
           className={`${
             removeLabel
-              ? "saved-card__delete-icon"
-              : "saved-card__delete-icon_save"
+            ? "saved-card__delete-icon"
+            : "saved-card__remove"
               }
           }`}/>
       </span>
 
-      <p className={`saved-card__remove-card ${removeLabel && 'saved-card__remove-card_open'
+      <p className={`saved-card__label ${removeLabel && 'saved-card__label'
         }`}>
         Remove from saved
       </p>

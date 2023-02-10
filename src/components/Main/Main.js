@@ -6,16 +6,18 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 import { news } from "../../utils/temp_articles";
 
-export default function Main({isLoggedIn, userName, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
+export default function Main({isLoggedIn, userName, onSigninClick, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
   return (
     <>
       <main className="main">
         <Hero
-          setIsLoginPopupOpen={setIsLoginPopupOpen}
-          setIsRegisterPopupOpen={setIsRegisterPopupOpen}
-          setIsSuccessPopupOpen={setIsSuccessPopupOpen}
           isLoggedIn={isLoggedIn}
-          userName={userName} />
+          userName={userName}
+          onSigninClick={onSigninClick}
+          // setIsLoginPopupOpen={setIsLoginPopupOpen}
+          // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+          // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
+          />
         <NewsCardList news={news} />
         <About />
         <Footer />

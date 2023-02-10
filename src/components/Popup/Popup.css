@@ -22,7 +22,7 @@
   }
   
   .popup__content {
-    max-width: 430px;
+    max-width: 360px;
     width: 100%;
     position: relative;
     cursor: default;

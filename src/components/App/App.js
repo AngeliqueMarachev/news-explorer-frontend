@@ -13,20 +13,29 @@ import SuccessPopup from "../SuccessPopup/SuccessPopup";
 
 // import "./App.css";
 import "../../index.css";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+
+  const handleSigninClick = () => {
+    setIsLoginPopupOpen(true);
+  }
+
+  const handleRegisterClick = () => {
+    setIsRegisterPopupOpen(true);
+  }
 
   const closeAllPopups = () => {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
     setIsSuccessPopupOpen(false);
   };
+
+  const userName = 'Elise';
 
   return (
     <div className="page">
@@ -35,18 +44,20 @@ export default function App() {
           path="/"
           element={
             <Main
-              isLoggedIn={isLoggedIn}
-              setIsLoginPopupOpen={setIsLoginPopupOpen}
-              setIsRegisterPopupOpen={setIsRegisterPopupOpen}
-              setIsSuccessPopupOpen={setIsSuccessPopupOpen}
+              isLoggedIn={false}
+              useName={userName}
+              onSigninClick={handleSigninClick} 
+              // setIsLoginPopupOpen={setIsLoginPopupOpen}
+              // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+              // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
             />
           }
         />
-        <Route path="/saved-news" element={<SavedNews />} />
+        <Route path="/saved-news" element={<SavedNews userName={userName} />} />
       </Routes>
 
-      <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} />
-      <Register isOpen={isRegisterPopupOpen} onClose={closeAllPopups} />
+      <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} onRegisterClick={handleRegisterClick} />
+      <Register isOpen={isRegisterPopupOpen} onClose={closeAllPopups} onSigninClick={handleSigninClick} />
       <SuccessPopup isOpen={isSuccessPopupOpen} onClose={closeAllPopups} />
     </div>
   );
