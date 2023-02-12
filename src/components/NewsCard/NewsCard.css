@@ -32,7 +32,7 @@
   background-color: #ffffff;
 }
 
-.card__button_type_save:hover {
+.card__button_type:hover {
   background: url("../../images/bookmark_hover.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -48,6 +48,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
+}
+
+.card__button_type_delete:hover {
+  background: url('../../images/trash_black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FFFFFF;
 }
 
 .card__button:hover + .card__label_type_sign-in {
@@ -79,7 +86,7 @@
 
 .card__label_type_sign-in {
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -97,7 +104,7 @@
 
 .card__label_text {
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -130,7 +137,7 @@
 }
 
 .card__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -141,7 +148,7 @@
 
 .card__text {
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -157,7 +164,7 @@
 }
 
 .card__source {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;

@@ -1,14 +1,14 @@
-.search__form {
+.search-form {
   width: 608px;
   padding-top: 88px;
   padding-bottom: 80px;
   justify-content: center;
   margin: auto;
   flex-direction: row;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
 }
 
-.search__form-container {
+.search-form__container {
   width: 100%;
   background-color: white;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   border: none;
 }
 
-.search__form-input {
+.search-form__input {
   width: 376px;
   font-weight: 400;
   font-size: 16px;
@@ -33,7 +33,7 @@
   z-index: 0;
 }
 
-.search__form-submit {
+.search-form__submit {
   background: #2f71e5;
   border-radius: 100px;
   width: 168px;
@@ -48,57 +48,60 @@
   box-shadow: 0px 5px 15px rgb(14 26 57 / 20%);
 }
 
-.search__form-submit:hover {
+
+.search-form__submit:hover {
   background: #347eff;
 }
 
-.search__form-submit:active {
+
+.search-form__submit:active {
   background: #2a65cc;
 }
 
 @media screen and (max-width: 768px) {
-  .search__form {
+  .search-form {
     margin: 48px 160px;
     width: 448px;
     height: 56px;
+    padding: 0;
   }
 
-  .search__form-container {
+  .search-form__container {
     width: 448px;
     height: 56px;
   }
 
-  .search__form-input {
+  .search-form__input {
     width: 228px;
     height: 22px;
     padding: 17px 24px;
     margin-right: 12px;
   }
 
-  .search__form-submit {
+  .search-form__submit {
     width: 160px;
     height: 56px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .search__form {
+  .search-form {
     width: 288px;
     padding-bottom: 32px;
     margin: 0 auto;
   }
 
-  .search__form-container {
+  .search-form__container {
     display: inline;
     background-color: transparent;
   }
 
-  .search__form-input {
+  .search-form__input {
     width: 256px;
     padding: 17px 16px;
   }
 
-  .search__form-submit {
+  .search-form__submit {
     min-width: 288px;
     margin-top: 16px;
     margin-bottom: 32px;

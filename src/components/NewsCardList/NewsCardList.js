@@ -22,7 +22,8 @@ export default function NewsCardList() {
               />
             );
           })}
-          </div>
+        </div>
+        
       
       </section>
       <div className="new-list__more">

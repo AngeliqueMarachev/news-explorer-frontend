@@ -7,7 +7,7 @@
 }
 
 .navbar__logo {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
@@ -17,7 +17,7 @@
 }
 
 .navbar__logo_saved {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
@@ -35,7 +35,7 @@
 .navbar__link {
   text-decoration: none;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
@@ -50,7 +50,7 @@
 .navbar__link_saved {
   color: #000;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
@@ -66,7 +66,7 @@
   padding: 12px 60px;
   background: none;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
@@ -90,7 +90,7 @@
   padding: 12px 60px;
   background: none;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
@@ -101,7 +101,7 @@
   column-gap: 15px;
 }
 
-.navbar__mobile_menu {
+.navbar__mobile-menu {
   display: none;
   visibility: hidden;
 }
@@ -124,7 +124,7 @@
     padding: 10px 60px 10px;
   }
 
-  .navbar__mobile_menu {
+  .navbar__mobile-menu {
     display: none;
     visibility: visible;
   }
@@ -188,7 +188,7 @@
     padding: 0;
   }
 
-  .navbar__mobile_menu {
+  .navbar__mobile-menu {
     background: none;
     background-image: url("../../images/burger_menu_white.svg");
     display: block;
@@ -199,7 +199,7 @@
     padding: 0;
   }
 
-  .navbar__mobile_menu_saved {
+  .navbar__mobile-menu_saved {
     background: none;
     background-image: url("../../images/burger_menu_black.svg");
   }

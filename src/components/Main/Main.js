@@ -1,7 +1,7 @@
 import React from "react";
-import "./Main.css";
 import About from "../About/About";
 import Hero from "../Hero/Hero";
+import "./Main.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 import { news } from "../../utils/temp_articles";

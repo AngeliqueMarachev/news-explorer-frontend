@@ -1,14 +1,21 @@
-.hero {
-    min-height: 576px;
+ .hero {
     background-image: url(../../images/hero.png);
-    top: 0;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
+    padding: calc(100% - 1440px);
 }
-
-@media screen and (max-width: 768px) {
+  
+  @media screen and (max-width: 768px) {
     .hero {
-        max-height: 400px;
+      background-position: center center;
+      padding: 0 0 1px 0;
     }
-}
+  }
+
+    
+  @media screen and (max-width: 320px) {
+    .hero {
+      background-position: center center;
+      padding: 0 0 70px 0;
+    }
+  }

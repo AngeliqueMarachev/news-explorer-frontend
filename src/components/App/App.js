@@ -11,7 +11,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import SuccessPopup from "../SuccessPopup/SuccessPopup";
 
-// import "./App.css";
+import "./App.css";
 import "../../index.css";
 
 export default function App() {

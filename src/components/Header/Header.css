@@ -5,7 +5,7 @@
   margin: auto;
   align-items: center;
   margin: auto;
-  color: white;
+  color: #ffffff;
 }
 
 .header__container {
@@ -15,7 +15,7 @@
 }
 
 .header__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", 'Times New Roman', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
@@ -23,7 +23,7 @@
 }
 
 .header__paragraph {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -38,6 +38,7 @@
   .header__title {
     font-size: 36px;
     max-width: 452px;
+    line-height: 40px;;
     margin: 0;
   }
 

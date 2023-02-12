@@ -28,7 +28,7 @@ export default function Navigation({
         <div className="navbar__mobile">
           <div className="navbar__top">
             <NavLink to='/' className={'navbar__logo'}>NewsExplorer</NavLink>
-            <button className="navbar__close=menu" onClick={handleBurgerCloseClick} />
+            <button className="navbar__close-menu" onClick={handleBurgerCloseClick} />
           </div>
 
           <div className="navbar__link_active">
@@ -56,7 +56,7 @@ export default function Navigation({
       ) : (
         <>
            <NavLink to='/' className={`navbar__logo navbar__logo` + navClass}>NewsExplorer</NavLink>
-            <button className={`navbar__mobile_menu navbar__mobile_menu` + navClass} onClick={handleBurgerMenuClick} />
+            <button className={`navbar__mobile-menu navbar__mobile-menu` + navClass} onClick={handleBurgerMenuClick} />
         </>
       )}
 

@@ -37,7 +37,7 @@
 }
 
 .saved-card__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -52,7 +52,7 @@
 }
 
 .saved-card__text {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -69,7 +69,7 @@
 }
 
 .saved-card__date {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
@@ -78,7 +78,7 @@ color: #b6bcbf;
 }
 
 .saved-card__source {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -137,7 +137,7 @@ color: #b6bcbf;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-size: 12px;
   font-weight: 500;
   width: 158px;
@@ -157,7 +157,7 @@ color: #b6bcbf;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", "Helvetica", sans-serif;
     font-size: 12px;
     font-weight: 500;
     right: 45px;
@@ -166,7 +166,7 @@ color: #b6bcbf;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s;
-} */
+} 
 
 .saved-card__keyword {
   position: absolute;
@@ -175,7 +175,7 @@ color: #b6bcbf;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
