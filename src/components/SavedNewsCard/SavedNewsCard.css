@@ -293,8 +293,8 @@
 
   .saved-card__text {
     margin-top: 14px;
-    -webkit-line-clamp: 4;
-    max-height: 88px;
+    -webkit-line-clamp: 3;
+    max-height: 66px;
     margin-bottom: 0;
   }
 

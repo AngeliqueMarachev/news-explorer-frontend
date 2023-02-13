@@ -2,7 +2,8 @@
     background-image: url(../../images/hero.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: calc(100% - 1440px);
+    /* padding: 0 calc((100% - 1440px) / 2) 0; */
+    padding: 0;
 }
   
   @media screen and (max-width: 768px) {

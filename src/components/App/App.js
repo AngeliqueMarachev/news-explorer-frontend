@@ -35,7 +35,7 @@ export default function App() {
     setIsSuccessPopupOpen(false);
   };
 
-  const userName = 'Elise';
+  const username = 'Elise';
 
   return (
     <div className="page">
@@ -45,7 +45,7 @@ export default function App() {
           element={
             <Main
               isLoggedIn={false}
-              useName={userName}
+              username={username}
               onSigninClick={handleSigninClick} 
               // setIsLoginPopupOpen={setIsLoginPopupOpen}
               // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
@@ -53,7 +53,7 @@ export default function App() {
             />
           }
         />
-        <Route path="/saved-news" element={<SavedNews userName={userName} />} />
+        <Route path="/saved-news" element={<SavedNews username={username} />} />
       </Routes>
 
       <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} onRegisterClick={handleRegisterClick} />

@@ -7,7 +7,7 @@ import logout_white from "../../images/logout_white.svg";
 
 export default function Navigation({
   isLoggedIn,
-  userName,
+  username,
   onSigninClick,
   setIsLoginPopupOpen }) {
   const location = useLocation();
@@ -75,7 +75,7 @@ export default function Navigation({
               Saved articles
             </NavLink>
             <button className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
-              userName={userName}>Elise
+              username={username}>Elise
               <img src={location.pathname === '/' ? logout_white : logout_black} alt="logout logo"/>
             </button>
           </>

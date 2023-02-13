@@ -2,15 +2,15 @@ import React from "react";
 import "./SavedNewsHeader.css";
 import Navigation from "../Navigation/Navigation";
 
-export default function SavedNewsHeader({ news, userName }) {
+export default function SavedNewsHeader({ news, username }) {
   return (
     <header className="saved-header">
-      <Navigation isLoggedIn={true} userName={userName} />
+      <Navigation isLoggedIn={true} username={username} />
 
       <section className="saved-header__text">
         <h4 className="saved-header__title">Saved articles</h4>
         <h2 className="saved-header__description">
-          {userName}, you have {news.length} saved articles
+          {username}, you have {news.length} saved articles
         </h2>
         <p className="saved-header__keywords">
           By keywords: {""}

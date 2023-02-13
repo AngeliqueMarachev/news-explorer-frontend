@@ -4,12 +4,12 @@ import Header from "../Header/Header";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 
-export default function Hero({ isLoggedIn, userName, onSigninClick, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
+export default function Hero({ isLoggedIn, username, onSigninClick, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
   return (
     <div className="hero">
       <Navigation
         isLoggedIn={isLoggedIn}
-        userName={userName}
+        username={username}
         // setIsLoginPopupOpen={setIsLoginPopupOpen}
         // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
       // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
