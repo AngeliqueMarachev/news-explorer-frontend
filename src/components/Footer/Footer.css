@@ -75,5 +75,9 @@
 .footer__image-links {
     margin-bottom: 30px;
 }
+
+.footer__links {
+    justify-content: space-evenly;
+}
 }
     

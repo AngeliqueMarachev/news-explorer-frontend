@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 16px;
-  padding: 62px 10% 10% 10%;
+  padding: 62px 102px 0 102px;
   min-height: 576px;
 }
 
@@ -18,3 +18,13 @@
     gap: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .saved-news__articles {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, auto);
+    padding: 32px 16px;
+    padding-bottom: 13px;
+  }
+}
+

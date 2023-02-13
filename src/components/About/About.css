@@ -71,7 +71,7 @@
 
 @media screen and (max-width: 320px) {
   .about__container {
-    padding: 47px 0 128px 0;
+    padding: 32px 0 128px 0;
     margin: 0;
     max-width: 320px;
     display: flex;
@@ -82,12 +82,15 @@
  .about__image {
   max-height: 272px;
   max-width: 272px;
-  margin: 24px;
+  margin: 0 24px;
  }
 
  .about__text {
   margin: 0;
  }
 
+ .about__content {
+  margin: 0 16px;
+ }
 }
   

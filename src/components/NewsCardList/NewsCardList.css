@@ -4,7 +4,7 @@
   margin: 0 auto;
   width: calc(100% - 208px);
   padding: 0;
-  min-height: 974px;
+  /* min-height: 974px; */
   max-width: 1232px;
 }
 
@@ -29,7 +29,8 @@
 .new-list__more {
   display: flex;
   justify-content: center;
-  padding-bottom: 64px;
+  padding-bottom: 80px;
+  padding-top: 64px;
 }
 
 .news-list__more-button {
@@ -82,7 +83,6 @@
   .news-list {
     margin: 0 auto;
     width: calc(320px - 32px);
-    
   }
 
   .news-list__articles {
@@ -100,7 +100,7 @@
   }
 
   .new-list__more {
-    padding-top: 21px;
-    padding-bottom: 24px;
+    padding-top: 32px;
+    padding-bottom: 40px;
   }
 }
