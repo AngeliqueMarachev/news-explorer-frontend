@@ -14,7 +14,7 @@
   }
 
     
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 650px) {
     .hero {
       background-position: center center;
       padding: 0 0 70px 0;
