@@ -178,6 +178,7 @@
 @media screen and (max-width: 1200px) {
   .card {
     width: 224px;
+    height: 420px;
   }
 
   .card__description {
@@ -231,7 +232,7 @@
 @media screen and (max-width: 320px) {
 .card {
   min-width: 288px;
-  max-height: 440px;
+  height: 440px;
 }
 
 .card__description {

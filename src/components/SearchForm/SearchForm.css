@@ -103,6 +103,7 @@
   .search-form__input {
     width: 256px;
     padding: 17px 16px;
+    margin-top: 122px;
   }
 
   .search-form__submit {

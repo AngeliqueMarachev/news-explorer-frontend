@@ -63,3 +63,10 @@
     margin: 5%;
   }
 }
+
+
+@media screen and (max-width: 320px) {
+.header__paragraph {
+  margin: 5% 5% 0 5%;
+}
+}

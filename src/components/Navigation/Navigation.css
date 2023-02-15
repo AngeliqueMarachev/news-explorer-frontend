@@ -204,3 +204,43 @@
     background-image: url("../../images/burger_menu_black.svg");
   }
 }
+
+@media screen and (max-width: 320px) {
+  .navbar__mobile {
+
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar__link_active {
+    text-decoration: none;
+  }
+
+  .navbar__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 16px 0;
+    border-bottom: 1px solid #C4C4C4;
+  }
+
+  .navbar__box {
+    width: 100%;
+    height: 568px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #000000;
+   
+  }
+
+  /* .navbar__box_overlay {
+    z-index: 9;
+    margin: 30px;
+    background: #009938;
+} */
+}
+
+

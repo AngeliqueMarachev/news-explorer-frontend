@@ -20,3 +20,10 @@
       padding: 0 0 70px 0;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .hero {
+      padding: 0;
+      height: 536px;
+    }
+  }

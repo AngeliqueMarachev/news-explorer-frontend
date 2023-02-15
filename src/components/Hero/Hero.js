@@ -7,9 +7,10 @@ import SearchForm from "../SearchForm/SearchForm";
 export default function Hero({ isLoggedIn, username, onSigninClick, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
   return (
     <div className="hero">
+ 
       <Navigation
         isLoggedIn={isLoggedIn}
-        username={username}
+        userame={username}
         // setIsLoginPopupOpen={setIsLoginPopupOpen}
         // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
       // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
