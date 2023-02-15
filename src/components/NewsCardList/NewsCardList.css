@@ -79,11 +79,17 @@
   .news-list {
     margin: 0 auto;
     width: calc(768px - 80px);
+    height: 654px;
   }
 
   .news-list__articles {
     max-width: 224px;
     gap: 8px;
+  }
+
+  .new-list__more {
+    padding-top: 0;
+    padding-bottom: 40px;
   }
 }
 
@@ -91,6 +97,7 @@
   .news-list {
     margin: 0 auto;
     width: calc(320px - 32px);
+    height: unset;
   }
 
 .news-list__articles {
@@ -102,7 +109,7 @@
 }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .news-list__title {
     font-size: 30px;
     margin: 10% 0;

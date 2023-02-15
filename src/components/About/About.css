@@ -45,7 +45,8 @@
 }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 960px) {
   .about__container {
     padding: 0;
   }
@@ -66,6 +67,24 @@
 
   .about__text {
    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about__container {
+    padding: 32px 0 128px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .about__image {
+    margin: 0 auto;
+  }
+
+  .about__content {
+    margin: 16px 40px 0 32px;
   }
 }
 
