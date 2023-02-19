@@ -141,6 +141,8 @@
   .navbar__logo {
     padding-left: 16px;
     z-index: 4;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .navbar__link {
@@ -159,6 +161,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    text-decoration: none;
   }
 
   .navbar__header-button {
@@ -179,6 +182,7 @@
     display: flex;
     justify-content: space-between;
     padding: 16px 16px 16px 0;
+    border-bottom: 1px solid #C4C4C4;
   }
 
   .navbar__close-menu {
@@ -207,27 +211,6 @@
     background: none;
     background-image: url("../../images/burger_menu_black.svg");
   }
-}
-
-@media screen and (max-width: 320px) {
-  .navbar__mobile {
-
-  }
-
-  .navbar {
-    position: relative;
-  }
-
-  .navbar__link_active {
-    text-decoration: none;
-  }
-
-  .navbar__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 16px 16px 0;
-    border-bottom: 1px solid #C4C4C4;
-  }
 
   .navbar__box {
     width: 100%;
@@ -239,7 +222,5 @@
     background: #000000;
    z-index: 2;
   }
-
-  
 }
 
