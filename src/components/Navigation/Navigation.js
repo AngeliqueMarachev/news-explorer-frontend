@@ -41,7 +41,7 @@ export default function Navigation({
             <NavLink to="/" className="navbar__link">
               Home
             </NavLink>
-
+            <div className="navbar__box"></div>
             {isLoggedIn ? (
               <>
                 <NavLink to="/saved-news" className="navbar__link">

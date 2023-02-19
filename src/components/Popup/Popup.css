@@ -19,6 +19,7 @@
     visibility: visible;
     opacity: 1;
     cursor: pointer;
+    z-index: 4;
   }
   
   .popup__content {
