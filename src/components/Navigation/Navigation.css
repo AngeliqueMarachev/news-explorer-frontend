@@ -77,6 +77,11 @@
   z-index: 3;
 }
 
+/* .navbar__mobile {
+  display: none;
+  visibility: hidden;
+} */
+
 .navbar__header-button_saved {
   border-color: #000;
   color: #000;
@@ -103,14 +108,10 @@
   column-gap: 15px;
 }
 
-.navbar__mobile-menu {
-  display: none;
-  visibility: hidden;
-}
 
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 14px 40px 10px;
+    padding: 14px 40px 15px;
   }
 
   .navbar__link {
@@ -126,101 +127,10 @@
     padding: 10px 60px 10px;
   }
 
-  .navbar__mobile-menu {
-    display: none;
-    visibility: visible;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .navbar {
-    padding: 16px 16px 16px 0;
-    position: relative;
-  }
-
-  .navbar__logo {
-    padding-left: 16px;
-    z-index: 4;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .navbar__link {
-    font-size: 18px;
-  }
-
-  .navbar__links {
     display: none;
-    visibility: hidden;
-  }
-
-  .navbar__link_active {
-    background-color: #000;
-    width: calc(100% - 32px);
-    padding: 32px 16px 24px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-    text-decoration: none;
-  }
-
-  .navbar__header-button {
-    width: calc(100% - 24px);
-    padding-top: 16px;
-    padding-bottom: 16px;
-    justify-content: center;
-  }
-
-  .navbar__mobile {
-    position: absolute;
-    top: 0;
-    background-color: #000;
-    width: 100%;
-  }
-
-  .navbar__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 16px 16px 0;
-    border-bottom: 1px solid #C4C4C4;
-  }
-
-  .navbar__close-menu {
-    background: none;
-    background-image: url("../../images/burger_close.svg");
-    background-size: 100%;
-    border: none;
-    width: 26px;
-    height: 26px;
-    padding: 0;
-    z-index: 4;
-  }
-
-  .navbar__mobile-menu {
-    background: none;
-    background-image: url("../../images/burger_menu_white.svg");
-    display: block;
-    visibility: visible;
-    width: 24px;
-    height: 24px;
-    border: none;
-    padding: 0;
-  }
-
-  .navbar__mobile-menu_saved {
-    background: none;
-    background-image: url("../../images/burger_menu_black.svg");
-  }
-
-  .navbar__box {
-    width: 100%;
-    height: 568px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    background: #000000;
-   z-index: 2;
   }
 }
-

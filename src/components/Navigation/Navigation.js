@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Navigation.css";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -13,69 +12,16 @@ export default function Navigation({
 }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
-  const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
-
-  const handleBurgerMenuClick = () => {
-    setIsBurgerMenuActive(true);
-  };
-
-  const handleBurgerCloseClick = () => {
-    setIsBurgerMenuActive(false);
-  };
 
   return (
     <div className="navbar">
-      {isBurgerMenuActive ? (
-        <div className="navbar__mobile">
-          <div className="navbar__top">
-            <NavLink to="/" className={"navbar__logo"}>
+      <div className="navbar__top">
+      <NavLink to="/" className={`navbar__logo ${navClass && 'navbar__logo_saved'}`}>
+          
               NewsExplorer
-            </NavLink>
-            <button
-              className="navbar__close-menu"
-              onClick={handleBurgerCloseClick}
-            />
-          </div>
-
-          <div className="navbar__link_active">
-            <NavLink to="/" className="navbar__link">
-              Home
-            </NavLink>
-            <div className="navbar__box"></div>
-            {isLoggedIn ? (
-              <>
-                <NavLink to="/saved-news" className="navbar__link">
-                  Saved articles
-                </NavLink>
-                <button
-                  className={`navbar__header-button navbar__header-button_logout`}
-                >
-                  <img src={logout_white} alt="logout logo" />
-                </button>
-              </>
-            ) : (
-              <button
-                className={`navbar__header-button navbar__header-login`}
-                type="button"
-                // onClick={() => setIsLoginPopupOpen(true)}
-                onClick={onSigninClick}
-              >
-                Sign in
-              </button>
-            )}
-          </div>
+        </NavLink>
         </div>
-      ) : (
-        <>
-          <NavLink to="/" className={`navbar__logo navbar__logo` + navClass}>
-            NewsExplorer
-          </NavLink>
-          <button
-            className={`navbar__mobile-menu navbar__mobile-menu` + navClass}
-            onClick={handleBurgerMenuClick}
-          />
-        </>
-      )}
+   
 
       <nav className="navbar__links">
         <NavLink
@@ -108,8 +54,7 @@ export default function Navigation({
                 `navbar__header-button navbar__header-button_logout navbar__header-button` +
                 navClass
               }
-              username={username}
-            >
+              username={username}>
               Elise
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}

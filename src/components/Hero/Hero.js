@@ -3,6 +3,7 @@ import "./Hero.css";
 import Header from "../Header/Header";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Hero({ isLoggedIn, username, onSigninClick, setIsLoginPopupOpen, setIsRegisterPopupOpen, setIsSuccessPopupOpen}) {
   return (
@@ -16,6 +17,7 @@ export default function Hero({ isLoggedIn, username, onSigninClick, setIsLoginPo
       // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
         onSigninClick={onSigninClick}
       />
+      <MobileMenu />
       <Header />
       <SearchForm />
     </div>
