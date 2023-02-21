@@ -5,6 +5,11 @@
 @media screen and (max-width: 600px) { 
 .mobile-menu {
   display: block;
+  background-color: transparent;
+}
+
+.mobile-menu-open {
+  display: block;
   position: fixed;
   height: 100%;
   padding: 0;
@@ -13,10 +18,21 @@
   z-index: 1;
 }
 
+.mobile-menu-open_saved {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
 .mobile-menu__container {
+  background-color: transparent;
+  /* width: 100vw;
+  height: 230px; */
+}
+
+.mobile-menu__container-open {
 background-color: #000;
 width: 100vw;
-height: 230px;
+height: 230px
 }
 
 .mobile-menu__header {

@@ -57,6 +57,7 @@
   .header__title {
     margin: 0 5%;
     line-height: 40px;
+    /* padding-top: 86px; */
   }
 
   .header__paragraph {
