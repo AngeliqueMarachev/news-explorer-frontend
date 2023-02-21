@@ -59,6 +59,7 @@ export default function App() {
       <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} onRegisterClick={handleRegisterClick} />
       <Register isOpen={isRegisterPopupOpen} onClose={closeAllPopups} onSigninClick={handleSigninClick} />
       <SuccessPopup isOpen={isSuccessPopupOpen} onClose={closeAllPopups} />
+      
     </div>
   );
 }

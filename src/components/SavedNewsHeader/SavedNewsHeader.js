@@ -1,12 +1,13 @@
 import React from "react";
 import "./SavedNewsHeader.css";
 import Navigation from "../Navigation/Navigation";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function SavedNewsHeader({ news, username }) {
   return (
     <header className="saved-header">
       <Navigation isLoggedIn={true} username={username} />
-
+      <MobileMenu  isLoggedIn={true} username={username}/>
       <section className="saved-header__text">
         <h4 className="saved-header__title">Saved articles</h4>
         <h2 className="saved-header__description">

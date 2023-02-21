@@ -1,5 +1,5 @@
 import "./Navigation.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 import logout_black from "../../images/logout_black.svg";
 import logout_white from "../../images/logout_white.svg";
@@ -16,13 +16,14 @@ export default function Navigation({
   return (
     <div className="navbar">
       <div className="navbar__top">
-      <NavLink to="/" className={`navbar__logo ${navClass && 'navbar__logo_saved'}`}>
-          
-              NewsExplorer
-        </NavLink>
-        </div>
-   
-
+        <Link
+          to="/"
+          className={`navbar__logo ${navClass && "navbar__logo_saved"}`}
+        >
+          NewsExplorer
+        </Link>
+      </div>
+      
       <nav className="navbar__links">
         <NavLink
           to="/"
@@ -54,7 +55,8 @@ export default function Navigation({
                 `navbar__header-button navbar__header-button_logout navbar__header-button` +
                 navClass
               }
-              username={username}>
+              username={username}
+            >
               Elise
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}
