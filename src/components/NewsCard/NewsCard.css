@@ -25,25 +25,28 @@
   cursor: pointer;
 }
 
-.card__button_type_save {
+.card__button_save {
   background: url("../../images/bookmark.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
 }
 
-.card__button_type:hover {
+.card__button_hover {
   background: url("../../images/bookmark_hover.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff;
 }
 
-.card__button_type_saved {
+.card__button_saved {
   background: url("../../images/bookmark_blue.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
 }
 
-.card__button_type_delete {
+.card__button_delete {
   background: url("../../images/trash.svg");
   background-repeat: no-repeat;
   background-position: center;

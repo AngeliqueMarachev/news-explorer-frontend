@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from 'react';
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
+
 
 export default function NewsCard({
   image,
@@ -14,15 +16,29 @@ export default function NewsCard({
 
   const location = useLocation();
 
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleSaveClick = () => {
+    setIsSaved(!isSaved);
+  };
+  
   return (
     <div className="card">
       <img className="card__image" src={image} alt={title} />
 
 
       {location.pathname === "/" ? (
-       <button className="card__button card__button_type_save" />
+        <button
+          type="button"
+          className={` ${
+            isSaved
+                ? "card__button card__button_saved"
+                : "card__button card__button_save"
+        }`}
+          onClick={handleSaveClick}
+           />
       ) : (
-        <button className="card__button card__button_type_delete" />
+        <button className="card__button card__button_delete" />
       )}
      
      {((location.pathname === '/' && !isLoggedIn) || location.pathname === '/saved-news') && (
