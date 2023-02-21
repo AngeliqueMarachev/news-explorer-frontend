@@ -1,5 +1,5 @@
    .footer {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", "Helvetica", sans-serif;
     padding: 30px 104px 26px 104px;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@
     gap: 25px;
 }
 
-.footer__link_text {
+.footer__link-text {
     cursor: pointer;
     text-decoration: none;
     color: #1a1b22;
@@ -66,7 +66,7 @@
         justify-content: space-between;
         margin-bottom: 38px;
     }
-    .footer__link_text {
+    .footer__link-text {
         font-size: 18px;
     }
 }

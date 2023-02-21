@@ -29,7 +29,7 @@ export default function Navigation({
           to="/"
           className={
             `${
-              navClass === "" && "navbar__link_active"
+              navClass === "" && "navbar__link navbar__link_active"
             } navbar__link navbar__link` + navClass
           }
         >

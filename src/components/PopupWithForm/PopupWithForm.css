@@ -32,35 +32,33 @@
 .form__submit {
   padding: 20px 60px;
   text-align: center;
-  background-color: #2F71E5;
-  color: #fff;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
   font-family: "Roboto", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
   border-radius: 100px;
-  border: 1px solid #fff;
+  border: 0;
   cursor: pointer;
   width: 100%;
   height: 64px;
+  margin: 8px 0 0;
 }
 
-.form__submit_disable {
-  background-color: #e6e8eb;
-  color: #b6bcbf;
+.form__submit_enabled {
+  background-color: #2f71e5;
+  color: #ffffff;
   box-shadow: none;
   cursor: default;
 }
 
-.form__submit:hover {
+.form__submit_enabled:hover {
   background-color: #347eff;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   transition: background-color 0.3s;
 }
 
-.form__submit_disable:hover {
-  background-color: #e6e8eb;
-}
 
 .form__link {
   color: #2f71e5;
@@ -68,7 +66,7 @@
   font-family: "Inter", "Futura", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 22px;
 }
 

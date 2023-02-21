@@ -9,11 +9,11 @@ export default function Footer() {
       <p className="footer__copy">©️ 2023 Supersite Powered by News API</p>
       <div className="footer__links">
         <div className="footer__text-links">
-          <a className="footer__link footer__link_text" href="#practicum">
+          <a className="footer__link footer__link-text" href="#practicum">
             Home
           </a>
           <a
-            className="footer__link footer__link_text"
+            className="footer__link footer__link-text"
             href="https://practicum.com/en-isr"
             target={"_blank"}
             rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
         <div className="footer__image-links">
           <a
-            className="footer__link footer__link_image"
+            className="footer__link footer__link-image"
             href="https://www.linkedin.com/in/angeliquemarachev/"
             target={"_blank"}
             rel="noopener noreferrer"
@@ -31,7 +31,7 @@ export default function Footer() {
             <img className="footer__image" src={githubPath} alt="github" />
           </a>
           <a
-            className="footer__link footer__link_image"
+            className="footer__link footer__link-image"
             href="https://www.facebook.com/angelina.francesca.98"
             target={"_blank"}
             rel="noopener noreferrer"

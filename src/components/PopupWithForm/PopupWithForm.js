@@ -28,7 +28,7 @@ export default function PopupWithForm({
       onClose={onClose}>
       <form className="form" autoComplete="off">
         {children}
-        <button className="form__submit">{name}</button>
+        <button type="submit" className="form__submit" disabled>{name}</button>
       </form>
       <p className="form__subtitle">
         or&nbsp;

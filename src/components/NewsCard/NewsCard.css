@@ -102,7 +102,7 @@
   align-items: center;
 }
 
-.card__label_text {
+.card__label-text {
   margin: 0;
   font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
@@ -113,7 +113,7 @@
   align-items: center;
   text-align: center;
   color: #000000;
-  padding: 13px 20px 11px 20px;
+  /* padding: 13px 20px 11px 20px; */
 }
 
 .card__description {
@@ -124,11 +124,12 @@
   row-gap: 16px;
   display: grid;
   grid-template-rows: 54px 64px 105px 30px;
+  font-family: ;
 }
 
 
 .card__date {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
