@@ -12,13 +12,13 @@ export default function PopupWithForm({
 }) {
 
   const handleSigninClick = () => {
-    onSigninClick();
     onClose();
+    onSigninClick();
   }
 
   const handleRegisterClick = () => {
-    onRegisterClick();
     onClose();
+    onRegisterClick();
   }
 
   return (

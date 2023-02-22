@@ -6,6 +6,8 @@
   .mobile-menu {
     display: block;
     background-color: transparent;
+    position: absolute;
+    width: 100%;
   }
 
   .mobile-menu-open {
@@ -44,7 +46,6 @@
     border-bottom: 1px solid #c4c4c4;
     padding-left: 16px;
   }
-
 
   .mobile-menu__logo {
     font-family: "Roboto Slab", "Times New Roman", serif;
@@ -142,6 +143,6 @@
   }
 
   .mobile-menu__button_login {
-    margin-top: 22px
+    margin-top: 22px;
   }
 }

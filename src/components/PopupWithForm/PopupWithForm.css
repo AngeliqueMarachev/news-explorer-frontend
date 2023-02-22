@@ -13,7 +13,6 @@
 .form__input {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  opacity: 0.2;
   padding: 9px 0;
   font-family: "Inter", "Futura", sans-serif;
   font-size: 14px;
@@ -22,6 +21,7 @@
   width: 100%;
   outline: none;
   background-color: white;
+  margin-bottom: 30px;
 }
 
 ::placeholder {
@@ -43,7 +43,6 @@
   cursor: pointer;
   width: 100%;
   height: 64px;
-  margin: 8px 0 0;
 }
 
 .form__submit_enabled {
@@ -96,5 +95,4 @@
 
 .form__error_general {
   text-align: center;
-  margin-top: 17px;
 }

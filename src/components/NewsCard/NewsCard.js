@@ -59,8 +59,10 @@ export default function NewsCard({
           </div>
       )}
       <div className="card__description">
+        <div className="card__info">
         <p className="card__date">{date}</p>
-        <h3 className="card__title">{title}</h3>
+          <h3 className="card__title">{title}</h3>
+          </div>
         <p className="card__text">{text}</p>
         <p className="card__source">{source}</p>
       </div>

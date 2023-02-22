@@ -119,10 +119,6 @@
     line-height: 1.5;
   }
 
-  .navbar__link_active {
-    text-underline-offset: 27px;
-  }
-
   .navbar__header-button {
     padding: 10px 60px 10px;
   }

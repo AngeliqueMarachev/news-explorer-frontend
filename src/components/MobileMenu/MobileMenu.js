@@ -28,7 +28,7 @@ export default function MobileMenu({
       <nav className="mobile-menu">
         {isBurgerMenuActive ? (
           // <nav className={`mobile-menu-open ${navClass && "mobile-menu-open_saved"}`}>
-          <nav className="mobile-menu-open">
+          <div className="mobile-menu-open">
             <div className="mobile-menu__container-open">
               <div className="mobile-menu__header">
                 <Link
@@ -53,12 +53,12 @@ export default function MobileMenu({
 
                 {isLoggedIn ? (
                   <>
-                      <Link
+                    <Link
                       to="/"
-                      className={`mobile-menu-logo mobile-menu__logo_active`} 
-                >
-                  NewsExplorer
-                </Link>
+                      className={`mobile-menu-logo mobile-menu__logo_active`}
+                    >
+                      NewsExplorer
+                    </Link>
                     <NavLink to="/saved-news" className="mobile-menu__link">
                       Saved articles
                     </NavLink>
@@ -76,35 +76,31 @@ export default function MobileMenu({
                     type="button"
                     // onClick={() => setIsLoginPopupOpen(true)}
                     onClick={onSigninClick}
-                  >Sign in
+                  >
+                    Sign in
                   </button>
                 )}
               </div>
             </div>
-          </nav>
+          </div>
         ) : (
-          <nav className="mobile-menu">
-            <div className="mobile-menu__container">
-              <div className="mobile-menu__header">
-                <Link
-                  to="/"
-                  className={`mobile-menu__logo ${
-                    navClass && "mobile-menu__logo_saved"
-                  }`}
-                >
-                  NewsExplorer
-                </Link>
-                <button
-                  type="button"
-                  className={`mobile-menu__burger ${
-                    navClass && "mobile-menu__burger_saved"
-                  }`}
-                  onClick={handleBurgerMenuClick}
-                ></button>
-              </div>
-              </div>
-
-          </nav>
+          <div className="mobile-menu__header">
+            <Link
+              to="/"
+              className={`mobile-menu__logo ${
+                navClass && "mobile-menu__logo_saved"
+              }`}
+            >
+              NewsExplorer
+            </Link>
+            <button
+              type="button"
+              className={`mobile-menu__burger ${
+                navClass && "mobile-menu__burger_saved"
+              }`}
+              onClick={handleBurgerMenuClick}
+            ></button>
+          </div>
         )}
       </nav>
     </>
