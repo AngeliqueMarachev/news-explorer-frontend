@@ -191,7 +191,8 @@
 
   .card__description {
     max-width: 224px;
-    height: 420px;
+    height: 365px;
+    justify-content: space-around;
   }
 
   .card__text {
@@ -213,7 +214,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 }
