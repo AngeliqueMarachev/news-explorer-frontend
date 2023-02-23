@@ -179,6 +179,17 @@
   padding-bottom: 24px;
 }
 
+@media screen and (max-width: 1350px) {
+  .card {
+    width: 390px;
+    height: 450px;
+  } 
+
+  .card__image {
+    width: 390px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .card {
     width: 224px;
@@ -187,7 +198,7 @@
 
   .card__description {
     max-width: 224px;
-    height: 365px;
+    height: 320px;
   }
 
   .card__text {
@@ -206,11 +217,6 @@
 
   .card__source {
     max-height: 20px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
   }
 }
 
@@ -235,6 +241,11 @@
     padding: 0;
     margin-bottom: 16px;
     margin-top: 2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   .card__date {

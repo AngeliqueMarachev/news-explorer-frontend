@@ -102,7 +102,7 @@ a {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   .saved-header__text {
     padding: 56px 40px 32px;
   }
