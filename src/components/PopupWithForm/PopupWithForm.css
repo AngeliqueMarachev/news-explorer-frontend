@@ -21,7 +21,7 @@
   width: 100%;
   outline: none;
   background-color: white;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
 }
 
 ::placeholder {
@@ -87,12 +87,21 @@
   display: block;
   margin-bottom: 15px;
   visibility: hidden;
+  /* visibility: visible; */
 }
 
 .form__error_visible {
   visibility: visible;
 }
 
-.form__error_general {
+.form__error-general {
   text-align: center;
+  margin-top: 16px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .form__input {
+    margin: 0;
+  }
 }

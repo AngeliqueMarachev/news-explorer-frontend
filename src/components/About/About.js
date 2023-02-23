@@ -4,7 +4,7 @@ import mePath from "../../images/me.jpg";
 
 export default function About() {
   return (
-    <section className="about__container">
+    <section className="about">
       <img className="about__image" src={mePath} alt={"Angelique Marachev"} />
       <div className="about__content">
         <h2 className="about__title">About the author</h2>

@@ -48,7 +48,7 @@ export default function Register({ isOpen, onClose, onSigninClick }) {
         onChange={(e) => setUsername(e.target.value)}
       ></input>
       {/* <span className="form__error">Invalid username</span> */}
-      <span className="form__error form__error_general">
+      <span className="form__error form__error-general">
         This email is not available
       </span>
     </PopupWithForm>
