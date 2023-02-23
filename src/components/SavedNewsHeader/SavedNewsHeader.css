@@ -101,6 +101,13 @@ a {
 }
 }
 
+
+@media screen and (max-width: 600px) {
+  .saved-header__text {
+    padding: 56px 40px 32px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .saved-header__text {
   padding: 56px 16px 0;

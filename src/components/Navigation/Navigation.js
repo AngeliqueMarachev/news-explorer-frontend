@@ -67,8 +67,9 @@ export default function Navigation({
         ) : (
           <button
             className={
-              `navbar__header-button navbar__header-login navbar__header-button` +
-              navClass
+              `navbar__header-button navbar__header-button_login navbar__header-button` +
+                navClass
+                
             }
             type="button"
             // onClick={() => setIsLoginPopupOpen(true)}

@@ -77,11 +77,6 @@
   z-index: 3;
 }
 
-/* .navbar__mobile {
-  display: none;
-  visibility: hidden;
-} */
-
 .navbar__header-button_saved {
   border-color: #000;
   color: #000;

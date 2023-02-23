@@ -27,7 +27,6 @@ export default function MobileMenu({
     <>
       <nav className="mobile-menu">
         {isBurgerMenuActive ? (
-          // <nav className={`mobile-menu-open ${navClass && "mobile-menu-open_saved"}`}>
           <div className="mobile-menu-open">
             <div className="mobile-menu__container-open">
               <div className="mobile-menu__header">
@@ -55,7 +54,7 @@ export default function MobileMenu({
                   <>
                     <Link
                       to="/"
-                      className={`mobile-menu-logo mobile-menu__logo_active`}
+                      className={`mobile-menu__logo mobile-menu__logo_active`}
                     >
                       NewsExplorer
                     </Link>

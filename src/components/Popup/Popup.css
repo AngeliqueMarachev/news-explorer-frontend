@@ -79,8 +79,12 @@
 }
 
 @media screen and (max-width: 320px) {
+  .popup {
+   backdrop-filter: blur(3px);
+  }
+
   .popup__content {
-    top: 50px;
+    top: 56px;
     border-radius: 16px 16px 0 0;
     padding-bottom: 100vw;
   }

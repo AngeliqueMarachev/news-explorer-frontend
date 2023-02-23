@@ -8,19 +8,13 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 export default function Hero({
   isLoggedIn,
   username,
-  onSigninClick,
-  setIsLoginPopupOpen,
-  setIsRegisterPopupOpen,
-  setIsSuccessPopupOpen,
+  onSigninClick
 }) {
   return (
     <div className="hero">
       <Navigation
         isLoggedIn={isLoggedIn}
         userame={username}
-        // setIsLoginPopupOpen={setIsLoginPopupOpen}
-        // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
-        // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
         onSigninClick={onSigninClick}
       />
       <MobileMenu
