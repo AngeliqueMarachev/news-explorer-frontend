@@ -1,0 +1,137 @@
+.news-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* width: calc(100% - 208px); */
+  padding: 0;
+  max-width: 1232px;
+}
+
+.news-list__title {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 0 0 64px 0;
+  color: #1a1b22;
+  padding-top: 80px;
+}
+
+.news-list__articles {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 16px;
+  min-height: 576px;
+  max-width: 400px;
+}
+
+.new-list__more {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+  padding-top: 64px;
+}
+
+.news-list__more-button {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  height: 64px;
+  width: 288px;
+  border-radius: 80px;
+  background: #ffffff;
+  align-self: center;
+  display: block;
+  border: none;
+  color: #1a1b22;
+}
+
+.news-list__more-button:hover {
+  background: #e8e8e8;
+}
+
+@media screen and (max-width: 1350px) {
+  .news-list__articles {
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .news-list {
+    margin: 0 auto;
+    width: calc(768px - 80px);
+  }
+
+  .news-list__articles {
+    max-width: 224px;
+    gap: 8px;
+  }
+
+  .new-list__more {
+    padding-top: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-list {
+    margin: 0 auto;
+    width: calc(768px - 80px);
+    height: 558px;
+    padding-bottom: 32px;
+  }
+
+  .news-list__title {
+    padding-top: 40px;
+  }
+
+  .news-list__articles {
+    max-width: 224px;
+    gap: 8px;
+  }
+
+  .new-list__more {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .news-list {
+    margin: 0 auto;
+    width: calc(320px - 32px);
+    height: unset;
+    padding-bottom: 21px;
+  }
+
+  .news-list__articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .news-list__title {
+    font-size: 30px;
+    margin: 10% 0;
+    padding: 0;
+  }
+
+  .new-list__more {
+    padding-bottom: 24px;
+    padding-top: 0;
+  }
+}
