@@ -1,6 +1,8 @@
 // REACT
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import * as mainApi from '../../utils/MainApi';
+// import api from '../../utils/MainApi';
 
 // ELEMENTS
 import Main from "../Main/Main";
@@ -35,6 +37,34 @@ export default function App() {
     setIsSuccessPopupOpen(false);
   };
 
+  // function handleRegister({ email, password, name }) {
+  //   api
+  //     .register(email, password, name)
+  //     .then((user) => {
+  //       if (user.data._id) {
+  //         closeAllPopups();
+  //         setIsSuccessPopupOpen(true);
+  //       } else {
+  //         console.log(user);
+  //       }
+  //     })
+  //     .catch((err) => console.log(err, "Hello error"));
+  // }
+
+  function handleRegister({ email, password, name }) {
+    mainApi
+      .register(email, password, name)
+      .then((res) => {
+        if (res._id) {
+          closeAllPopups();
+          setIsSuccessPopupOpen(true);
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((err) => console.log(err, "Hello error"));
+  }
+  
   const username = 'Elise';
 
   return (
@@ -57,7 +87,12 @@ export default function App() {
       </Routes>
 
       <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} onRegisterClick={handleRegisterClick} />
-      <Register isOpen={isRegisterPopupOpen} onClose={closeAllPopups} onSigninClick={handleSigninClick} />
+      <Register
+        isOpen={isRegisterPopupOpen}
+        onClose={closeAllPopups}
+        onSigninClick={handleSigninClick}
+        onRegister={handleRegister}
+      />
       <SuccessPopup isOpen={isSuccessPopupOpen} onClose={closeAllPopups} />
       
     </div>

@@ -8,7 +8,8 @@ export default function PopupWithForm({
   isOpen,
   onClose,
   onSigninClick,
-  onRegisterClick
+  onRegisterClick,
+  onSubmit
 }) {
 
   const handleSigninClick = () => {
@@ -21,14 +22,19 @@ export default function PopupWithForm({
     onRegisterClick();
   }
 
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    onSubmit();
+  }
+
   return (
     <Popup
       name={name}
       isOpen={isOpen}
       onClose={onClose}>
-      <form className="form" autoComplete="off">
+      <form className="form" autoComplete="off" onSubmit={handleFormSubmit}>
         {children}
-        <button type="submit" className="form__submit" disabled>{name}</button>
+        <button type="submit" className="form__submit">{name}</button>
       </form>
       <p className="form__subtitle">
         or&nbsp;
