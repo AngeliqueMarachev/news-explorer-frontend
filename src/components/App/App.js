@@ -1,7 +1,10 @@
 // REACT
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import * as mainApi from '../../utils/MainApi';
+import { Routes, Route, Navigate } from "react-router-dom";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
+// API
+import * as mainApi from "../../utils/MainApi";
 // import api from '../../utils/MainApi';
 
 // ELEMENTS
@@ -17,7 +20,9 @@ import "./App.css";
 import "../../index.css";
 
 export default function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState("Elise");
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -25,31 +30,17 @@ export default function App() {
 
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
-  }
+  };
 
   const handleRegisterClick = () => {
     setIsRegisterPopupOpen(true);
-  }
+  };
 
   const closeAllPopups = () => {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
     setIsSuccessPopupOpen(false);
   };
-
-  // function handleRegister({ email, password, name }) {
-  //   api
-  //     .register(email, password, name)
-  //     .then((user) => {
-  //       if (user.data._id) {
-  //         closeAllPopups();
-  //         setIsSuccessPopupOpen(true);
-  //       } else {
-  //         console.log(user);
-  //       }
-  //     })
-  //     .catch((err) => console.log(err, "Hello error"));
-  // }
 
   function handleRegister({ email, password, name }) {
     mainApi
@@ -62,39 +53,68 @@ export default function App() {
           console.log(res);
         }
       })
-      .catch((err) => console.log(err, "Hello error"));
+      .catch((err) => console.log(err, "Register Error"));
   }
-  
-  const username = 'Elise';
+
+  function handleLogin({ email, password }) {
+    mainApi
+      .login(email, password)
+      .then((res) => {
+        if (res.token) {
+          setIsLoggedIn(true);
+          setCurrentUser(res.name);
+          localStorage.setItem("jwt", res.token);
+          setToken(res.token);
+          closeAllPopups();
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((err) => console.log(err, "Login Error"));
+  }
 
   return (
-    <div className="page">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Main
-              isLoggedIn={false}
-              username={username}
-              onSigninClick={handleSigninClick} 
-              // setIsLoginPopupOpen={setIsLoginPopupOpen}
-              // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
-              // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
-            />
-          }
-        />
-        <Route path="/saved-news" element={<SavedNews username={username} />} />
-      </Routes>
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="page">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                isLoggedIn={isLoggedIn}
+                username={currentUser}
+                onSigninClick={handleSigninClick}
+                // setIsLoginPopupOpen={setIsLoginPopupOpen}
+                // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+                // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
+              />
+            }
+          />
+          <Route
+            path="/saved-news"
+            element={<SavedNews username={currentUser} />}
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
 
-      <Login isOpen={isLoginPopupOpen} onClose={closeAllPopups} onRegisterClick={handleRegisterClick} />
-      <Register
-        isOpen={isRegisterPopupOpen}
-        onClose={closeAllPopups}
-        onSigninClick={handleSigninClick}
-        onRegister={handleRegister}
-      />
-      <SuccessPopup isOpen={isSuccessPopupOpen} onClose={closeAllPopups} />
-      
-    </div>
+        <Login
+          isOpen={isLoginPopupOpen}
+          onClose={closeAllPopups}
+          onRegisterClick={handleRegisterClick}
+          onLogin={handleLogin}
+        />
+        <Register
+          isOpen={isRegisterPopupOpen}
+          onClose={closeAllPopups}
+          onSigninClick={handleSigninClick}
+          onRegister={handleRegister}
+        />
+        <SuccessPopup
+          isOpen={isSuccessPopupOpen}
+          onClose={closeAllPopups}
+          onSigninClick={handleSigninClick}
+        />
+      </div>
+    </CurrentUserContext.Provider>
   );
 }

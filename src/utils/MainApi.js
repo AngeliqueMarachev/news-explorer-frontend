@@ -16,7 +16,18 @@ export const register = (email, password, name) => {
     .then((res) => checkResponse(res));
 };
 
+export const login = (email, password) => {
+    return fetch(`${BASE_URL}/signin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => checkResponse(res));
+  };
 
+  
 // class MainApi {
 //   constructor({ baseUrl, headers }) {
 //     this._baseUrl = baseUrl;

@@ -13,7 +13,6 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
     onRegister(values);
   }
 
-
   return (
     <PopupWithForm
       name="Sign up"
@@ -34,6 +33,7 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         // onChange={(e) => setEmail(e.target.value)}
       ></input>
       <span className="form__error">Invalid email</span>
+
       <label className="form__label">Password</label>
       <input
         className="form__input"
@@ -46,6 +46,7 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         // onChange={(e) => setPassword(e.target.value)}
       ></input>
       <span className="form__error">Invalid password</span>
+
       <label className="form__label">Username</label>
       <input
         className="form__input"
@@ -58,9 +59,11 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         // onChange={(e) => setUsername(e.target.value)}
       ></input>
       <span className="form__error">Invalid username</span>
+
       <span className="form__error form__error-general">
         This email is not available
       </span>
     </PopupWithForm>
   );
 }
+
