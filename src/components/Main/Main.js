@@ -4,12 +4,17 @@ import Hero from "../Hero/Hero";
 import "./Main.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
-import { news } from "../../utils/temp_articles";
+import Preloader from '../Preloader/Preloader';
+import NotFound from '../NotFound/Notfound'
+// import { news } from "../../utils/temp_articles";
 
 export default function Main({
   isLoggedIn,
   username,
-  onSigninClick
+  onSigninClick,
+  isLoading,
+  articles, 
+  onLogout
 }) {
   return (
     <>
@@ -18,8 +23,15 @@ export default function Main({
           isLoggedIn={isLoggedIn}
           username={username}
           onSigninClick={onSigninClick}
-          />
-        <NewsCardList news={news} />
+          onLogout={onLogout} />
+        {isLoading && (
+          <Preloader />
+        )}
+        {articles.length === 0 ? (
+          <NotFound />
+        ) : (
+          <NewsCardList articles={articles} />
+        )}
         <About />
         <Footer />
       </main>

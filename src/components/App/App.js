@@ -18,11 +18,14 @@ import SuccessPopup from "../SuccessPopup/SuccessPopup";
 
 import "./App.css";
 import "../../index.css";
+import { news } from "../../utils/temp_articles";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState("Elise");
   const [token, setToken] = useState(localStorage.getItem("jwt"));
+  const [isLoading, setIsLoading] = useState(false);
+  const [articles, setArticles] = useState(news);
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -73,6 +76,14 @@ export default function App() {
       .catch((err) => console.log(err, "Login Error"));
   }
 
+  function handleLogout() {
+    setIsLoggedIn(false);
+    setCurrentUser('');
+    localStorage.removeItem('jwt');
+    setToken('');
+    setIsLoginPopupOpen(true);
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -84,6 +95,9 @@ export default function App() {
                 isLoggedIn={isLoggedIn}
                 username={currentUser}
                 onSigninClick={handleSigninClick}
+                isLoading={isLoading}
+                articles={articles}
+                onLogout={handleLogout}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}
                 // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
                 // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
@@ -92,7 +106,12 @@ export default function App() {
           />
           <Route
             path="/saved-news"
-            element={<SavedNews username={currentUser} />}
+            element={
+              <SavedNews
+                username={currentUser}
+                articles={articles}
+                onLogout={handleLogout}
+              />}
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

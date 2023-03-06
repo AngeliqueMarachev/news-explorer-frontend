@@ -8,7 +8,8 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 export default function Hero({
   isLoggedIn,
   username,
-  onSigninClick
+  onSigninClick, 
+  onLogout
 }) {
   return (
     <div className="hero">
@@ -16,11 +17,13 @@ export default function Hero({
         isLoggedIn={isLoggedIn}
         userame={username}
         onSigninClick={onSigninClick}
+        onLogout={onLogout}
       />
       <MobileMenu
         isLoggedIn={isLoggedIn}
         userame={username}
         onSigninClick={onSigninClick}
+        onLogout={onLogout}
       />
       <Header />
       <SearchForm />

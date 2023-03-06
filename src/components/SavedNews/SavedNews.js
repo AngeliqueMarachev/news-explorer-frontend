@@ -3,19 +3,24 @@ import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 // import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import Footer from "../Footer/Footer";
-import { news } from "../../utils/temp_articles.js";
+// import { news } from "../../utils/temp_articles.js";
 import NewsCard from "../NewsCard/NewsCard";
 
 
-export default function SavedNews({username}) {
+export default function SavedNews({ username, articles, onLogout }) {
   return (
     
     <>
-      <SavedNewsHeader username={username} news={news} />
+      <SavedNewsHeader
+        username={username}
+        articles={articles}
+        onLogout={onLogout}
+         // news={news}
+      />
 
       <section className="saved-news">
         <div className="saved-news__articles">
-          {news.map((article, index) => {
+          {articles.map((article, index) => {
             return (
               // <SavedNewsCard
               //   isSaved={true}

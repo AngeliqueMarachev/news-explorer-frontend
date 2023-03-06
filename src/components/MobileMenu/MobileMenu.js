@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import "./MobileMenu.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
 
-// import logout_black from "../../images/logout_black.svg";
+// import CurrentUserContext from '../../contexts/CurrentUserContext';
+// import { useContext } from 'react';
+
+
 import logout_white from "../../images/logout_white.svg";
 
 export default function MobileMenu({
   isLoggedIn,
-  username,
   onSigninClick,
+  onLogout,
+  username,
   // setIsLoginPopupOpen,
 }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
+  // const currentUser = useContext(CurrentUserContext);
 
   const handleBurgerMenuClick = () => {
     setIsBurgerMenuActive(true);
@@ -52,20 +57,21 @@ export default function MobileMenu({
 
                 {isLoggedIn ? (
                   <>
-                    <Link
+                    {/* <Link
                       to="/"
                       className={`mobile-menu__logo mobile-menu__logo_active`}
                     >
                       NewsExplorer
-                    </Link>
+                    </Link> */}
                     <NavLink to="/saved-news" className="mobile-menu__link">
                       Saved articles
                     </NavLink>
                     <button
                       className={`mobile-menu__button mobile-menu__button_logout`}
-                      username={username}
-                    >
+                      onClick={onLogout}
+                      username={username}>
                       Elise
+                      {/* {currentUser} */}
                       <img src={logout_white} alt="logout logo" />
                     </button>
                   </>
