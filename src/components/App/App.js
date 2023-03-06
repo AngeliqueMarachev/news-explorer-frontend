@@ -1,11 +1,11 @@
 // REACT
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import * as mainApi from "../../utils/MainApi";
-// import api from '../../utils/MainApi';
 
 // ELEMENTS
 import Main from "../Main/Main";
@@ -30,6 +30,25 @@ export default function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+
+  useEffect(() => {
+    if (token) {
+      mainApi
+        .checkToken(token)
+        .then((res) => {
+          if (res._id) {
+            setCurrentUser(res.name);
+            setIsLoggedIn(true);
+          } else {
+            localStorage.removeItem('jwt')
+            console.log(res);
+          }
+        })
+        .catch((err) => console.log(err))
+    };
+  }, [token]);
+
+
 
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
@@ -107,11 +126,13 @@ export default function App() {
           <Route
             path="/saved-news"
             element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
               <SavedNews
                 username={currentUser}
                 articles={articles}
                 onLogout={handleLogout}
-              />}
+              />
+              </ProtectedRoute>}
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
