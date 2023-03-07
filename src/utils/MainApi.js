@@ -37,6 +37,17 @@ export const checkToken = (token) => {
   })
     .then((res) => checkResponse(res));
 };
+
+export const getArticles = (token) => {
+  return fetch(`${BASE_URL}/articles`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${token}`
+    }
+  })
+    .then((res) => checkResponse(res));
+};
   
 
   

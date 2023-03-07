@@ -1,13 +1,21 @@
-import React from "react";
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-// import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import Footer from "../Footer/Footer";
-// import { news } from "../../utils/temp_articles.js";
+import { news } from "../../utils/temp_articles.js";
 import NewsCard from "../NewsCard/NewsCard";
 
+import { useEffect } from "react";
 
-export default function SavedNews({ username, articles, onLogout }) {
+// import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
+
+
+export default function SavedNews({ username, articles, onLogout, onNewsLoading }) {
+
+  useEffect(() => {
+    onNewsLoading();
+    
+  });
+
   return (
     
     <>
@@ -15,12 +23,12 @@ export default function SavedNews({ username, articles, onLogout }) {
         username={username}
         articles={articles}
         onLogout={onLogout}
-         // news={news}
+        // news={news}
       />
 
       <section className="saved-news">
         <div className="saved-news__articles">
-          {articles.map((article, index) => {
+          {news.map((article, index) => {
             return (
               // <SavedNewsCard
               //   isSaved={true}

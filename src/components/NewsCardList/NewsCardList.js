@@ -1,16 +1,16 @@
 import React from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
-import { news } from '../../utils/temp_articles.js';
+// import { news } from '../../utils/temp_articles.js';
 
-export default function NewsCardList() {
+export default function NewsCardList({ articles, isLoggedIn }) {
   return (
     <>
       <section className="news-list">
         <h4 className="news-list__title">Search results</h4>
        
         <div className="news-list__articles">
-          {news.map((article, index) => {
+          {articles.map((article, index) => {
             return (
               <NewsCard
                 key={index}
@@ -19,6 +19,7 @@ export default function NewsCardList() {
                 title={article.title}
                 text={article.text}
                 source={article.source}
+                isLoggedIn={isLoggedIn}
               />
             );
           })}

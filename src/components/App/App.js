@@ -1,6 +1,6 @@
 // REACT
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
@@ -21,35 +21,37 @@ import "../../index.css";
 import { news } from "../../utils/temp_articles";
 
 export default function App() {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState("Elise");
+  const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
+  const [savedNews, setSavedNews] = useState([]);
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
 
+  // CHECK TOKEN
   useEffect(() => {
     if (token) {
       mainApi
         .checkToken(token)
         .then((res) => {
           if (res._id) {
-            setCurrentUser(res.name);
+            setCurrentUser(res);
             setIsLoggedIn(true);
           } else {
-            localStorage.removeItem('jwt')
+            localStorage.removeItem("jwt");
             console.log(res);
           }
         })
-        .catch((err) => console.log(err))
-    };
+        .catch((err) => console.log(err));
+    }
   }, [token]);
 
-
-
+  // POPUP STATES
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
   };
@@ -64,6 +66,7 @@ export default function App() {
     setIsSuccessPopupOpen(false);
   };
 
+// AUTHORIZATION
   function handleRegister({ email, password, name }) {
     mainApi
       .register(email, password, name)
@@ -84,7 +87,7 @@ export default function App() {
       .then((res) => {
         if (res.token) {
           setIsLoggedIn(true);
-          setCurrentUser(res.name);
+          setCurrentUser(res);
           localStorage.setItem("jwt", res.token);
           setToken(res.token);
           closeAllPopups();
@@ -97,10 +100,20 @@ export default function App() {
 
   function handleLogout() {
     setIsLoggedIn(false);
-    setCurrentUser('');
-    localStorage.removeItem('jwt');
-    setToken('');
-    setIsLoginPopupOpen(true);
+    setCurrentUser("");
+    localStorage.removeItem("jwt");
+    setToken("");
+    navigate('/');
+  }
+
+  // LOAD SAVED NEWS
+  function getSavedNews() {
+    mainApi
+      .getArticles(token)
+      .then((res) => {
+        setSavedNews(res);
+      })
+      .catch((err) => console.log(err, "Get Saved News Error"));
   }
 
   return (
@@ -112,7 +125,7 @@ export default function App() {
             element={
               <Main
                 isLoggedIn={isLoggedIn}
-                username={currentUser}
+                username={currentUser.name}
                 onSigninClick={handleSigninClick}
                 isLoading={isLoading}
                 articles={articles}
@@ -127,12 +140,14 @@ export default function App() {
             path="/saved-news"
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <SavedNews
-                username={currentUser}
-                articles={articles}
-                onLogout={handleLogout}
-              />
-              </ProtectedRoute>}
+                <SavedNews
+                  username={currentUser.name}
+                  articles={savedNews}
+                  onLogout={handleLogout}
+                  onNewsLoading={getSavedNews}
+                />
+              </ProtectedRoute>
+            }
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

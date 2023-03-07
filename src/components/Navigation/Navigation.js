@@ -1,8 +1,8 @@
 import "./Navigation.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
 
-// import { useContext } from 'react';
-// import CurrentUserContext from '../../contexts/CurrentUserContext';
+import { useContext } from 'react';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 import logout_black from "../../images/logout_black.svg";
 import logout_white from "../../images/logout_white.svg";
@@ -16,7 +16,7 @@ export default function Navigation({
 }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
-  // const currentUser = useContext(CurrentUserContext);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <div className="navbar">
@@ -58,10 +58,10 @@ export default function Navigation({
             <button
               className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
               onClick={onLogout}
-              username={username}
+              // username={username}
             >
-              Elise
-              {/* {currentUser.username} */}
+              {/* Elise */}
+              {currentUser.name}
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}
                 alt="logout logo"
