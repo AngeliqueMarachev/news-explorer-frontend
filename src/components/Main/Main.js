@@ -29,7 +29,10 @@ export default function Main({
         {articles.length === 0 ? (
           <NotFound />
         ) : (
-          <NewsCardList articles={articles} isLoggedIn={isLoggedIn} />
+            <NewsCardList
+              articles={articles}
+              isLoggedIn={isLoggedIn}
+            />
         )}
         <About />
         <Footer />

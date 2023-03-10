@@ -3,7 +3,7 @@ import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 // import { news } from '../../utils/temp_articles.js';
 
-export default function NewsCardList({ articles, isLoggedIn }) {
+export default function NewsCardList({ articles, isLoggedIn, onSaveClick, savedArticles }) {
   return (
     <>
       <section className="news-list">
@@ -20,6 +20,8 @@ export default function NewsCardList({ articles, isLoggedIn }) {
                 text={article.text}
                 source={article.source}
                 isLoggedIn={isLoggedIn}
+                onSave={onSaveClick}
+                savedArticles={savedArticles}
               />
             );
           })}

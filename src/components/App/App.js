@@ -27,7 +27,6 @@ export default function App() {
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
-  const [savedNews, setSavedNews] = useState([]);
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -106,16 +105,6 @@ export default function App() {
     navigate('/');
   }
 
-  // LOAD SAVED NEWS
-  function getSavedNews() {
-    mainApi
-      .getArticles(token)
-      .then((res) => {
-        setSavedNews(res);
-      })
-      .catch((err) => console.log(err, "Get Saved News Error"));
-  }
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -130,6 +119,7 @@ export default function App() {
                 isLoading={isLoading}
                 articles={articles}
                 onLogout={handleLogout}
+                // savedArticles={savedNews}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}
                 // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
                 // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
@@ -142,9 +132,8 @@ export default function App() {
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <SavedNews
                   username={currentUser.name}
-                  articles={savedNews}
+                  articles={articles}
                   onLogout={handleLogout}
-                  onNewsLoading={getSavedNews}
                 />
               </ProtectedRoute>
             }

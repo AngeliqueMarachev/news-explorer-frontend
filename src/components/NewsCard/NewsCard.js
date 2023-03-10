@@ -34,15 +34,15 @@ export default function NewsCard({
         {location.pathname === "/" ? (
           <button
             type="button"
-            className={` ${
-              isSaved
+            className={` ${isSaved
                 ? "card__button card__button_saved"
                 : "card__button card__button_save"
-            }`}
+              }`}
             onClick={handleSaveClick}
           />
         ) : (
-          <button className="card__button card__button_delete" />
+          // <button className="card__button card__button_delete" />
+          <button className={`card__button card__button_delete`} />
         )}
 
         {((location.pathname === "/" && !isLoggedIn) ||

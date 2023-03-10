@@ -1,20 +1,19 @@
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import Footer from "../Footer/Footer";
-import { news } from "../../utils/temp_articles.js";
-import NewsCard from "../NewsCard/NewsCard";
 
-import { useEffect } from "react";
-
-// import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
+// import NewsCard from "../NewsCard/NewsCard";
+import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
+// import { news } from "../../utils/temp_articles.js";
 
 
-export default function SavedNews({ username, articles, onLogout, onNewsLoading }) {
+export default function SavedNews({
+  username,
+  articles,
+  onLogout,
+}) {
 
-  useEffect(() => {
-    onNewsLoading();
-    
-  });
+
 
   return (
     
@@ -28,26 +27,26 @@ export default function SavedNews({ username, articles, onLogout, onNewsLoading 
 
       <section className="saved-news">
         <div className="saved-news__articles">
-          {news.map((article, index) => {
+          {articles.map((article, index) => {
             return (
-              // <SavedNewsCard
-              //   isSaved={true}
-              //   key={index}
-              //   image={article.image}
-              //   date={article.date}
-              //   title={article.title}
-              //   text={article.text}
-              //   source={article.source}
-              //   keyword={article.keyword}
-              // />
-              <NewsCard
-              key={index}
-              image={article.image}
-              date={article.date}
-              title={article.title}
-              text={article.text}
-              source={article.source}
-            />
+              <SavedNewsCard
+                isSaved={true}
+                key={index}
+                image={article.image}
+                date={article.date}
+                title={article.title}
+                text={article.text}
+                source={article.source}
+                keyword={article.keyword}
+              />
+            //   <NewsCard
+            //   key={index}
+            //   image={article.image}
+            //   date={article.date}
+            //   title={article.title}
+            //   text={article.text}
+            //   source={article.source}
+            // />
             );
           })}
         </div>

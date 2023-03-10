@@ -61,7 +61,7 @@ export default function Navigation({
               // username={username}
             >
               {/* Elise */}
-              {currentUser.name}
+              {currentUser.username}
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}
                 alt="logout logo"
