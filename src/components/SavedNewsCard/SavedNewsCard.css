@@ -217,8 +217,14 @@
     right: 12px;
   }
 
+  .saved-card__trash-container {
+    top: 12px;
+    right: 12px;
+  }
+
   .saved-card__keyword {
     top: 0;
+    left: 12px;
   }
 
   .saved-card__remove {
@@ -235,6 +241,8 @@
 
   .saved-card__image {
     height: 196px;
+    /* width: 288px; */
+    width: unset;
   }
 
   .saved-card__main {
@@ -280,15 +288,6 @@
     padding: 0 16px;
     grid-template-rows: 25px 60px 82px 54px;
     row-gap: unset;
-  }
-
-  .saved-card__image {
-    width: 288px;
-  }
-
-  .saved-card__trash-container {
-    top: 12px;
-    right: 12px;
   }
 
   .saved-card__text {

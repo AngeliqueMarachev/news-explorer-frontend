@@ -12,7 +12,8 @@
   margin-top: 0px;
   margin-bottom: 80px;
   border: none;
-  width: 100vw;
+  /* width: 100vw; */
+  width: unset;
 }
 
 .search-form__container-form {

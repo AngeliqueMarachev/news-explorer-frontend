@@ -9,23 +9,25 @@ export default function NewsCardList({ articles, isLoggedIn, onSaveClick, savedA
       <section className="news-list">
         <h4 className="news-list__title">Search results</h4>
        
-        <div className="news-list__articles">
+        <ul className="news-list__articles">
           {articles.map((article, index) => {
             return (
+              <li key={index}>
               <NewsCard
-                key={index}
+             
                 image={article.image}
                 date={article.date}
                 title={article.title}
                 text={article.text}
                 source={article.source}
                 isLoggedIn={isLoggedIn}
-                onSave={onSaveClick}
-                savedArticles={savedArticles}
-              />
+                // onSave={onSaveClick}
+                // savedArticles={savedArticles}
+                />
+                </li>
             );
           })}
-        </div>
+        </ul>
         
       
       </section>
@@ -35,6 +37,8 @@ export default function NewsCardList({ articles, isLoggedIn, onSaveClick, savedA
         </button>
       </div>
     </>
+
   );
 }
+
 

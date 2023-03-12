@@ -6,7 +6,7 @@ import facebookPath from "../../images/facebook_icon.svg";
 export default function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__copy">©️ 2023 Supersite Powered by News API</p>
+      <p className="footer__copy">©️ {new Date().getFullYear()} Supersite Powered by News API</p>
       <div className="footer__links">
         <div className="footer__text-links">
           <a className="footer__link footer__link-text" href="#practicum">

@@ -11,12 +11,10 @@ export default function SavedNews({
   username,
   articles,
   onLogout,
+  getArticles, 
 }) {
 
-
-
   return (
-    
     <>
       <SavedNewsHeader
         username={username}
@@ -26,9 +24,10 @@ export default function SavedNews({
       />
 
       <section className="saved-news">
-        <div className="saved-news__articles">
+        <ul className="saved-news__articles">
           {articles.map((article, index) => {
             return (
+              <li key={index}>
               <SavedNewsCard
                 isSaved={true}
                 key={index}
@@ -39,6 +38,7 @@ export default function SavedNews({
                 source={article.source}
                 keyword={article.keyword}
               />
+              </li>
             //   <NewsCard
             //   key={index}
             //   image={article.image}
@@ -49,7 +49,7 @@ export default function SavedNews({
             // />
             );
           })}
-        </div>
+        </ul>
       </section>
       <Footer />
     </>

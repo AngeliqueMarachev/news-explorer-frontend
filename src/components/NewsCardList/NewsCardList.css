@@ -23,6 +23,8 @@
   column-gap: 16px;
   min-height: 576px;
   max-width: 400px;
+  list-style: none;
+  padding: 0;
 }
 
 .new-list__more {

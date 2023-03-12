@@ -48,6 +48,29 @@ export const getArticles = (token) => {
   })
     .then((res) => checkResponse(res));
 };
+
+export const saveArticle = (token, { date, image, keyword, url, source, text, title }) => {
+  return fetch(`${BASE_URL}/articles`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${token}`,
+    },
+    body: JSON.stringify({ date, image, keyword, url, source, text, title }),
+  })
+    .then((res) => checkResponse(res));
+};
+
+export const deleteArticle = (token, article) => {
+  return fetch(`${BASE_URL}/articles/${article._id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${token}`,
+    },
+  })
+    .then((res) => checkResponse(res));
+};
   
 
   
