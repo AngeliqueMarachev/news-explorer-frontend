@@ -25,7 +25,7 @@ export default function SavedNews({
 
       <section className="saved-news">
         <ul className="saved-news__articles">
-          {articles.map((article, index) => {
+          {articles && articles.map((article, index) => {
             return (
               <li key={index}>
               <SavedNewsCard

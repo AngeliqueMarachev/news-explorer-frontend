@@ -32,7 +32,7 @@ export default function PopupWithForm({
       name={name}
       isOpen={isOpen}
       onClose={onClose}>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" autoComplete="off" onSubmit={handleSubmit}>
         {children}
         <button type="submit" className="form__submit">{name}</button>
       </form>
@@ -47,4 +47,3 @@ export default function PopupWithForm({
     </Popup>
   );
 }
-

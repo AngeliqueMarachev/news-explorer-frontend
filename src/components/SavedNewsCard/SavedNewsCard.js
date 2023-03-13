@@ -12,7 +12,7 @@ export default function SavedNewsCard({
   return (
     <div className="saved-card">
       <img className="saved-card__image " src={image} alt={title} />
-      <p className="saved-card__keyword">{keyword}</p>
+     
       <div className="saved-card__main">
         <p className="saved-card__date">{date}</p>
         <h3 className="saved-card__title">{title}</h3>
@@ -27,7 +27,8 @@ export default function SavedNewsCard({
       <p className="saved-card__label">
         Remove from saved
         </p>
-        </span>
+      </span>
+      <p className="saved-card__keyword">{keyword}</p>
     </div>
   );
 }
