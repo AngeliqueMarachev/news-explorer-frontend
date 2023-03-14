@@ -15,7 +15,8 @@ export default function Main({
   isLoading,
   articles,
   onLogout,
-  onSearch
+  onSearch,
+  setArticles,
 }) {
   return (
     <>
@@ -26,8 +27,9 @@ export default function Main({
           onSigninClick={onSigninClick}
           onLogout={onLogout}
           onSearch={onSearch}
+          setArticles={setArticles}
         />
-        {isLoading && (
+        {/* {isLoading && (
           <Preloader />
           )}
         {articles.length === 0 ? (
@@ -37,7 +39,11 @@ export default function Main({
               articles={articles}
               isLoggedIn={isLoggedIn}
             />
-        )}
+        )} */}
+        <NewsCardList
+              articles={articles}
+              isLoggedIn={isLoggedIn}
+            />
         <About />
         <Footer />
       </main>

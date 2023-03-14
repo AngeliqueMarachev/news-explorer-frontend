@@ -1,7 +1,8 @@
 class NewsApi {
-  constructor({ baseUrl, token }) {
+  constructor({ baseUrl, token, q }) {
     this._baseUrl = baseUrl;
     this._token = token;
+    this._q = q;
   }
 
   search(keyword) {
@@ -13,7 +14,7 @@ class NewsApi {
   }
 }
 
-export const api = new NewsApi({
+export const newsApi = new NewsApi({
   baseUrl: "https://newsapi.org/v2/everything",
   token: "51ec63208a60418e8c73a8efa6a2b016",
 });

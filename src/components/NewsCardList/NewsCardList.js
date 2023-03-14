@@ -11,18 +11,16 @@ export default function NewsCardList({ articles, isLoggedIn, onSaveClick, savedA
        
         <ul className="news-list__articles">
           {articles && articles.map((article, index) => {
+            console.log(article)
             return (
               <li key={index}>
               <NewsCard
-             
                 image={article.image}
                 date={article.date}
                 title={article.title}
                 text={article.text}
                 source={article.source}
                 isLoggedIn={isLoggedIn}
-                // onSave={onSaveClick}
-                // savedArticles={savedArticles}
                 />
                 </li>
             );

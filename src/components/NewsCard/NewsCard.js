@@ -29,15 +29,19 @@ export default function NewsCard({
         target="blank"
         rel="noopener noreferrer"
       >
-        <img className="card__image" src={image} alt={title} />
-
+        <img
+          className="card__image"
+          src={image}
+          alt={title} />
+        
         {location.pathname === "/" ? (
           <button
             type="button"
-            className={` ${isSaved
+            className={` ${
+              isSaved
                 ? "card__button card__button_saved"
                 : "card__button card__button_save"
-              }`}
+            }`}
             onClick={handleSaveClick}
           />
         ) : (
@@ -62,16 +66,15 @@ export default function NewsCard({
           </div>
         )}
 
-      <div className="card__description">
-        <div className="card__info">
-          <p className="card__date">{date}</p>
-          <h3 className="card__title">{title}</h3>
+        <div className="card__description">
+          <div className="card__info">
+            <p className="card__date">{date}</p>
+            <h3 className="card__title">{title}</h3>
+          </div>
+          <p className="card__text">{text}</p>
+          <p className="card__source">{source}</p>
         </div>
-        <p className="card__text">{text}</p>
-        <p className="card__source">{source}</p>
-        </div>
-        </a>
+      </a>
     </div>
   );
 }
-

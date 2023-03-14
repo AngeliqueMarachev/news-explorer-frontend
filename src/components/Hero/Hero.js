@@ -10,7 +10,8 @@ export default function Hero({
   username,
   onSigninClick, 
   onLogout,
-  onSearch
+  onSearch,
+  setArticles
 }) {
   return (
     <div className="hero">
@@ -29,6 +30,7 @@ export default function Hero({
       <Header />
       <SearchForm
         onSearch={onSearch}
+        setArticles={setArticles}
       />
     </div>
   );

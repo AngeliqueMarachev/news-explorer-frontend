@@ -6,7 +6,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import * as mainApi from "../../utils/MainApi";
-import { api } from "../../utils/NewsApi";
+// import {newsApi } from "../../utils/NewsApi";
 
 // ELEMENTS
 import Main from "../Main/Main";
@@ -63,17 +63,18 @@ export default function App() {
   // }, [isLoggedIn]);
 
   // HANDLE SEARCH BAR
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log("submitted");
+  // const handleSearchSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("submitted");
 
-    api.search().then((res) => {
-      if (res.articles) {
-        console.log("res", res.articles);
-        setArticles(res.articles);
-      }
-    });
-  };
+  //   newsApi.search('apple').then((res) => {
+  //     if (res.articles) {
+  //       console.log("res", res.articles);
+  //       setArticles(res.articles);
+  //     }
+  //     console.log(res);
+  //   });
+  // };
 
   // POPUP STATES
   const handleSigninClick = () => {
@@ -144,7 +145,8 @@ export default function App() {
                 isLoading={isLoading}
                 articles={articles}
                 onLogout={handleLogout}
-                onSearch={handleSearchSubmit}
+                setArticles={setArticles}
+                // onSearch={handleSearchSubmit}
                 // savedArticles={savedNews}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}
                 // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
