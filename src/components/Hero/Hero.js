@@ -9,7 +9,8 @@ export default function Hero({
   isLoggedIn,
   username,
   onSigninClick, 
-  onLogout
+  onLogout,
+  onSearch
 }) {
   return (
     <div className="hero">
@@ -26,7 +27,9 @@ export default function Hero({
         onLogout={onLogout}
       />
       <Header />
-      <SearchForm />
+      <SearchForm
+        onSearch={onSearch}
+      />
     </div>
   );
 }

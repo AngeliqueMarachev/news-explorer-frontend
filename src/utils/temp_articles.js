@@ -8,7 +8,7 @@ export const news = [
     text: "Ever since I read Richard Louv's influential book, Last Child in the Woods, the idea of having a special sit spot has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find...'",
     source: "TREEHUGGER",
     _id: '1',
-    url: 'https://www.google.com/'
+    url: 'https://yro.slashdot.org/story/23/03/02/1550245/uk-argues-ai-is-no-more-of-an-inventor-than-your-cat'
   },
   {
     image:
@@ -19,7 +19,7 @@ export const news = [
     text: "We all know how good nature can make us feel. We have known it for millennia: the sound of the ocean, the scents of a forest, the way dappled sunlight dances through leaves.'",
     source: "NATIONAL GEOGRAPHIC",
     _id: '2',
-    url: 'https://www.google.com/'
+    url: 'https://www.theguardian.com/lifeandstyle/2023/mar/04/tim-dowling-spring-hasnt-sprung-yet-but-the-tortoise-has'
   },
   {
     image:
@@ -30,7 +30,7 @@ export const news = [
     text: "“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be...'",
     source: "NATIONAL PARKS TRAVELLER",
     _id: '3',
-    url: 'https://www.google.com/'
+    url: 'https://www.theguardian.com/film/2023/mar/08/the-irish-mob-review-cat-and-mouse-with-the-gardai-in-knock-off-gangster-flick'
   },
   // {
   //   image:

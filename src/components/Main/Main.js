@@ -15,6 +15,7 @@ export default function Main({
   isLoading,
   articles,
   onLogout,
+  onSearch
 }) {
   return (
     <>
@@ -24,8 +25,11 @@ export default function Main({
           username={username}
           onSigninClick={onSigninClick}
           onLogout={onLogout}
+          onSearch={onSearch}
         />
-        {isLoading && <Preloader />}
+        {isLoading && (
+          <Preloader />
+          )}
         {articles.length === 0 ? (
           <NotFound />
         ) : (

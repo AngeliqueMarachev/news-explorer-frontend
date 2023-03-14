@@ -6,6 +6,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import * as mainApi from "../../utils/MainApi";
+import { api } from "../../utils/NewsApi";
 
 // ELEMENTS
 import Main from "../Main/Main";
@@ -27,6 +28,7 @@ export default function App() {
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
+  // const [articles, setArticles] = useState([]);
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -50,6 +52,29 @@ export default function App() {
     }
   }, [token]);
 
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     mainApi
+  //       .getArticles(token)
+  //       .then((res) => {
+  //       setisLoading(true)
+  //       })
+  //   }
+  // }, [isLoggedIn]);
+
+  // HANDLE SEARCH BAR
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
+
+    api.search().then((res) => {
+      if (res.articles) {
+        console.log("res", res.articles);
+        setArticles(res.articles);
+      }
+    });
+  };
+
   // POPUP STATES
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
@@ -65,7 +90,7 @@ export default function App() {
     setIsSuccessPopupOpen(false);
   };
 
-// AUTHORIZATION
+  // AUTHORIZATION
   function handleRegister({ email, password, name }) {
     mainApi
       .register(email, password, name)
@@ -102,7 +127,7 @@ export default function App() {
     setCurrentUser("");
     localStorage.removeItem("jwt");
     setToken("");
-    navigate('/');
+    navigate("/");
   }
 
   return (
@@ -119,6 +144,7 @@ export default function App() {
                 isLoading={isLoading}
                 articles={articles}
                 onLogout={handleLogout}
+                onSearch={handleSearchSubmit}
                 // savedArticles={savedNews}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}
                 // setIsRegisterPopupOpen={setIsRegisterPopupOpen}

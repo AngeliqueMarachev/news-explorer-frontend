@@ -11,7 +11,7 @@ export default function NewsCard({
   source,
   keyword,
   isLoggedIn,
-  link,
+  url,
 }) {
   const location = useLocation();
 
@@ -24,7 +24,7 @@ export default function NewsCard({
   return (
     <div className="card">
       <a
-        href={link}
+        href={url}
         className="card__link"
         target="blank"
         rel="noopener noreferrer"
@@ -74,3 +74,4 @@ export default function NewsCard({
     </div>
   );
 }
+
