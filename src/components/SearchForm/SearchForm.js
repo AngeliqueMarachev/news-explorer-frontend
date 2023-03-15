@@ -13,31 +13,31 @@ import { useState } from "react";
 
 export default function SearchForm({ setArticles, onSearch }) {
   
-//   // FROM MAKSIM/LIZA LIVE-CODING
+//   // FROM LIVE-CODING
   const [keyword, setKeyword] = useState('');
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log("submitted");
+  // const handleSearchSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("submitted");
 
-    newsApi.search(keyword).then((res) => {
-      if (res.articles) {
-        console.log("res", res.articles);
-        const newData = res.articles.map((article) => ({
-          image: article.urlToImage,
-          date: article.publishedAt,
-          title: article.title,
-          text: article.description,
-          source: article.source.name,
-          keyword: article.keyword,
-          url: article.url,
-        }));
-        setArticles(newData);
-      }
-      console.log("res", res.articles);
+  //   newsApi.search(keyword).then((res) => {
+  //     if (res.articles) {
+  //       console.log("res", res.articles);
+  //       const newData = res.articles.map((article) => ({
+  //         image: article.urlToImage,
+  //         date: article.publishedAt,
+  //         title: article.title,
+  //         text: article.description,
+  //         source: article.source.name,
+  //         keyword: article.keyword,
+  //         url: article.url,
+  //       }));
+  //       setArticles(newData);
+  //     }
+  //     console.log("res", res.articles);
 
-    });
-  };
+  //   });
+  // };
 
   function handleChange(e) {
     setKeyword(e.target.value)
@@ -48,8 +48,8 @@ export default function SearchForm({ setArticles, onSearch }) {
       <div className="search-form__container">
         <form
           className="search-form__container-form"
-          onSubmit={handleSearchSubmit}
-          // onSubmit={onSearch}
+          // onSubmit={handleSearchSubmit}
+          onSubmit={(e) => onSearch(e, keyword)}
         >
           <label className="search-form__container-form-field">
             <input

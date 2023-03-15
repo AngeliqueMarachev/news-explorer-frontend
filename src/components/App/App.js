@@ -29,7 +29,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
   // const [articles, setArticles] = useState([]);
-  const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState('');
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -54,28 +54,29 @@ export default function App() {
   }, [token]);
 
   // HANDLE SEARCH BAR
-  //  const handleSearchSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("submitted");
+   const handleSearchSubmit = (e, keyword) => {
+    e.preventDefault();
+    console.log("submitted");
 
-  //   newsApi.search(keyword).then((res) => {
-  //     if (res.articles) {
-  //       console.log("res", res.articles);
-  //       const newData = res.articles.map((article) => ({
-  //         image: article.urlToImage,
-  //         date: article.publishedAt,
-  //         title: article.title,
-  //         text: article.description,
-  //         source: article.source.name,
-  //         keyword: article.keyword,
-  //         url: article.url,
-  //       }));
-  //       setArticles(newData);
-  //     }
-  //     console.log("res", res.articles);
+    newsApi.search(keyword)
+    .then((res) => {
+      if (res.articles) {
+        console.log("res", res.articles);
+        const newData = res.articles.map((article) => ({
+          image: article.urlToImage,
+          date: article.publishedAt,
+          title: article.title,
+          text: article.description,
+          source: article.source.name,
+          keyword: article.keyword,
+          url: article.url,
+        }));
+        setArticles(newData);
+      }
+      console.log("res", res.articles);
 
-  //   });
-  // };
+    });
+  };
 
   // POPUP STATES
   const handleSigninClick = () => {
@@ -148,7 +149,7 @@ export default function App() {
                 onLogout={handleLogout}
                 setArticles={setArticles}
 
-                // onSearch={handleSearchSubmit}
+                onSearch={handleSearchSubmit}
 
                 // savedArticles={savedNews}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}

@@ -11,7 +11,8 @@ export default function Hero({
   onSigninClick, 
   onLogout,
   onSearch,
-  setArticles
+  setArticles, 
+  setKeyword
 }) {
   return (
     <div className="hero">
@@ -31,6 +32,7 @@ export default function Hero({
       <SearchForm
         onSearch={onSearch}
         setArticles={setArticles}
+        setKeyword={setKeyword}
       />
     </div>
   );
