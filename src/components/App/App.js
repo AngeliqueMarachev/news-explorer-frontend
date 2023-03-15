@@ -29,7 +29,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
   // const [articles, setArticles] = useState([]);
-  const [keyword, setKeyword] = useState('');
+  // const [keyword, setKeyword] = useState('');
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -56,7 +56,8 @@ export default function App() {
   // HANDLE SEARCH BAR
    const handleSearchSubmit = (e, keyword) => {
     e.preventDefault();
-    console.log("submitted");
+     console.log("submitted");
+     setIsLoading(true);
 
     newsApi.search(keyword)
     .then((res) => {
@@ -73,9 +74,12 @@ export default function App() {
         }));
         setArticles(newData);
       }
-      console.log("res", res.articles);
-
-    });
+      // console.log("res", res.articles);
+    })
+    .catch((err) => console.log(err))
+    .finally(() => {
+      setIsLoading(false);
+    })
   };
 
   // POPUP STATES

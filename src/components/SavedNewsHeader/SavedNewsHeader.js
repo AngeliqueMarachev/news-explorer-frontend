@@ -22,7 +22,7 @@ export default function SavedNewsHeader({ news, articles, username, onLogout }) 
           By keywords: {""}
           <strong>
             <span>
-              {articles[0].keyword}, {articles[1].keyword}, and {articles.length - 2}others
+              {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others
             </span>
           </strong>
         </p>

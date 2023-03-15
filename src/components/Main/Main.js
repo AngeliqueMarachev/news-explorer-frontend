@@ -18,8 +18,19 @@ export default function Main({
   onSearch,
   setArticles,
 }) {
+  const blockState = () => {
+    if (isLoading) return (<Preloader />);
+    if (articles.length === 0) {
+      return (<NotFound />);
+    }
+    return (<NewsCardList
+      articles={articles}
+      isLoggedIn={isLoggedIn}
+    />);
+  }
+
   return (
-    <>
+ 
       <main className="main">
         <Hero
           isLoggedIn={isLoggedIn}
@@ -29,24 +40,11 @@ export default function Main({
           onSearch={onSearch}
           setArticles={setArticles}
         />
-        {/* {isLoading && (
-          <Preloader />
-          )}
-        {articles.length === 0 ? (
-          <NotFound />
-        ) : (
-            <NewsCardList
-              articles={articles}
-              isLoggedIn={isLoggedIn}
-            />
-        )} */}
-        <NewsCardList
-              articles={articles}
-              isLoggedIn={isLoggedIn}
-            />
+       {blockState()} 
+       
         <About />
         <Footer />
       </main>
-    </>
+
   );
 }
