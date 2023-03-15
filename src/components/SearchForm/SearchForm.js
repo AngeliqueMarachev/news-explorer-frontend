@@ -9,14 +9,12 @@ import { useState } from "react";
 //   function handleSubmit(e) {
 //     e.preventDefault();
 //     onSearch(values.keyword);
+//   }
 
-export default function SearchForm({setArticles}) {
-  // FROM LIZA LIVE-CODING
-
-  // const [news, setNews] = useState([]);
+export default function SearchForm({ setArticles, onSearch }) {
+  
+//   // FROM MAKSIM/LIZA LIVE-CODING
   const [keyword, setKeyword] = useState('');
-
- 
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +26,7 @@ export default function SearchForm({setArticles}) {
         const newData = res.articles.map((article) => ({
           image: article.urlToImage,
           date: article.publishedAt,
-          title:article. title,
+          title: article.title,
           text: article.description,
           source: article.source.name,
           keyword: article.keyword,
@@ -38,9 +36,12 @@ export default function SearchForm({setArticles}) {
       }
       console.log("res", res.articles);
 
-      // setNews({}); //link, title
     });
   };
+
+  function handleChange(e) {
+    setKeyword(e.target.value)
+  }
 
   return (
     <div className="search-form">
@@ -48,6 +49,7 @@ export default function SearchForm({setArticles}) {
         <form
           className="search-form__container-form"
           onSubmit={handleSearchSubmit}
+          // onSubmit={onSearch}
         >
           <label className="search-form__container-form-field">
             <input
@@ -56,8 +58,9 @@ export default function SearchForm({setArticles}) {
               placeholder="Enter Topic"
               autoFocus
               autoComplete="off"
-              value={keyword}
-              onChange={e => setKeyword(e.target.value)} 
+              // value={keyword}
+              // onChange={e => setKeyword(e.target.value)} 
+              onChange={handleChange}
             />
             <button className="search-form__submit" type="submit">
               Search

@@ -2,7 +2,6 @@ class NewsApi {
   constructor({ baseUrl, token, q }) {
     this._baseUrl = baseUrl;
     this._token = token;
-    this._q = q;
   }
 
   search(keyword) {

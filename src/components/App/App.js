@@ -6,7 +6,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import * as mainApi from "../../utils/MainApi";
-// import {newsApi } from "../../utils/NewsApi";
+import { newsApi } from "../../utils/NewsApi";
 
 // ELEMENTS
 import Main from "../Main/Main";
@@ -29,6 +29,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
   // const [articles, setArticles] = useState([]);
+  const [keyword, setKeyword] = useState("");
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -52,27 +53,27 @@ export default function App() {
     }
   }, [token]);
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     mainApi
-  //       .getArticles(token)
-  //       .then((res) => {
-  //       setisLoading(true)
-  //       })
-  //   }
-  // }, [isLoggedIn]);
-
   // HANDLE SEARCH BAR
-  // const handleSearchSubmit = (e) => {
+  //  const handleSearchSubmit = (e) => {
   //   e.preventDefault();
   //   console.log("submitted");
 
-  //   newsApi.search('apple').then((res) => {
+  //   newsApi.search(keyword).then((res) => {
   //     if (res.articles) {
   //       console.log("res", res.articles);
-  //       setArticles(res.articles);
+  //       const newData = res.articles.map((article) => ({
+  //         image: article.urlToImage,
+  //         date: article.publishedAt,
+  //         title: article.title,
+  //         text: article.description,
+  //         source: article.source.name,
+  //         keyword: article.keyword,
+  //         url: article.url,
+  //       }));
+  //       setArticles(newData);
   //     }
-  //     console.log(res);
+  //     console.log("res", res.articles);
+
   //   });
   // };
 
@@ -146,7 +147,9 @@ export default function App() {
                 articles={articles}
                 onLogout={handleLogout}
                 setArticles={setArticles}
+
                 // onSearch={handleSearchSubmit}
+
                 // savedArticles={savedNews}
                 // setIsLoginPopupOpen={setIsLoginPopupOpen}
                 // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
