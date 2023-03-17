@@ -10,7 +10,7 @@ export default function NewsCardList({ articles, isLoggedIn, onSaveClick, savedA
         <h4 className="news-list__title">Search results</h4>
        
         <ul className="news-list__articles">
-          {articles && articles.map((article, index) => {
+          {articles && articles.slice(0,3).map((article, index) => {
             console.log(article)
             return (
               <li key={index}>

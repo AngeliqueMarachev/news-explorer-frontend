@@ -1,6 +1,5 @@
 import "./SearchForm.css";
 // import useForm from "../../utils/useForm";
-import { newsApi } from "../../utils/NewsApi";
 import { useState } from "react";
 
 // export default function SearchForm({ onSearch }) {
@@ -11,33 +10,9 @@ import { useState } from "react";
 //     onSearch(values.keyword);
 //   }
 
-export default function SearchForm({ setArticles, onSearch }) {
-  
-//   // FROM LIVE-CODING
+export default function SearchForm({ onSearch }) {
+
   const [keyword, setKeyword] = useState('');
-
-  // const handleSearchSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("submitted");
-
-  //   newsApi.search(keyword).then((res) => {
-  //     if (res.articles) {
-  //       console.log("res", res.articles);
-  //       const newData = res.articles.map((article) => ({
-  //         image: article.urlToImage,
-  //         date: article.publishedAt,
-  //         title: article.title,
-  //         text: article.description,
-  //         source: article.source.name,
-  //         keyword: article.keyword,
-  //         url: article.url,
-  //       }));
-  //       setArticles(newData);
-  //     }
-  //     console.log("res", res.articles);
-
-  //   });
-  // };
 
   function handleChange(e) {
     setKeyword(e.target.value)
@@ -48,7 +23,6 @@ export default function SearchForm({ setArticles, onSearch }) {
       <div className="search-form__container">
         <form
           className="search-form__container-form"
-          // onSubmit={handleSearchSubmit}
           onSubmit={(e) => onSearch(e, keyword)}
         >
           <label className="search-form__container-form-field">

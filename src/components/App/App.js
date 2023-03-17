@@ -29,7 +29,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState(news);
   // const [articles, setArticles] = useState([]);
-  // const [keyword, setKeyword] = useState('');
 
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
