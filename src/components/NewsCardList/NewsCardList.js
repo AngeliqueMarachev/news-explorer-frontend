@@ -3,7 +3,13 @@ import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 // import { news } from '../../utils/temp_articles.js';
 
-export default function NewsCardList({ articles, isLoggedIn, onSave }) {
+export default function NewsCardList({
+  articles,
+  isLoggedIn,
+  // onSave,
+  savedArticles,
+  onDelete
+}) {
   const [showMore, setShowMore] = useState(3);
 
   const handleShowMoreClick = () => {
@@ -20,7 +26,8 @@ export default function NewsCardList({ articles, isLoggedIn, onSave }) {
             articles.slice(0, showMore).map((article, index) => {
               console.log(article);
               return (
-                <li key={index}>
+                // <li key={index}>
+                  <li key={article._id}>
                   <NewsCard
                     card={article}
                     image={article.image}
@@ -29,7 +36,9 @@ export default function NewsCardList({ articles, isLoggedIn, onSave }) {
                     text={article.text}
                     source={article.source}
                     isLoggedIn={isLoggedIn}
-                    onSave={onSave}
+                    // onSave={onSave}
+                    savedArticles={savedArticles}
+                    onDelete={onDelete}
                   />
                 </li>
               );

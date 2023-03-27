@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./MobileMenu.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { useContext } from 'react';
-
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 import logout_white from "../../images/logout_white.svg";

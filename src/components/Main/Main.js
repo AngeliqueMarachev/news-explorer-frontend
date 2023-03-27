@@ -1,7 +1,7 @@
 import React from "react";
+import "./Main.css";
 import About from "../About/About";
 import Hero from "../Hero/Hero";
-import "./Main.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
@@ -10,43 +10,45 @@ import NotFound from "../NotFound/Notfound";
 
 export default function Main({
   isLoggedIn,
-  username,
   onSigninClick,
   isLoading,
   articles,
   onLogout,
+  savedArticles,
   onSearch,
   setArticles,
-  onSave
+  // onSave,
+  onDelete
 }) {
   const blockState = () => {
-    if (isLoading) return (<Preloader />);
+    if (isLoading) return <Preloader />;
     if (articles.length === 0) {
-      return (<NotFound />);
+      return <NotFound />;
     }
-    return (<NewsCardList
+    return <NewsCardList
       articles={articles}
       isLoggedIn={isLoggedIn}
-    />);
-  }
+      setArticles={setArticles}
+      savedArticles={savedArticles}
+      // onSave={onSave}
+      onDelete={onDelete}
+      
+    />;
+  };
 
   return (
- 
-      <main className="main">
-        <Hero
+    <main className="main">
+      <Hero
         isLoggedIn={isLoggedIn}
-        onSave={onSave}
-          username={username}
-          onSigninClick={onSigninClick}
-          onLogout={onLogout}
-          onSearch={onSearch}
-          setArticles={setArticles}
-        />
-       {blockState()} 
-       
-        <About />
-        <Footer />
-      </main>
+        onSigninClick={onSigninClick}
+        onLogout={onLogout}
+        onSearch={onSearch}
+        
+      />
+      {blockState()}
 
+      <About />
+      <Footer />
+    </main>
   );
 }

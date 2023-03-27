@@ -2,7 +2,11 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 // import { useState } from "react";
 import useForm from '../../utils/useForm';
 
-export default function Register({ isOpen, onClose, onSigninClick, onRegister }) {
+export default function Register({
+  isOpen,
+  onClose,
+  onSigninClick,
+  onRegister }) {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   // const [username, setUsername] = useState("");
@@ -29,7 +33,7 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         name="email"
         onChange={handleChange}
         required
-        // value={email || ""}
+        // value={values.email}
         // onChange={(e) => setEmail(e.target.value)}
       ></input>
       <span className="form__error">Invalid email</span>
@@ -42,7 +46,7 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         name="password"
         onChange={handleChange}
         required
-        // value={password || ""}
+        // value={values.password}
         // onChange={(e) => setPassword(e.target.value)}
       ></input>
       <span className="form__error">Invalid password</span>
@@ -55,7 +59,7 @@ export default function Register({ isOpen, onClose, onSigninClick, onRegister })
         name="name"
         onChange={handleChange}
         required
-        // value={username || ""}
+        // value={values.username}
         // onChange={(e) => setUsername(e.target.value)}
       ></input>
       <span className="form__error">Invalid username</span>

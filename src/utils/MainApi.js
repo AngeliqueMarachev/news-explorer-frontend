@@ -49,17 +49,14 @@ export const getArticles = (token) => {
     .then((res) => checkResponse(res));
 };
 
-export const saveArticle = (token, card, keyword) => {
-// export const saveArticle = (token, { date, image, keyword, url, source, text, title }) => {
+  export const saveArticle = (token, { publishedAt, urlToImage, url, source, description, title }, keyword) => {
   return fetch(`${BASE_URL}/articles`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization' : `Bearer ${token}`,
     },
-    // body: JSON.stringify({ date, image, keyword, url, source, text, title }),
-    // body: JSON.stringify({ date: publishedAt, image: urlToImage, keyword, link: url, source: source.name, text: description, title }),
-    body: JSON.stringify({ card, keyword }),
+    body: JSON.stringify({ date: publishedAt, image: urlToImage, keyword, link: url, source: source.name, text: description, title }),
 
   })
     .then((res) => checkResponse(res));

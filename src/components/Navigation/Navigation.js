@@ -1,20 +1,15 @@
 import "./Navigation.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { useContext } from 'react';
-import CurrentUserContext from '../../contexts/CurrentUserContext';
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 import logout_black from "../../images/logout_black.svg";
 import logout_white from "../../images/logout_white.svg";
 
-export default function Navigation({
-  isLoggedIn,
-  onSigninClick,
-  onLogout
-}) {
+export default function Navigation({ isLoggedIn, onSigninClick, onLogout }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
   const currentUser = useContext(CurrentUserContext);
-
 
   return (
     <div className="navbar">
@@ -26,7 +21,7 @@ export default function Navigation({
           NewsExplorer
         </Link>
       </div>
-      
+
       <nav className="navbar__links">
         <NavLink
           to="/"
@@ -54,9 +49,13 @@ export default function Navigation({
               Saved articles
             </NavLink>
             <button
-              className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
-              onClick={onLogout}>
-            {currentUser.name}
+              className={
+                `navbar__header-button navbar__header-button_logout navbar__header-button` +
+                navClass
+              }
+              onClick={onLogout}
+            >
+              {currentUser.name}
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}
                 alt="logout logo"
@@ -67,8 +66,7 @@ export default function Navigation({
           <button
             className={
               `navbar__header-button navbar__header-button_login navbar__header-button` +
-                navClass
-                
+              navClass
             }
             type="button"
             onClick={onSigninClick}

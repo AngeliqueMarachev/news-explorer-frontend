@@ -2,7 +2,12 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import useForm from '../../utils/useForm';
 
-export default function Login({ isOpen, onClose, onRegisterClick, onLogin }) {
+export default function Login({
+  isOpen,
+  onClose,
+  onRegisterClick,
+  onLogin
+}) {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
 
@@ -47,3 +52,4 @@ export default function Login({ isOpen, onClose, onRegisterClick, onLogin }) {
     </PopupWithForm>
   );
 }
+
