@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./MobileMenu.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
+import { useContext } from 'react';
 
-// import CurrentUserContext from '../../contexts/CurrentUserContext';
-// import { useContext } from 'react';
-
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 import logout_white from "../../images/logout_white.svg";
 
@@ -12,13 +11,11 @@ export default function MobileMenu({
   isLoggedIn,
   onSigninClick,
   onLogout,
-  username,
-  // setIsLoginPopupOpen,
 }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
   const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
-  // const currentUser = useContext(CurrentUserContext);
+  const currentUser = useContext(CurrentUserContext);
 
   const handleBurgerMenuClick = () => {
     setIsBurgerMenuActive(true);
@@ -57,21 +54,13 @@ export default function MobileMenu({
 
                 {isLoggedIn ? (
                   <>
-                    {/* <Link
-                      to="/"
-                      className={`mobile-menu__logo mobile-menu__logo_active`}
-                    >
-                      NewsExplorer
-                    </Link> */}
                     <NavLink to="/saved-news" className="mobile-menu__link">
                       Saved articles
                     </NavLink>
                     <button
                       className={`mobile-menu__button mobile-menu__button_logout`}
-                      onClick={onLogout}
-                      username={username}>
-                      Elise
-                      {/* {currentUser} */}
+                      onClick={onLogout}>
+                      { currentUser.name }
                       <img src={logout_white} alt="logout logo" />
                     </button>
                   </>
@@ -79,7 +68,6 @@ export default function MobileMenu({
                   <button
                     className={`mobile-menu__button mobile-menu__button_login`}
                     type="button"
-                    // onClick={() => setIsLoginPopupOpen(true)}
                     onClick={onSigninClick}
                   >
                     Sign in

@@ -17,6 +17,7 @@ export default function Main({
   onLogout,
   onSearch,
   setArticles,
+  onSave
 }) {
   const blockState = () => {
     if (isLoading) return (<Preloader />);
@@ -33,7 +34,8 @@ export default function Main({
  
       <main className="main">
         <Hero
-          isLoggedIn={isLoggedIn}
+        isLoggedIn={isLoggedIn}
+        onSave={onSave}
           username={username}
           onSigninClick={onSigninClick}
           onLogout={onLogout}

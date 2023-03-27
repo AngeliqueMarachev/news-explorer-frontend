@@ -3,7 +3,7 @@ import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 // import { news } from '../../utils/temp_articles.js';
 
-export default function NewsCardList({ articles, isLoggedIn }) {
+export default function NewsCardList({ articles, isLoggedIn, onSave }) {
   const [showMore, setShowMore] = useState(3);
 
   const handleShowMoreClick = () => {
@@ -22,12 +22,14 @@ export default function NewsCardList({ articles, isLoggedIn }) {
               return (
                 <li key={index}>
                   <NewsCard
+                    card={article}
                     image={article.image}
                     date={article.date}
                     title={article.title}
                     text={article.text}
                     source={article.source}
                     isLoggedIn={isLoggedIn}
+                    onSave={onSave}
                   />
                 </li>
               );

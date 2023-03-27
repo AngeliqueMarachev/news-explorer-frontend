@@ -1,6 +1,5 @@
 import "./Navigation.css";
 import { NavLink, Link, useLocation } from "react-router-dom";
-
 import { useContext } from 'react';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 
@@ -9,14 +8,13 @@ import logout_white from "../../images/logout_white.svg";
 
 export default function Navigation({
   isLoggedIn,
-  username,
   onSigninClick,
-  // setIsLoginPopupOpen,
   onLogout
 }) {
   const location = useLocation();
   const navClass = location.pathname === "/" ? "" : "_saved";
   const currentUser = useContext(CurrentUserContext);
+
 
   return (
     <div className="navbar">
@@ -57,11 +55,8 @@ export default function Navigation({
             </NavLink>
             <button
               className={`navbar__header-button navbar__header-button_logout navbar__header-button` + navClass}
-              onClick={onLogout}
-              // username={username}
-            >
-              {/* Elise */}
-              {currentUser.name}
+              onClick={onLogout}>
+            {currentUser.name}
               <img
                 src={location.pathname === "/" ? logout_white : logout_black}
                 alt="logout logo"
@@ -76,7 +71,6 @@ export default function Navigation({
                 
             }
             type="button"
-            // onClick={() => setIsLoginPopupOpen(true)}
             onClick={onSigninClick}
           >
             Sign in

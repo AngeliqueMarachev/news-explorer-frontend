@@ -9,8 +9,8 @@ export default function SavedNewsHeader({ news, articles, username, onLogout }) 
 
   return (
     <header className="saved-header">
-      <Navigation isLoggedIn={true} username={currentUser} onLogout={onLogout} />
-      <MobileMenu isLoggedIn={true} username={currentUser} onLogout={onLogout} />
+      <Navigation isLoggedIn={true} onLogout={onLogout} />
+      <MobileMenu isLoggedIn={true} onLogout={onLogout} />
       
       <section className="saved-header__text">
         <h4 className="saved-header__title">Saved articles</h4>

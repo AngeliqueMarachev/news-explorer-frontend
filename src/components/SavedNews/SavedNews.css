@@ -19,6 +19,36 @@
   padding-left: 0;
 }
 
+.saved-news__more {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+  padding-top: 64px;
+}
+
+.saved-news__more-button {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  height: 64px;
+  width: 288px;
+  border-radius: 80px;
+  background: #ffffff;
+  align-self: center;
+  display: block;
+  border: none;
+  color: #1a1b22;
+}
+
+.saved-news__more-button:hover {
+  background: #e8e8e8;
+}
 @media screen and (max-width: 1350px) {
   .saved-news__articles {
     padding: 32px 40px;

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
+// import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 export default function NewsCard({
   image,
@@ -14,12 +15,14 @@ export default function NewsCard({
   url,
 }) {
   const location = useLocation();
-
+  // const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
 
   const handleSaveClick = () => {
     setIsSaved(!isSaved);
   };
+
+  const realDate = new Date(date);
 
   return (
     <div className="card">
@@ -37,11 +40,12 @@ export default function NewsCard({
         {location.pathname === "/" ? (
           <button
             type="button"
-            className={` ${
-              isSaved
-                ? "card__button card__button_saved"
-                : "card__button card__button_save"
-            }`}
+            className={`card__button card__button_save ${isSaved && 'card__button_saved'} ${(!isSaved) && 'card__button_hover'}`}
+            // className={` ${
+            //   isSaved
+            //     ? "card__button card__button_saved"
+            //     : "card__button card__button_save"
+            // }`}
             onClick={handleSaveClick}
           />
         ) : (
@@ -68,7 +72,7 @@ export default function NewsCard({
 
         <div className="card__description">
           <div className="card__info">
-            <p className="card__date">{date}</p>
+            <p className="card__date">{realDate.toDateString()}</p>
             <h3 className="card__title">{title}</h3>
           </div>
           <p className="card__text">{text}</p>

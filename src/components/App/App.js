@@ -41,16 +41,17 @@ export default function App() {
         .checkToken(token)
         .then((res) => {
           if (res._id) {
-            setCurrentUser(res);
+            setCurrentUser(res.data.name);
             setIsLoggedIn(true);
           } else {
             localStorage.removeItem("jwt");
-            console.log(res);
+            // console.log(res.data.name);
           }
         })
         .catch((err) => console.log(err));
     }
   }, [token]);
+  
 
   // HANDLE SEARCH BAR
    const handleSearchSubmit = (e, keyword) => {
@@ -79,7 +80,7 @@ export default function App() {
     .finally(() => {
       setIsLoading(false);
     })
-  };
+   };
 
   // POPUP STATES
   const handleSigninClick = () => {
@@ -122,7 +123,7 @@ export default function App() {
           setToken(res.token);
           closeAllPopups();
         } else {
-          console.log(res);
+          console.log(res, "handleLogin");
         }
       })
       .catch((err) => console.log(err, "Login Error"));
@@ -130,7 +131,7 @@ export default function App() {
 
   function handleLogout() {
     setIsLoggedIn(false);
-    setCurrentUser("");
+    setCurrentUser('');
     localStorage.removeItem("jwt");
     setToken("");
     navigate("/");
@@ -145,19 +146,13 @@ export default function App() {
             element={
               <Main
                 isLoggedIn={isLoggedIn}
-                username={currentUser.name}
+                // username={currentUser.name}
                 onSigninClick={handleSigninClick}
                 isLoading={isLoading}
                 articles={articles}
                 onLogout={handleLogout}
                 setArticles={setArticles}
-
                 onSearch={handleSearchSubmit}
-
-                // savedArticles={savedNews}
-                // setIsLoginPopupOpen={setIsLoginPopupOpen}
-                // setIsRegisterPopupOpen={setIsRegisterPopupOpen}
-                // setIsSuccessPopupOpen={setIsSuccessPopupOpen}
               />
             }
           />
@@ -166,9 +161,10 @@ export default function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <SavedNews
-                  username={currentUser.name}
+                  // username={currentUser.name}
                   articles={articles}
                   onLogout={handleLogout}
+                  setArticles={setArticles}
                 />
               </ProtectedRoute>
             }

@@ -32,15 +32,15 @@ export const news = [
     _id: '3',
     url: 'https://www.theguardian.com/film/2023/mar/08/the-irish-mob-review-cat-and-mouse-with-the-gardai-in-knock-off-gangster-flick'
   },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1678269449746-175349634993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-  //   date: "October 19, 2020",
-  //   title: "Grand Teton Renews Historic Crest Trail",
-  //   keyword: "Parks",
-  //   text: "“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be...'",
-  //   source: "NATIONAL PARKS TRAVELLER",
-  //   _id: '4',
-  //   url: 'https://www.google.com/'
-  // },
+  {
+    image:
+      "https://images.unsplash.com/photo-1678269449746-175349634993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    date: "October 19, 2020",
+    title: "Grand Teton Renews Historic Crest Trail",
+    keyword: "Parks",
+    text: "“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be...'",
+    source: "NATIONAL PARKS TRAVELLER",
+    _id: '4',
+    url: 'https://www.google.com/'
+  },
 ];
