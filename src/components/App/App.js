@@ -52,13 +52,17 @@ export default function App() {
 
   // FETCH SAVED ARTICLES ACCORDING TO USER
   useEffect(() => {
-    mainApi
-      .getArticles(token)
-      .then((data) => {
-        setSavedArticles(data);
+    if (isLoggedIn) {
+      mainApi
+        .getArticles(token)
+        .then((res) => {
+          if (res)
+          // setSavedArticles(res);
+          setCurrentUser((currentUser) => ({ ...currentUser, setSavedArticles: res }));
       })
-      .catch((err) => console.log(err));
-  }, [token]);
+    }
+  }, [isLoggedIn, token]);
+
 
   // HANDLE SEARCH BAR
   const handleSearchSubmit = (e, keyword) => {
