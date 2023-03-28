@@ -38,8 +38,8 @@ export default function App() {
       mainApi
         .checkToken(token)
         .then((res) => {
-          if (res._id) {
-            setCurrentUser(res.data.name);
+          if (res.data._id) {
+            setCurrentUser(res.data);
             setIsLoggedIn(true);
           } else {
             localStorage.removeItem("jwt");
@@ -56,9 +56,10 @@ export default function App() {
       mainApi
         .getArticles(token)
         .then((res) => {
-          if (res)
-          // setSavedArticles(res);
-          setCurrentUser((currentUser) => ({ ...currentUser, setSavedArticles: res }));
+          if (res.data)
+          setSavedArticles(res.data);
+            // setCurrentUser((currentUser) => ({ ...currentUser, setSavedArticles: res.data }));
+          debugger;
       })
     }
   }, [isLoggedIn, token]);
@@ -130,8 +131,8 @@ export default function App() {
       .then((res) => {
         if (res.token) {
           setIsLoggedIn(true);
-          setCurrentUser(res);
           localStorage.setItem("jwt", res.token);
+          console.log(res)
           setToken(res.token);
           closeAllPopups();
         } else {
@@ -143,7 +144,7 @@ export default function App() {
 
   function handleLogout() {
     setIsLoggedIn(false);
-    setCurrentUser("");
+    setCurrentUser({});
     localStorage.removeItem("jwt");
     setToken("");
     navigate("/");
@@ -184,8 +185,8 @@ export default function App() {
                 // username={currentUser.name}
                 onSigninClick={handleSigninClick}
                 isLoading={isLoading}
-                // articles={articles}
-                articles={savedArticles}
+                articles={articles}
+                savedArticles={savedArticles}
                 onLogout={handleLogout}
                 setArticles={setArticles}
                 onSearch={handleSearchSubmit}

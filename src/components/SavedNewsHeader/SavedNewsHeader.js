@@ -21,13 +21,13 @@ export default function SavedNewsHeader({
         <h4 className="saved-header__title">Saved articles</h4>
         <h2 className="saved-header__description">
           {/* {username}, you have {articles.length} saved articles */}
-          {currentUser.username}, you have {currentUser.savedArticles.length} saved articles
+          {currentUser.name}, you have {0} saved articles
         </h2>
         <p className="saved-header__keywords">
           By keywords: {""}
           <strong>
             <span>
-              {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others
+              {/* {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others */}
             </span>
           </strong>
         </p>
