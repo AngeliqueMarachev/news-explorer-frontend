@@ -1,5 +1,4 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-// import { useState } from "react";
 import useForm from '../../utils/useForm';
 
 export default function Register({
@@ -7,9 +6,6 @@ export default function Register({
   onClose,
   onSigninClick,
   onRegister }) {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [username, setUsername] = useState("");
 
   const { values, handleChange } = useForm({ email: '', password: '', name: '' })
   
@@ -33,8 +29,6 @@ export default function Register({
         name="email"
         onChange={handleChange}
         required
-        // value={values.email}
-        // onChange={(e) => setEmail(e.target.value)}
       ></input>
       <span className="form__error">Invalid email</span>
 
@@ -46,8 +40,6 @@ export default function Register({
         name="password"
         onChange={handleChange}
         required
-        // value={values.password}
-        // onChange={(e) => setPassword(e.target.value)}
       ></input>
       <span className="form__error">Invalid password</span>
 
@@ -59,8 +51,6 @@ export default function Register({
         name="name"
         onChange={handleChange}
         required
-        // value={values.username}
-        // onChange={(e) => setUsername(e.target.value)}
       ></input>
       <span className="form__error">Invalid username</span>
 

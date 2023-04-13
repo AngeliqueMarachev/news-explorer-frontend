@@ -1,18 +1,6 @@
 import "./SearchForm.css";
-// import useForm from "../../utils/useForm";
-import { useState } from "react";
 
-// export default function SearchForm({ onSearch }) {
-//   const { values, handleChange } = useForm({ keyword: '' });
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     onSearch(values.keyword);
-//   }
-
-export default function SearchForm({ onSearch }) {
-
-  const [keyword, setKeyword] = useState('');
+export default function SearchForm({ onSearch, keyword, setKeyword }) {
 
   function handleChange(e) {
     setKeyword(e.target.value)
@@ -32,8 +20,6 @@ export default function SearchForm({ onSearch }) {
               placeholder="Enter Topic"
               autoFocus
               autoComplete="off"
-              // value={keyword}
-              // onChange={e => setKeyword(e.target.value)} 
               onChange={handleChange}
             />
             <button className="search-form__submit" type="submit">

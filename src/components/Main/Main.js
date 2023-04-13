@@ -6,7 +6,6 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
 import NotFound from "../NotFound/Notfound";
-// import { news } from "../../utils/temp_articles";
 
 export default function Main({
   isLoggedIn,
@@ -17,8 +16,9 @@ export default function Main({
   savedArticles,
   onSearch,
   setArticles,
-  // onSave,
-  onDelete
+  onSave,
+  keyword,
+  setKeyword
 }) {
   const blockState = () => {
     if (isLoading) return <Preloader />;
@@ -30,9 +30,7 @@ export default function Main({
       isLoggedIn={isLoggedIn}
       setArticles={setArticles}
       savedArticles={savedArticles}
-      // onSave={onSave}
-      onDelete={onDelete}
-      
+      onSave={onSave}      
     />;
   };
 
@@ -43,7 +41,8 @@ export default function Main({
         onSigninClick={onSigninClick}
         onLogout={onLogout}
         onSearch={onSearch}
-        
+        keyword={keyword}
+        setKeyword={setKeyword}
       />
       {blockState()}
 

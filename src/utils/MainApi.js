@@ -49,18 +49,20 @@ export const getArticles = (token) => {
     .then((res) => checkResponse(res));
 };
 
-  export const saveArticle = (token, { publishedAt, urlToImage, url, source, description, title }, keyword) => {
+  export const saveArticle = (token, { date, image, url, source, text, title }, keyword) => {
   return fetch(`${BASE_URL}/articles`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization' : `Bearer ${token}`,
     },
-    body: JSON.stringify({ date: publishedAt, image: urlToImage, keyword, link: url, source: source.name, text: description, title }),
+    body: JSON.stringify({ date, image, link: url, source, text, title, keyword }),
 
   })
     .then((res) => checkResponse(res));
-};
+
+    // TODO: change all url to link everywhere
+  };
 
 export const deleteArticle = (token, article) => {
   return fetch(`${BASE_URL}/articles/${article._id}`, {

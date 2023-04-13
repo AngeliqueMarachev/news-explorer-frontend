@@ -7,7 +7,6 @@ export default function SavedNewsCard({
   text,
   source,
   keyword,
-  onDelete
 }) {
 
   return (
@@ -24,7 +23,6 @@ export default function SavedNewsCard({
         <button
           type="button"
           className="saved-card__delete-icon"
-          onDelete={onDelete}
         />
       <p className="saved-card__label">
         Remove from saved

@@ -5,38 +5,21 @@ import { useLocation } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function NewsCard({
-  // image,
-  // date,
-  // title,
-  // text,
-  // source,
-  // keyword,
-  // url,
   isLoggedIn,
   card,
-  onDelete,
-  // onSave
+  onSave
 }) {
+
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
 
-  // const handleSaveClick = () => {
-  //   setIsSaved(!isSaved);
-  // };
-
-  function handleSaveClick(e) {
+  const handleSaveClick = (e) => {
+    console.log('handleSaveClick called');
     e.preventDefault();
-    setIsSaved((state) => !state);
-    if (isSaved) {
-      onDelete(currentUser.savedArticles.find((article) => article.link === card.url))
-    } 
-  }
-
-  function handleDelete(e) {
-    e.preventDefault();
-    onDelete(card);
-  }
+    // setIsSaved(!isSaved);
+    onSave(card);
+  };
 
   const realDate = new Date(card.date);
 
@@ -60,17 +43,11 @@ export default function NewsCard({
             className={`card__button card__button_save ${
               isSaved && "card__button_saved"
             } ${!isSaved && "card__button_hover"}`}
-            // className={` ${
-            //   isSaved
-            //     ? "card__button card__button_saved"
-            //     : "card__button card__button_save"
-            // }`}
             onClick={handleSaveClick}
           />
         ) : (
           <button
             className="card__button card__button_delete"
-            onClick={handleDelete}
           />
         )}
 

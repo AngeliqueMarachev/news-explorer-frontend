@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import "./Popup.css";
-// import { NavLink } from "react-router-dom";
 
 export default function Popup({
   name,

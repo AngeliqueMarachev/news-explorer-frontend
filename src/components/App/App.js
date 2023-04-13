@@ -6,6 +6,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // API
 import * as mainApi from "../../utils/MainApi";
 import { newsApi } from "../../utils/NewsApi";
+import { news } from "../../utils/temp_articles";
 // ELEMENTS
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
@@ -32,6 +33,8 @@ export default function App() {
   const [articles, setArticles] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
 
+  const [keyword, setKeyword] = useState('');
+
   // CHECK TOKEN
   useEffect(() => {
     if (token) {
@@ -43,7 +46,6 @@ export default function App() {
             setIsLoggedIn(true);
           } else {
             localStorage.removeItem("jwt");
-            // console.log(res.data.name);
           }
         })
         .catch((err) => console.log(err));
@@ -53,24 +55,21 @@ export default function App() {
   // FETCH SAVED ARTICLES ACCORDING TO USER
   useEffect(() => {
     if (isLoggedIn) {
-      mainApi
-        .getArticles(token)
-        .then((res) => {
-          if (res.data)
-          setSavedArticles(res.data);
-            // setCurrentUser((currentUser) => ({ ...currentUser, setSavedArticles: res.data }));
-          debugger;
-      })
+      mainApi.getArticles(token).then((res) => {
+        if (res.data)
+          setCurrentUser((currentUser) => ({
+            ...currentUser,
+            savedArticles: res.data,
+          }));
+      });
     }
   }, [isLoggedIn, token]);
-
 
   // HANDLE SEARCH BAR
   const handleSearchSubmit = (e, keyword) => {
     e.preventDefault();
     console.log("submitted");
     setIsLoading(true);
-
     newsApi
       .search(keyword)
       .then((res) => {
@@ -87,7 +86,6 @@ export default function App() {
           }));
           setArticles(newData);
         }
-        // console.log("res", res.articles);
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -132,7 +130,7 @@ export default function App() {
         if (res.token) {
           setIsLoggedIn(true);
           localStorage.setItem("jwt", res.token);
-          console.log(res)
+          console.log(res);
           setToken(res.token);
           closeAllPopups();
         } else {
@@ -150,27 +148,25 @@ export default function App() {
     navigate("/");
   }
 
-  // SAVE ARTICLE
-  // const handleSave = (card) => {
-  //   mainApi
-  //   .saveArticle(token, card, "example keyword")
-  //     .then((res) => {
-
-  //       setSavedArticles([...savedArticles, res]);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // DELETE ARTICLE
-  const handleDelete = (card) => {
+  function getSavedNews() {
     mainApi
-      .deleteArticle(token, { _id: card })
-      .then(() => {
-        setSavedArticles(
-          savedArticles.filter((article) => article._id !== card)
-        );
+      .getArticles(token)
+      .then((res) => {
+        console.log(res)
+        setSavedArticles(res);
       })
-      .catch((err) => console.log(err, "Delete Card Error"));
+      .catch((err) => console.log(err, "Get Saved News Error"));
+  }
+
+  // SAVE ARTICLE
+  const handleSave = (card) => {
+    console.log(card, "handleSave");
+    mainApi
+      .saveArticle(token, card, keyword)
+      .then((res) => {
+        setSavedArticles(...currentUser.savedArticles, res.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -182,16 +178,15 @@ export default function App() {
             element={
               <Main
                 isLoggedIn={isLoggedIn}
-                // username={currentUser.name}
                 onSigninClick={handleSigninClick}
                 isLoading={isLoading}
                 articles={articles}
-                savedArticles={savedArticles}
                 onLogout={handleLogout}
                 setArticles={setArticles}
                 onSearch={handleSearchSubmit}
-                // onSave={handleSave}
-                onDelete={handleDelete}
+                onSave={handleSave}
+                keyword={keyword}
+                setKeyword={setKeyword}
               />
             }
           />
@@ -200,11 +195,11 @@ export default function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <SavedNews
-                  // username={currentUser.name}
                   articles={articles}
                   onLogout={handleLogout}
-                  setArticles={setArticles}
-                  onDelete={handleDelete}
+                  // setArticles={setArticles}
+                  // savedArticles={savedArticles}
+                  onLoadSaved={getSavedNews}
                 />
               </ProtectedRoute>
             }

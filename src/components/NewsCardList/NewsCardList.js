@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
-// import { news } from '../../utils/temp_articles.js';
 
 export default function NewsCardList({
   articles,
   isLoggedIn,
-  // onSave,
+  onSave,
   savedArticles,
-  onDelete
 }) {
   const [showMore, setShowMore] = useState(3);
 
@@ -26,7 +24,6 @@ export default function NewsCardList({
             articles.slice(0, showMore).map((article, index) => {
               console.log(article);
               return (
-                // <li key={index}>
                   <li key={article._id}>
                   <NewsCard
                     card={article}
@@ -36,9 +33,8 @@ export default function NewsCardList({
                     text={article.text}
                     source={article.source}
                     isLoggedIn={isLoggedIn}
-                    // onSave={onSave}
+                    onSave={onSave}
                     savedArticles={savedArticles}
-                    onDelete={onDelete}
                   />
                 </li>
               );
