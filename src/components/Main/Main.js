@@ -18,7 +18,8 @@ export default function Main({
   setArticles,
   onSave,
   keyword,
-  setKeyword
+  setKeyword, 
+  onDelete
 }) {
   const blockState = () => {
     if (isLoading) return <Preloader />;
@@ -30,7 +31,8 @@ export default function Main({
       isLoggedIn={isLoggedIn}
       setArticles={setArticles}
       savedArticles={savedArticles}
-      onSave={onSave}      
+      onSave={onSave}
+      onDelete={onDelete}
     />;
   };
 

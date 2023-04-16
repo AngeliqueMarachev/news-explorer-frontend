@@ -7,22 +7,26 @@
   box-shadow: 0 0 rgba(8, 29, 45, 0.1);
   /* margin-bottom: 126px; */
   width: 400px;
+  max-height: 576px;
 }
 
 .saved-card__image {
   width: 400px;
   height: 272px;
-  max-height: 272px;
+  min-height: 272px;
   border-radius: 16px 16px 0 0;
   object-fit: cover;
 }
 
 .saved-card__main {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 0 24px;
   row-gap: 16px;
-  display: grid;
-  grid-template-rows: 54px 95px 173px 62px;
+  /* display: grid;
+  grid-template-rows: 54px 95px 173px 62px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .saved-card__list {

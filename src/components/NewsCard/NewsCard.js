@@ -4,21 +4,21 @@ import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-export default function NewsCard({
-  isLoggedIn,
-  card,
-  onSave
-}) {
-
+export default function NewsCard({ isLoggedIn, card, onSave, onDelete }) {
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
 
   const handleSaveClick = (e) => {
-    console.log('handleSaveClick called');
     e.preventDefault();
     // setIsSaved(!isSaved);
     onSave(card);
+  };
+
+  const handleDeleteClick = (e) => {
+    console.log("handleDeleteClick called");
+    e.preventDefault();
+    onDelete(card);
   };
 
   const realDate = new Date(card.date);
@@ -48,6 +48,7 @@ export default function NewsCard({
         ) : (
           <button
             className="card__button card__button_delete"
+            onClick={handleDeleteClick}
           />
         )}
 

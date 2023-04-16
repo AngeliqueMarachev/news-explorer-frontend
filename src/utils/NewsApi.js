@@ -5,7 +5,11 @@ class NewsApi {
   }
 
   search(keyword) {
-    return fetch(`${this._baseUrl}?q=${keyword}&apiKey=${this._token}`)
+    const toDate = new Date();
+    let fromDate = new Date();
+    fromDate.setDate(toDate.getDate() - 7);
+
+    return fetch(`${this._baseUrl}?q=${keyword}&from=${fromDate.toISOString()}&to=${toDate.toISOString()}&pageSize=10&apiKey=${this._token}`)
       .then((res) => {
         return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
       }

@@ -68,7 +68,6 @@ export default function App() {
   // HANDLE SEARCH BAR
   const handleSearchSubmit = (e, keyword) => {
     e.preventDefault();
-    console.log("submitted");
     setIsLoading(true);
     newsApi
       .search(keyword)
@@ -85,6 +84,7 @@ export default function App() {
             url: article.url,
           }));
           setArticles(newData);
+
         }
       })
       .catch((err) => console.log(err))
@@ -148,19 +148,8 @@ export default function App() {
     navigate("/");
   }
 
-  function getSavedNews() {
-    mainApi
-      .getArticles(token)
-      .then((res) => {
-        console.log(res)
-        setSavedArticles(res);
-      })
-      .catch((err) => console.log(err, "Get Saved News Error"));
-  }
-
   // SAVE ARTICLE
   const handleSave = (card) => {
-    console.log(card, "handleSave");
     mainApi
       .saveArticle(token, card, keyword)
       .then((res) => {
@@ -168,6 +157,14 @@ export default function App() {
       })
       .catch((err) => console.log(err));
   };
+
+  const handleDelete = (card) => {
+    console.log(card, "handleDelete");
+    mainApi
+      .deleteArticle(token, card)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -187,6 +184,7 @@ export default function App() {
                 onSave={handleSave}
                 keyword={keyword}
                 setKeyword={setKeyword}
+                onDelete={handleDelete}
               />
             }
           />
@@ -197,9 +195,9 @@ export default function App() {
                 <SavedNews
                   articles={articles}
                   onLogout={handleLogout}
-                  // setArticles={setArticles}
+                  setArticles={setArticles}
                   // savedArticles={savedArticles}
-                  onLoadSaved={getSavedNews}
+                  onDelete={handleDelete}
                 />
               </ProtectedRoute>
             }

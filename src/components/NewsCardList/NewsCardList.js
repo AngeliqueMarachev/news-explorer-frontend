@@ -7,6 +7,7 @@ export default function NewsCardList({
   isLoggedIn,
   onSave,
   savedArticles,
+  onDelete
 }) {
   const [showMore, setShowMore] = useState(3);
 
@@ -35,6 +36,7 @@ export default function NewsCardList({
                     isLoggedIn={isLoggedIn}
                     onSave={onSave}
                     savedArticles={savedArticles}
+                    onDelete={onDelete}
                   />
                 </li>
               );

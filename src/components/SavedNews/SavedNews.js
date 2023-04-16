@@ -8,7 +8,8 @@ import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 
 export default function SavedNews({
   articles,
-  onLogout
+  onLogout,
+  onDelete
 }) {
   
   const currentUser = useContext(CurrentUserContext);
@@ -28,7 +29,7 @@ export default function SavedNews({
       />
 
       <section className="saved-news">
-        <h2 className="saved-news__title">Saved articles</h2>
+        <h2 className="saved-news__title"></h2>
         <div className="saved-news__cards">
           {currentUser.savedArticles && currentUser.savedArticles.map((article) => (
             <SavedNewsCard
@@ -39,11 +40,11 @@ export default function SavedNews({
               text={article.text}
               source={article.source}
               keyword={article.keyword}
+              onDelete={onDelete}
             />
           ))}
         </div>
         <div className="saved-news__more">
-          {articles && articles.length && (
             <button
               className="saved-news__more-button"
               type="button"
@@ -51,7 +52,6 @@ export default function SavedNews({
             >
               Show more
             </button>
-          )}
         </div>
       </section>
 
