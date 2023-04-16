@@ -162,6 +162,7 @@ export default function App() {
 
   // DELETE ARTICLE
   // const handleDelete = (article) => {
+  //   console.log("Delete Card")
   //   mainApi
   //     .deleteArticle(token, article)
   //     .then((res) => {
@@ -176,6 +177,7 @@ export default function App() {
   // }
 
   const handleDelete = (article) => {
+    console.log("handleDelete called")
     mainApi
       .deleteArticle(token, article)
  

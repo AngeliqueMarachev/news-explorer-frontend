@@ -41,6 +41,7 @@ export default function SavedNews({
               source={article.source}
               keyword={article.keyword}
               onDelete={onDelete}
+              card={article}
             />
           ))}
         </div>
