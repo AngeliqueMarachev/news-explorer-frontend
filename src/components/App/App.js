@@ -35,6 +35,8 @@ export default function App() {
 
   const [keyword, setKeyword] = useState('');
 
+  const [wasSearch, setWasSearch] = useState(false)
+
   // CHECK TOKEN
   useEffect(() => {
     if (token) {
@@ -84,7 +86,7 @@ export default function App() {
             url: article.url,
           }));
           setArticles(newData);
-
+          setWasSearch(true);
         }
       })
       .catch((err) => console.log(err))
@@ -158,13 +160,35 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  const handleDelete = (card) => {
-    console.log(card, "handleDelete");
+  // DELETE ARTICLE
+  // const handleDelete = (article) => {
+  //   mainApi
+  //     .deleteArticle(token, article)
+  //     .then((res) => {
+  //       setCurrentUser({
+  //         ...currentUser,
+  //         setSavedArticles: currentUser.savedArticles.filter(
+  //           (currArticle) => currArticle._id !== article._id,
+  //         )
+  //       })
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
+  const handleDelete = (article) => {
     mainApi
-      .deleteArticle(token, card)
-      .then((res) => console.log(res))
+      .deleteArticle(token, article)
+ 
+      .then((res) => {
+        setCurrentUser((prevUser) => ({
+          ...prevUser,
+          savedArticles: prevUser.savedArticles.filter(
+            (currArticle) => currArticle._id !== article._id
+          ),
+        }));
+      })
       .catch((err) => console.log(err));
-  }
+  };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -184,7 +208,8 @@ export default function App() {
                 onSave={handleSave}
                 keyword={keyword}
                 setKeyword={setKeyword}
-                onDelete={handleDelete}
+                // onDelete={handleDelete}
+                wasSearch={wasSearch}
               />
             }
           />
@@ -196,7 +221,7 @@ export default function App() {
                   articles={articles}
                   onLogout={handleLogout}
                   setArticles={setArticles}
-                  // savedArticles={savedArticles}
+                  savedArticles={savedArticles}
                   onDelete={handleDelete}
                 />
               </ProtectedRoute>

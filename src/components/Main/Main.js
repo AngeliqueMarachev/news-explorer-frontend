@@ -19,7 +19,8 @@ export default function Main({
   onSave,
   keyword,
   setKeyword, 
-  onDelete
+  onDelete, 
+  wasSearch
 }) {
   const blockState = () => {
     if (isLoading) return <Preloader />;
@@ -46,7 +47,7 @@ export default function Main({
         keyword={keyword}
         setKeyword={setKeyword}
       />
-      {blockState()}
+      {wasSearch && blockState()}
 
       <About />
       <Footer />

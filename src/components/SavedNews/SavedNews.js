@@ -31,7 +31,7 @@ export default function SavedNews({
       <section className="saved-news">
         <h2 className="saved-news__title"></h2>
         <div className="saved-news__cards">
-          {currentUser.savedArticles && currentUser.savedArticles.map((article) => (
+          {currentUser.savedArticles && currentUser.savedArticles.slice(0, showMore).map((article) => (
             <SavedNewsCard
               key={article._id}
               image={article.image}

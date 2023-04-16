@@ -65,6 +65,7 @@ export const getArticles = (token) => {
   };
 
 export const deleteArticle = (token, article) => {
+  console.log(article)
   return fetch(`${BASE_URL}/articles/${article._id}`, {
     method: 'DELETE',
     headers: {
