@@ -6,7 +6,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // API
 import * as mainApi from "../../utils/MainApi";
 import { newsApi } from "../../utils/NewsApi";
-import { news } from "../../utils/temp_articles";
+// import { news } from "../../utils/temp_articles";
 // ELEMENTS
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
@@ -28,6 +28,9 @@ export default function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+
+  const [registerError, setRegisterError] = useState(false);
+
   // NEWS STATES
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState([]);
@@ -98,6 +101,7 @@ export default function App() {
   // POPUP STATES
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
+    setIsRegisterPopupOpen(false);
   };
 
   const handleRegisterClick = () => {
@@ -122,7 +126,10 @@ export default function App() {
           console.log(res);
         }
       })
-      .catch((err) => console.log(err, "Register Error"));
+      .catch((err) => {
+        if (err === 'Error: 409') setRegisterError(true);
+        else console.log(err);
+      });
   }
 
   function handleLogin({ email, password }) {
@@ -159,22 +166,6 @@ export default function App() {
       })
       .catch((err) => console.log(err));
   };
-
-  // DELETE ARTICLE
-  // const handleDelete = (article) => {
-  //   console.log("Delete Card")
-  //   mainApi
-  //     .deleteArticle(token, article)
-  //     .then((res) => {
-  //       setCurrentUser({
-  //         ...currentUser,
-  //         setSavedArticles: currentUser.savedArticles.filter(
-  //           (currArticle) => currArticle._id !== article._id,
-  //         )
-  //       })
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
 
   const handleDelete = (article) => {
     console.log("handleDelete called")
@@ -243,6 +234,7 @@ export default function App() {
           onClose={closeAllPopups}
           onSigninClick={handleSigninClick}
           onRegister={handleRegister}
+          isCommonError={registerError }
         />
         <SuccessPopup
           isOpen={isSuccessPopupOpen}

@@ -1,14 +1,22 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import useForm from '../../utils/useForm';
+import { useEffect } from "react";
+import useFormWithValidation from "../../utils/FormValidation";
 
 export default function Register({
   isOpen,
   onClose,
   onSigninClick,
-  onRegister }) {
+  onRegister,
+  isCommonError,
+}) {
+  const { values, handleChange, errors, isValid, resetForm, setValues } =
+    useFormWithValidation({ email: "", password: "", name: "" });
 
-  const { values, handleChange } = useForm({ email: '', password: '', name: '' })
-  
+  useEffect(() => {
+    resetForm();
+    setValues({ email: "", password: "", name: "" });
+  }, [isOpen]);
+
   function handleSubmit() {
     onRegister(values);
   }
@@ -19,8 +27,9 @@ export default function Register({
       isOpen={isOpen}
       onClose={onClose}
       onSigninClick={onSigninClick}
-      onSubmit={handleSubmit}>
-      
+      onSubmit={handleSubmit}
+      isValid={isValid}
+    >
       <label className="form__label">Email</label>
       <input
         className="form__input"
@@ -28,9 +37,16 @@ export default function Register({
         type="email"
         name="email"
         onChange={handleChange}
+        value={values.email}
         required
       ></input>
-      <span className="form__error">Invalid email</span>
+      <span
+        className={`form__error email-error  ${
+          errors["email"] && "form__error_visible"
+        }`}
+      >
+        Invalid email
+      </span>
 
       <label className="form__label">Password</label>
       <input
@@ -39,9 +55,17 @@ export default function Register({
         type="password"
         name="password"
         onChange={handleChange}
+        value={values.password}
+        minLength="8"
         required
       ></input>
-      <span className="form__error">Invalid password</span>
+      <span
+        className={`form__error password-error ${
+          errors["password"] && "form__error_visible"
+        }`}
+      >
+        Invalid password
+      </span>
 
       <label className="form__label">Username</label>
       <input
@@ -50,11 +74,23 @@ export default function Register({
         type="text"
         name="name"
         onChange={handleChange}
+        value={values.name}
+        minLength="3"
         required
       ></input>
-      <span className="form__error">Invalid username</span>
+      <span
+        className={`form__error name-error ${
+          errors["name"] && "form__error_visible"
+        }`}
+      >
+        Invalid username
+      </span>
 
-      <span className="form__error form__error-general">
+      <span
+        className={`form__error form__error_general ${
+          isCommonError && "form__error_visible"
+        }`}
+      >
         This email is not available
       </span>
     </PopupWithForm>

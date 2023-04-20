@@ -1,13 +1,21 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import useForm from '../../utils/useForm';
+import { useEffect } from 'react';
+import useFormWithValidation from "../../utils/FormValidation";
 
 export default function Login({
   isOpen,
   onClose,
   onRegisterClick,
-  onLogin
+  onLogin,
+  isCommonError,
 }) {
-  const { values, handleChange } = useForm({ email: "", password: "" });
+  const { values, handleChange, errors, isValid, resetForm, setValues } =
+    useFormWithValidation({ email: "", password: "" });
+
+  useEffect(() => {
+    resetForm();
+    setValues({ email: "", password: "" });
+  }, [isOpen]);
 
   function handleSubmit() {
     onLogin(values);
@@ -20,6 +28,7 @@ export default function Login({
       onClose={onClose}
       onRegisterClick={onRegisterClick}
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <label className="form__label">Email</label>
       <input
@@ -28,9 +37,16 @@ export default function Login({
         type="email"
         name="email"
         onChange={handleChange}
+        value={values.email}
         required
       ></input>
-      <span className="form__error">Invalid email address</span>
+      <span
+        className={`form__error email-error  ${
+          errors["email"] && "form__error_visible"
+        }`}
+      >
+        Invalid email address
+      </span>
       <label className="form__label">Password</label>
       <input
         className="form__input"
@@ -38,10 +54,24 @@ export default function Login({
         type="password"
         name="password"
         onChange={handleChange}
+        value={values.password}
+        minLength="8"
         required
       ></input>
-      <span className="form__error">Invalid password</span>
+      <span
+        className={`form__error password-error ${
+          errors["password"] && "form__error_visible"
+        }`}
+      >
+        Invalid password
+      </span>
+      <span
+        className={`form__error form__error_general ${
+          isCommonError && "form__error_visible"
+        }`}
+      >
+        Incorrect email or password
+      </span>
     </PopupWithForm>
   );
 }
-
