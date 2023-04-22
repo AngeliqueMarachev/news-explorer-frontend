@@ -165,11 +165,10 @@
   line-height: 22px;
   color: #1a1b22;
   max-width: 352px;
-  max-height: px;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -189,7 +188,7 @@
 @media screen and (max-width: 1350px) {
   .card {
     width: 390px;
-    height: 450px;
+    /* height: 450px; */
   } 
 
   .card__image {

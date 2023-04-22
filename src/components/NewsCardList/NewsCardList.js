@@ -42,16 +42,17 @@ export default function NewsCardList({
               );
             })}
         </ul>
-      </section>
+     
     
-      <div className="new-list__more">
+      <div className="news-list__more">
       {articles.length && (
           <button className="news-list__more-button" type="button" onClick={handleShowMoreClick}>
             Show more
           </button>
       
         )}
-          </div>
+        </div>
+        </section>
     </>
   );
 }
