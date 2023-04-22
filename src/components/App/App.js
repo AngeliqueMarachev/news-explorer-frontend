@@ -71,9 +71,14 @@ export default function App() {
   }, [isLoggedIn, token]);
 
   // HANDLE SEARCH BAR
+  function firstLeterToUpperCase(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   const handleSearchSubmit = (e, keyword) => {
     e.preventDefault();
     setIsLoading(true);
+    setKeyword(firstLeterToUpperCase(keyword));
     newsApi
       .search(keyword)
       .then((res) => {
@@ -97,6 +102,7 @@ export default function App() {
         setIsLoading(false);
       });
   };
+
 
   // POPUP STATES
   const handleSigninClick = () => {
@@ -183,6 +189,10 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
+  function handleUnauthorizedSaveClick() {
+    setIsRegisterPopupOpen(true);
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -203,6 +213,7 @@ export default function App() {
                 setKeyword={setKeyword}
                 // onDelete={handleDelete}
                 wasSearch={wasSearch}
+                onUnauthorizedClick={handleUnauthorizedSaveClick}
               />
             }
           />
@@ -245,3 +256,11 @@ export default function App() {
     </CurrentUserContext.Provider>
   );
 }
+
+
+  // TODO: 
+  // 1. change all url to link everywhere
+  // 2. successful regitration not opening
+  // 3. after registration open sign in popup
+  // 4. saved card does not reflect immediately
+  // 5. date on saved cards

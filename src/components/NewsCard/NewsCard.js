@@ -4,7 +4,7 @@ import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-export default function NewsCard({ isLoggedIn, card, onSave, onDelete }) {
+export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnauthorizedClick }) {
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
@@ -14,6 +14,11 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete }) {
     setIsSaved(!isSaved);
     onSave(card);
   };
+
+  function handleUnauthorizedSaveClick(e) {
+    e.preventDefault();
+    onUnauthorizedClick();
+  }
 
   function handleDeleteClick(e) {
     e.preventDefault();
@@ -42,7 +47,8 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete }) {
             className={`card__button card__button_save ${
               isSaved && "card__button_saved"
             } ${!isSaved && "card__button_hover"}`}
-            onClick={handleSaveClick}
+            // onClick={handleSaveClick}
+            onClick={isLoggedIn ? handleSaveClick : handleUnauthorizedSaveClick}
           />
         ) : (
           <button

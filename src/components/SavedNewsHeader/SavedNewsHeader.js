@@ -19,17 +19,17 @@ export default function SavedNewsHeader({
         <h4 className="saved-header__title">Saved articles</h4>
         <h2 className="saved-header__description">
           {currentUser.name}, you have {currentUser.savedArticles.length} saved articles</h2>
-          {/* {currentUser.savedArticles.length > 0 && ( */}
+      
         <p className="saved-header__keywords">
           By keywords: {""}
           <strong>
               <span>
-             
               {/* {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others */}
-            </span>
+                {currentUser.savedArticles.map((article) => article.keyword, )}
+              </span>
           </strong>
           </p>
-           {/* )} */}
+         
       </section>
     </header>
   );

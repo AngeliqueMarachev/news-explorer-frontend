@@ -60,8 +60,6 @@ export const getArticles = (token) => {
 
   })
     .then((res) => checkResponse(res));
-
-    // TODO: change all url to link everywhere
   };
 
 export const deleteArticle = (token, article) => {
