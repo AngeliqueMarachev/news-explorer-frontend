@@ -25,7 +25,6 @@ export default function SavedNewsCard({
         <button
           type="button"
           className="saved-card__delete-icon"
-          // onClick={onDelete}
           onClick={()=>onDelete(card)}
         />
       <p className="saved-card__label">

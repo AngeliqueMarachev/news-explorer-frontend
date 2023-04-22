@@ -29,8 +29,9 @@ export default function SavedNews({
       />
 
       <section className="saved-news">
-        <h2 className="saved-news__title"></h2>
-        <div className="saved-news__cards">
+      <div className='saved-news__text'>
+      {/* <h2 className='saved-news__title'>Saved articles</h2> */}
+          <div className="saved-news__cards">
           {currentUser.savedArticles && currentUser.savedArticles.slice(0, showMore).map((article) => (
             <SavedNewsCard
               key={article._id}
@@ -44,7 +45,8 @@ export default function SavedNews({
               card={article}
             />
           ))}
-        </div>
+          </div>
+          </div>
         <div className="saved-news__more">
             <button
               className="saved-news__more-button"
@@ -55,18 +57,6 @@ export default function SavedNews({
             </button>
         </div>
       </section>
-
-      {/* <section className="saved-news">
-                //   <NewsCard
-                //   key={index}
-                //   image={article.image}
-                //   date={article.date}
-                //   title={article.title}
-                //   text={article.text}
-                //   source={article.source}
-                // />
-      </section> */}
-
       <Footer />
     </>
   );

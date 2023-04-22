@@ -11,12 +11,11 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete }) {
 
   const handleSaveClick = (e) => {
     e.preventDefault();
-   // setIsSaved(!isSaved);
-      onSave(card);
+    setIsSaved(!isSaved);
+    onSave(card);
   };
 
   function handleDeleteClick(e) {
-    console.log("handleDeleteClick called");
     e.preventDefault();
     onDelete(card);
   };
