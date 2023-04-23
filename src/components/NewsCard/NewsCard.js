@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useContext } from "react";
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
@@ -9,11 +9,29 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
   const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
 
-  const handleSaveClick = (e) => {
+  // check if the current user has saved articles that match card.url
+  // and update isSaved state accordingly.
+  useEffect(() => {
+    (currentUser.savedArticles &&
+      currentUser.savedArticles.some((article) => article.link === card.url))
+      && setIsSaved(true)
+  }, [card.url, currentUser.savedArticles]);
+
+  // const handleSaveClick = (e) => {
+  //   e.preventDefault();
+  //   setIsSaved(!isSaved);
+  //   onSave(card);
+  // };
+
+  function handleSaveClick(e) {
     e.preventDefault();
-    setIsSaved(!isSaved);
-    onSave(card);
-  };
+    setIsSaved((state) => !state);
+    if (isSaved) {
+      onDelete(currentUser.savedArticles.find((article) => article.link === card.url))
+    } else {
+      onSave(card)
+    }
+  }
 
   function handleUnauthorizedSaveClick(e) {
     e.preventDefault();
@@ -25,7 +43,25 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
     onDelete(card);
   };
 
-  const realDate = new Date(card.date);
+  // const realDate = new Date(card.date);
+  function setDateString() {
+    const date = new Date(card.publishedAt || card.date);
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+  }
 
   return (
     <div className="card">
@@ -47,7 +83,6 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
             className={`card__button card__button_save ${
               isSaved && "card__button_saved"
             } ${!isSaved && "card__button_hover"}`}
-            // onClick={handleSaveClick}
             onClick={isLoggedIn ? handleSaveClick : handleUnauthorizedSaveClick}
           />
         ) : (
@@ -76,7 +111,7 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
 
         <div className="card__description">
           <div className="card__info">
-            <p className="card__date">{realDate.toDateString()}</p>
+            <p className="card__date">{setDateString()}</p>
             <h3 className="card__title">{card.title}</h3>
           </div>
           <p className="card__text">{card.description || card.text}</p>

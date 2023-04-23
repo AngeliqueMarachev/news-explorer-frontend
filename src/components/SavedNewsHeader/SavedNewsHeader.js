@@ -10,6 +10,14 @@ export default function SavedNewsHeader({
 }) {
   const currentUser = useContext(CurrentUserContext);
 
+  function makeHeaderString() {
+    const keywords = currentUser.savedArticles.map((article) => article.keyword);
+    const uniqueKeywords = [...new Set(keywords)];
+    return currentUser.savedArticles.length <= 3
+      ? uniqueKeywords.join(', ')
+      : uniqueKeywords.slice(0 ,2).join(', ') + ' and ' + (uniqueKeywords.length -2) + 'others'
+  }
+
   return (
     <header className="saved-header">
       <Navigation isLoggedIn={true} onLogout={onLogout} />
@@ -25,7 +33,8 @@ export default function SavedNewsHeader({
           <strong>
               <span>
               {/* {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others */}
-                {currentUser.savedArticles.map((article) => article.keyword, )}
+              {/* {currentUser.savedArticles.map((article) => article.keyword, )} */}
+              {makeHeaderString()}
               </span>
           </strong>
           </p>

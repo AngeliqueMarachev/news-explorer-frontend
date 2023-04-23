@@ -12,10 +12,11 @@ export default function Register({
   const { values, handleChange, errors, isValid, resetForm, setValues } =
     useFormWithValidation({ email: "", password: "", name: "" });
 
+  // reset form values when isOpen and/or values change, or resetForm() is triggered
   useEffect(() => {
     resetForm();
     setValues({ email: "", password: "", name: "" });
-  }, [isOpen]);
+  }, [isOpen, resetForm, setValues]);
 
   function handleSubmit() {
     onRegister(values);

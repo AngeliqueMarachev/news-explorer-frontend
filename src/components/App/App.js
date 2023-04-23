@@ -6,7 +6,6 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // API
 import * as mainApi from "../../utils/MainApi";
 import { newsApi } from "../../utils/NewsApi";
-// import { news } from "../../utils/temp_articles";
 // ELEMENTS
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
@@ -112,6 +111,7 @@ export default function App() {
 
   const handleRegisterClick = () => {
     setIsRegisterPopupOpen(true);
+    setRegisterError(false);
   };
 
   const closeAllPopups = () => {
@@ -145,7 +145,6 @@ export default function App() {
         if (res.token) {
           setIsLoggedIn(true);
           localStorage.setItem("jwt", res.token);
-          console.log(res);
           setToken(res.token);
           closeAllPopups();
         } else {
@@ -211,7 +210,7 @@ export default function App() {
                 onSave={handleSave}
                 keyword={keyword}
                 setKeyword={setKeyword}
-                // onDelete={handleDelete}
+                onDelete={handleDelete}
                 wasSearch={wasSearch}
                 onUnauthorizedClick={handleUnauthorizedSaveClick}
               />
@@ -245,7 +244,7 @@ export default function App() {
           onClose={closeAllPopups}
           onSigninClick={handleSigninClick}
           onRegister={handleRegister}
-          isCommonError={registerError }
+          isCommonError={registerError}
         />
         <SuccessPopup
           isOpen={isSuccessPopupOpen}
@@ -260,7 +259,7 @@ export default function App() {
 
   // TODO: 
   // 1. change all url to link everywhere
-  // 2. successful regitration not opening
-  // 3. after registration open sign in popup
+  // 2. successful registration not opening
+  // 3. after registration, open sign in popup
   // 4. saved card does not reflect immediately
   // 5. date on saved cards

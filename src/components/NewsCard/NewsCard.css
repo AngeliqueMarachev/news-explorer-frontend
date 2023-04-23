@@ -154,6 +154,11 @@
   line-height: 30px;
   color: #1a1b22;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .card__text {

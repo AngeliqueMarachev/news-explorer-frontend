@@ -20,7 +20,8 @@ export default function Main({
   keyword,
   setKeyword, 
   onDelete, 
-  wasSearch
+  wasSearch,
+  onUnauthorizedClick
 }) {
   const blockState = () => {
     if (isLoading) return <Preloader />;
@@ -34,6 +35,7 @@ export default function Main({
       savedArticles={savedArticles}
       onSave={onSave}
       onDelete={onDelete}
+      onUnauthorizedClick={onUnauthorizedClick}
     />;
   };
 

@@ -8,6 +8,7 @@ export default function Popup({
   onClose
 }) {
   
+  // prevents code from running if isOpen is false
   useEffect(() => {
     if (!isOpen) {
       return;
