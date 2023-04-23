@@ -65,6 +65,7 @@ export default function App() {
             ...currentUser,
             savedArticles: res.data,
           }));
+        setSavedArticles(res.data);
       });
     }
   }, [isLoggedIn, token]);
@@ -167,13 +168,12 @@ export default function App() {
     mainApi
       .saveArticle(token, card, keyword)
       .then((res) => {
-        setSavedArticles(...currentUser.savedArticles, res.data);
+        setSavedArticles([...savedArticles, res.data]);
       })
       .catch((err) => console.log(err));
   };
 
   const handleDelete = (article) => {
-    console.log("handleDelete called")
     mainApi
       .deleteArticle(token, article)
  
@@ -184,6 +184,9 @@ export default function App() {
             (currArticle) => currArticle._id !== article._id
           ),
         }));
+        setSavedArticles((prevArticles) => {
+          prevArticles.filter((currArticle) => currArticle._id !== article._id)
+        })
       })
       .catch((err) => console.log(err));
   };

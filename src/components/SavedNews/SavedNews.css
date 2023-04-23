@@ -12,6 +12,7 @@
   flex-direction: column;
   row-gap: 30px;
   padding: 5% 4.5% 0;
+  margin-left: 40px;
 }
 
 .saved-news__title {
@@ -77,6 +78,10 @@
   background: #e8e8e8;
 }
 @media screen and (max-width: 1350px) {
+  .saved-news__cards {
+    
+  }
+
   .saved-news__articles {
     padding: 32px 40px;
     gap: 8px;
