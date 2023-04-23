@@ -15,7 +15,7 @@ export default function SavedNewsHeader({
     const uniqueKeywords = [...new Set(keywords)];
     return currentUser.savedArticles.length <= 3
       ? uniqueKeywords.join(', ')
-      : uniqueKeywords.slice(0 ,2).join(', ') + ' and ' + (uniqueKeywords.length -2) + 'others'
+      : uniqueKeywords.slice(0 ,2).join(', ') + ' and ' + (uniqueKeywords.length - 2) + ' others'
   }
 
   return (
@@ -32,8 +32,6 @@ export default function SavedNewsHeader({
           By keywords: {""}
           <strong>
               <span>
-              {/* {articles[0].keyword}, {articles[1].keyword} and {articles.length - 2}others */}
-              {/* {currentUser.savedArticles.map((article) => article.keyword, )} */}
               {makeHeaderString()}
               </span>
           </strong>
