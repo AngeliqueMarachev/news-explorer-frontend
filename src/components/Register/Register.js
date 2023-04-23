@@ -8,6 +8,8 @@ export default function Register({
   onSigninClick,
   onRegister,
   isCommonError,
+  setIsSuccessPopupOpen,
+  setIsRegisterPopupOpen
 }) {
   const { values, handleChange, errors, isValid, resetForm, setValues } =
     useFormWithValidation({ email: "", password: "", name: "" });
@@ -20,6 +22,8 @@ export default function Register({
 
   function handleSubmit() {
     onRegister(values);
+    setIsSuccessPopupOpen(true);
+    setIsRegisterPopupOpen(false);
   }
 
   return (

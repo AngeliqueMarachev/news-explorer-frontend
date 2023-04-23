@@ -245,6 +245,8 @@ export default function App() {
           onSigninClick={handleSigninClick}
           onRegister={handleRegister}
           isCommonError={registerError}
+          setIsRegisterPopupOpen={setIsRegisterPopupOpen}
+          setIsSuccessPopupOpen={setIsSuccessPopupOpen}
         />
         <SuccessPopup
           isOpen={isSuccessPopupOpen}

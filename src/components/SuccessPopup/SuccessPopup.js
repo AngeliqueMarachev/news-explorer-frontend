@@ -13,7 +13,6 @@ export default function SuccessPopup({ isOpen, onClose, onSignInClick }) {
       isOpen={isOpen}
       onClose={onClose}>
       <NavLink className="form__link" onClick={handleSignInClick}>Sign in</NavLink>
-      <button className="popup__close-button" onClose={onClose} />
     </Popup>
   );
 }
