@@ -27,6 +27,7 @@ export default function SavedNews({
       <SavedNewsHeader
         articles={articles}
         onLogout={onLogout}
+        savedArticles={savedArticles}
       />
 
       <section className="saved-news">

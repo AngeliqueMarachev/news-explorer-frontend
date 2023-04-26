@@ -61,10 +61,6 @@ export default function App() {
     if (isLoggedIn) {
       mainApi.getArticles(token).then((res) => {
         if (res.data)
-          setCurrentUser((currentUser) => ({
-            ...currentUser,
-            savedArticles: res.data,
-          }));
         setSavedArticles(res.data);
       });
     }
@@ -174,20 +170,13 @@ export default function App() {
   };
 
   const handleDelete = (article) => {
+    
     mainApi
       .deleteArticle(token, article)
  
       .then((res) => {
-        setCurrentUser((prevUser) => ({
-          ...prevUser,
-          savedArticles: prevUser.savedArticles.filter(
-            (currArticle) => currArticle._id !== article._id
-          ),
-        }));
-        setSavedArticles((prevArticles) => {
-          prevArticles.filter((currArticle) => currArticle._id !== article._id)
-        })
-      })
+        setSavedArticles(savedArticles.filter((currArticle) => currArticle._id !== article._id)
+      )})
       .catch((err) => console.log(err));
   };
 

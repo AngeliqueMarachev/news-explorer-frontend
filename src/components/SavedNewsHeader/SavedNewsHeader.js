@@ -6,14 +6,15 @@ import { useContext } from 'react';
 
 export default function SavedNewsHeader({
   articles,
-  onLogout
+  onLogout,
+  savedArticles
 }) {
   const currentUser = useContext(CurrentUserContext);
 
   function makeHeaderString() {
-    const keywords = currentUser.savedArticles.map((article) => article.keyword);
+    const keywords = savedArticles.map((article) => article.keyword);
     const uniqueKeywords = [...new Set(keywords)];
-    return currentUser.savedArticles.length <= 3
+    return savedArticles.length <= 3
       ? uniqueKeywords.join(', ')
       : uniqueKeywords.slice(0 ,2).join(', ') + ' and ' + (uniqueKeywords.length - 2) + ' others'
   }
@@ -26,7 +27,7 @@ export default function SavedNewsHeader({
       <section className="saved-header__text">
         <h4 className="saved-header__title">Saved articles</h4>
         <h2 className="saved-header__description">
-          {currentUser.name}, you have {currentUser.savedArticles.length} saved articles</h2>
+          {currentUser.name}, you have {savedArticles.length} saved articles</h2>
       
         <p className="saved-header__keywords">
           By keywords: {""}
