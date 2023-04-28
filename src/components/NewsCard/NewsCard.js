@@ -4,32 +4,36 @@ import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnauthorizedClick }) {
+export default function NewsCard({
+  isLoggedIn,
+  card,
+  onSave,
+  onDelete,
+  onUnauthorizedClick,
+}) {
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   // check if the current user has saved articles that match card.url
-  // and update isSaved state accordingly.
-  useEffect(() => {
-    (currentUser.savedArticles &&
-      currentUser.savedArticles.some((article) => article.link === card.url))
-      && setIsSaved(true)
-  }, [card.url, currentUser.savedArticles]);
+  // and update isSaved state accordingly
 
-  // const handleSaveClick = (e) => {
-  //   e.preventDefault();
-  //   setIsSaved(!isSaved);
-  //   onSave(card);
-  // };
+  useEffect(() => {
+    currentUser.savedArticles &&
+      currentUser.savedArticles.some((article) => article.link === card.url) &&
+      setIsSaved(true);
+  }, [card.url, currentUser.savedArticles]);
 
   function handleSaveClick(e) {
     e.preventDefault();
     setIsSaved((state) => !state);
     if (isSaved) {
-      onDelete(currentUser.savedArticles.find((article) => article.link === card.url))
+      onDelete(
+        currentUser.savedArticles.find((article) => article.link === card.url)
+      );
     } else {
-      onSave(card)
+      onSave(card);
     }
   }
 
@@ -41,27 +45,37 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
   function handleDeleteClick(e) {
     e.preventDefault();
     onDelete(card);
-  };
+  }
 
   // const realDate = new Date(card.date);
   function setDateString() {
     const date = new Date(card.publishedAt || card.date);
     const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
-    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    return `${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`;
   }
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
 
   return (
     <div className="card">
@@ -82,7 +96,9 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
             type="button"
             className={`card__button card__button_save ${
               isSaved && "card__button_saved"
-            } ${!isSaved && "card__button_hover"}`}
+            } ${(!isSaved && isHover) && "card__button_hover"}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             onClick={isLoggedIn ? handleSaveClick : handleUnauthorizedSaveClick}
           />
         ) : (
@@ -96,9 +112,11 @@ export default function NewsCard({ isLoggedIn, card, onSave, onDelete, onUnautho
           location.pathname === "/saved-news") && (
           <div className="card__label card__label_type_sign-in">
             <p className="card__label-text">
-              {location.pathname === "/"
-                ? "Sign to save articles"
-                : "Remove from saved"}
+            {location.pathname === '/' ? (
+                'Sign in to save articles'
+              ) : (
+                'Remove from saved'
+              )}
             </p>
           </div>
         )}

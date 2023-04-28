@@ -162,7 +162,6 @@
 }
 
 .card__text {
-  /* margin: 0; */
   font-family: "Roboto", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -193,7 +192,6 @@
 @media screen and (max-width: 1350px) {
   .card {
     width: 390px;
-    /* height: 450px; */
   } 
 
   .card__image {
@@ -250,7 +248,7 @@
 
   .card__source {
     padding: 0;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     margin-top: 2px;
     text-overflow: ellipsis;
     overflow: hidden;

@@ -27,9 +27,9 @@ export default function SavedNewsCard({
           className="saved-card__delete-icon"
           onClick={()=>onDelete(card)}
         />
-      <p className="saved-card__label">
+      {/* <p className="saved-card__label">
         Remove from saved
-        </p>
+        </p> */}
       </span>
       <p className="saved-card__keyword">{keyword}</p>
     </div>
