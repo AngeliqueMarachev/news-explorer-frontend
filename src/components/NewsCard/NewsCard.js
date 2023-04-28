@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function NewsCard({
   isLoggedIn,
@@ -10,27 +9,24 @@ export default function NewsCard({
   onSave,
   onDelete,
   onUnauthorizedClick,
+  savedArticles
 }) {
   const location = useLocation();
-  const currentUser = useContext(CurrentUserContext);
   const [isSaved, setIsSaved] = useState(false);
   const [isHover, setIsHover] = useState(false);
 
-  // check if the current user has saved articles that match card.url
-  // and update isSaved state accordingly
-
   useEffect(() => {
-    currentUser.savedArticles &&
-      currentUser.savedArticles.some((article) => article.link === card.url) &&
+    savedArticles &&
+      savedArticles.some((article) => article.link === card.url) &&
       setIsSaved(true);
-  }, [card.url, currentUser.savedArticles]);
+  }, [card.url, savedArticles]);
 
   function handleSaveClick(e) {
     e.preventDefault();
     setIsSaved((state) => !state);
     if (isSaved) {
       onDelete(
-        currentUser.savedArticles.find((article) => article.link === card.url)
+        savedArticles.find((article) => article.link === card.url)
       );
     } else {
       onSave(card);

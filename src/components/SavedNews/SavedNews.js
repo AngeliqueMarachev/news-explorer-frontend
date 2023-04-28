@@ -1,8 +1,7 @@
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import Footer from "../Footer/Footer";
-import CurrentUserContext from '../../contexts/CurrentUserContext';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 
@@ -12,8 +11,6 @@ export default function SavedNews({
   onDelete,
   savedArticles
 }) {
-  
-  const currentUser = useContext(CurrentUserContext);
 
   const [showMore, setShowMore] = useState(3);
 
