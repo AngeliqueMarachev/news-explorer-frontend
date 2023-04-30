@@ -132,11 +132,6 @@
   background-position: center;
 }
 
-.saved-card__delete-icon:hover + .saved-card__label {
-  visibility: visible;
-  opacity: 1;
-}
-
 .saved-card__label {
   cursor: pointer;
   position: absolute;
@@ -155,6 +150,11 @@
   opacity: 0;
   transition: 0.2s;
   white-space: nowrap;
+}
+
+.saved-card__delete-icon:hover + .saved-card__label {
+  visibility: visible;
+  opacity: 1;
 }
 
 .saved-card__remove {

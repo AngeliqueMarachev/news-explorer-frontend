@@ -253,7 +253,4 @@ export default function App() {
 
   // TODO: 
   // 1. change all url to link everywhere
-  // 2. successful registration not opening
-  // 3. after registration, open sign in popup
-  // 4. saved card does not reflect immediately
-  // 5. date on saved cards
+  // 2. date on saved cards

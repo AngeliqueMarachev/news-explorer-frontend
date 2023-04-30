@@ -90,9 +90,9 @@ export default function NewsCard({
         {location.pathname === "/" ? (
           <button
             type="button"
-            className={`card__button card__button_save ${
-              isSaved && "card__button_saved"
-            } ${(!isSaved && isHover) && "card__button_hover"}`}
+              className={`card__button card__button_save ${
+                isSaved && "card__button_saved"
+              } ${!isSaved && "card__button_hover"}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={isLoggedIn ? handleSaveClick : handleUnauthorizedSaveClick}
