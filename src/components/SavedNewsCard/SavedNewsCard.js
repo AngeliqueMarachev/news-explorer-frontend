@@ -11,12 +11,19 @@ export default function SavedNewsCard({
   onDelete
 }) {
 
+  function setDateString() {
+    const isoDate = card.publishedAt || card.date;
+    const date = new Date(isoDate);
+    const options = { month: 'long', day: 'numeric', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
   return (
     <div className="saved-card">
       <img className="saved-card__image " src={image} alt={title} />
      
       <div className="saved-card__main">
-        <p className="saved-card__date">{date}</p>
+        <p className="saved-card__date">{setDateString()}</p>
         <h3 className="saved-card__title">{title}</h3>
         <p className="saved-card__text">{text}</p>
         <p className="saved-card__source">{source}</p>

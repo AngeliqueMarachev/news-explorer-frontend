@@ -43,27 +43,13 @@ export default function NewsCard({
     onDelete(card);
   }
 
-  // const realDate = new Date(card.date);
   function setDateString() {
-    const date = new Date(card.publishedAt || card.date);
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return `${
-      months[date.getMonth()]
-    } ${date.getDate()}, ${date.getFullYear()}`;
-  }
+    const isoDate = card.publishedAt || card.date;
+    const date = new Date(isoDate);
+    const options = { month: 'long', day: 'numeric', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
 
   const handleMouseEnter = () => {
     setIsHover(true);
