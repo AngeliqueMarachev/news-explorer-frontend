@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function NewsCardList({
   articles,
@@ -26,7 +27,8 @@ export default function NewsCardList({
             articles.slice(0, showMore).map((article, index) => {
               console.log(article);
               return (
-                  <li key={article._id}>
+                // <li key={article._id}>
+                   <li key={uuidv4()}>
                   <NewsCard
                     card={article}
                     image={article.image}

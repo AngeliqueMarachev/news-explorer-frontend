@@ -11,3 +11,5 @@ React and JS Functionality
 
 * React JS
 
+[Link to deployed version](https://angelique.students.nomoredomainssbs.ru/)
+
