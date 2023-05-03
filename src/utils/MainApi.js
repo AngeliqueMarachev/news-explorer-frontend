@@ -1,5 +1,5 @@
-export const BASE_URL = "http://localhost:3000";
-// export const BASE_URL =  "https://api.angelique.students.nomoredomainssbs.ru";
+// export const BASE_URL = "http://localhost:3000";
+export const BASE_URL =  "https://api.angelique.students.nomoredomainssbs.ru";
 
 function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
