@@ -92,7 +92,9 @@ export default function NewsCard({
 
         {((location.pathname === "/" && !isLoggedIn) ||
           location.pathname === "/saved-news") && (
-          <div className="card__label card__label_type_sign-in">
+          // <div className="card__label card__label_type_sign-in">
+          <div className={`card__label ${isHover && 'card__label_type_sign-in'}`}>
+
             <p className="card__label-text">
             {location.pathname === '/' ? (
                 'Sign in to save articles'

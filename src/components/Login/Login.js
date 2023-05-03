@@ -15,7 +15,8 @@ export default function Login({
   useEffect(() => {
     resetForm();
     setValues({ email: "", password: "" });
-  }, [isOpen, resetForm, setValues]);
+  // }, [isOpen, resetForm, setValues]);
+}, [isOpen]);
 
   function handleSubmit() {
     onLogin(values);
