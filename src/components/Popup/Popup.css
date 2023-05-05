@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 320px) {
   .popup {
-   backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
   .popup__content {

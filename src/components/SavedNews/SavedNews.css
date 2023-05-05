@@ -75,11 +75,11 @@
 .saved-news__more-button:hover {
   background: #e8e8e8;
 }
+
 @media screen and (max-width: 1350px) {
   .saved-news__cards {
     grid-template-columns: repeat(1, auto);
     margin: 0 auto;
-   
   }
 
   .saved-news__articles {
@@ -101,7 +101,7 @@
   }
 
   .saved-news__text {
-margin-left: unset;
+    margin-left: unset;
   }
 
   .saved-news__articles {

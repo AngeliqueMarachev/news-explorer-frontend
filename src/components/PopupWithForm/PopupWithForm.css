@@ -62,7 +62,6 @@
   background-color: #e6e8eb;
 }
 
-
 .form__link {
   color: #2f71e5;
   text-decoration: none;
@@ -102,7 +101,6 @@
   text-align: center;
   margin-top: 16px;
 }
-
 
 @media screen and (max-width: 500px) {
   .form__input {
