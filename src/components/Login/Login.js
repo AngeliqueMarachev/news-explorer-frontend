@@ -1,5 +1,5 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import useFormWithValidation from "../../utils/FormValidation";
 
 export default function Login({
@@ -15,8 +15,8 @@ export default function Login({
   useEffect(() => {
     resetForm();
     setValues({ email: "", password: "" });
-  // }, [isOpen, resetForm, setValues]);
-}, [isOpen]);
+  }, [isOpen, resetForm, setValues]);
+  // }, [isOpen]);
 
   function handleSubmit() {
     onLogin(values);
