@@ -31,6 +31,7 @@ class NewsApi {
 }
 
 export const newsApi = new NewsApi({
-  baseUrl: "https://newsapi.org/v2/everything",
+  // baseUrl: "https://newsapi.org/v2/everything",
+  baseUrl: "https://nomoreparties.co/news/v2/everything",
   token: "51ec63208a60418e8c73a8efa6a2b016",
 });
