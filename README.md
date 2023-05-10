@@ -1,15 +1,16 @@
-# News Explorer Final Project: 
-# Frontend 
+# News Explorer Final Project:
+
+# Frontend
+
 # Stage 3
 
 ## Overview
 
-This repo contains the third stage of the final project development: 
+This repo contains the third stage of the final project development:
 React and JS Functionality
 
 ## Technologies used for frontend
 
-* React JS
+- React JS
 
-[Link to deployed version](https://angelique.students.nomoredomainssbs.ru/)
-
+[Link to deployed version](https://https://angelique.worldnews.mooo.com/)
