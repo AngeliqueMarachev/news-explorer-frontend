@@ -35,9 +35,9 @@ export default function App() {
   const [articles, setArticles] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
 
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState("");
 
-  const [wasSearch, setWasSearch] = useState(false)
+  const [wasSearch, setWasSearch] = useState(false);
 
   // CHECK TOKEN
   useEffect(() => {
@@ -59,10 +59,12 @@ export default function App() {
   // FETCH SAVED ARTICLES ACCORDING TO USER
   useEffect(() => {
     if (isLoggedIn) {
-      mainApi.getArticles(token).then((res) => {
-        if (res.data)
-        setSavedArticles(res.data);
-      });
+      mainApi
+        .getArticles(token)
+        .then((res) => {
+          if (res.data) setSavedArticles(res.data);
+        })
+        .catch((err) => console.log(err));
     }
   }, [isLoggedIn, token]);
 
@@ -99,7 +101,6 @@ export default function App() {
       });
   };
 
-
   // POPUP STATES
   const handleSigninClick = () => {
     setIsLoginPopupOpen(true);
@@ -130,7 +131,7 @@ export default function App() {
         }
       })
       .catch((err) => {
-        if (err === 'Error: 409') setRegisterError(true);
+        if (err === "Error: 409") setRegisterError(true);
         else console.log(err);
       });
   }
@@ -157,6 +158,7 @@ export default function App() {
     localStorage.removeItem("jwt");
     setToken("");
     navigate("/");
+    setIsLoginPopupOpen(true);
   }
 
   // SAVE ARTICLE
@@ -170,13 +172,14 @@ export default function App() {
   };
 
   const handleDelete = (article) => {
-    
     mainApi
       .deleteArticle(token, article)
- 
+
       .then((res) => {
-        setSavedArticles(savedArticles.filter((currArticle) => currArticle._id !== article._id)
-      )})
+        setSavedArticles(
+          savedArticles.filter((currArticle) => currArticle._id !== article._id)
+        );
+      })
       .catch((err) => console.log(err));
   };
 
@@ -250,7 +253,5 @@ export default function App() {
   );
 }
 
-
-  // TODO: 
-  // 1. change all url to link everywhere
-  // 2. date on saved cards
+// TODO:
+// 1. change all url to link everywhere

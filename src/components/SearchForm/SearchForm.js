@@ -1,9 +1,8 @@
 import "./SearchForm.css";
 
 export default function SearchForm({ onSearch, keyword, setKeyword }) {
-
   function handleChange(e) {
-    setKeyword(e.target.value)
+    setKeyword(e.target.value);
   }
 
   return (
@@ -21,6 +20,7 @@ export default function SearchForm({ onSearch, keyword, setKeyword }) {
               autoFocus
               autoComplete="off"
               onChange={handleChange}
+              value={keyword || ""}
             />
             <button className="search-form__submit" type="submit">
               Search

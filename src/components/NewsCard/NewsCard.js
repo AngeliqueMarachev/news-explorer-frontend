@@ -9,7 +9,7 @@ export default function NewsCard({
   onSave,
   onDelete,
   onUnauthorizedClick,
-  savedArticles
+  savedArticles,
 }) {
   const location = useLocation();
   const [isSaved, setIsSaved] = useState(false);
@@ -25,9 +25,7 @@ export default function NewsCard({
     e.preventDefault();
     setIsSaved((state) => !state);
     if (isSaved) {
-      onDelete(
-        savedArticles.find((article) => article.link === card.url)
-      );
+      onDelete(savedArticles.find((article) => article.link === card.url));
     } else {
       onSave(card);
     }
@@ -46,10 +44,9 @@ export default function NewsCard({
   function setDateString() {
     const isoDate = card.publishedAt || card.date;
     const date = new Date(isoDate);
-    const options = { month: 'long', day: 'numeric', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  };
-
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  }
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -76,9 +73,9 @@ export default function NewsCard({
         {location.pathname === "/" ? (
           <button
             type="button"
-              className={`card__button card__button_save ${
-                isSaved && "card__button_saved"
-              } ${!isSaved && "card__button_hover"}`}
+            className={`card__button card__button_save ${
+              isSaved && "card__button_saved"
+            } ${!isSaved && "card__button_hover"}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={isLoggedIn ? handleSaveClick : handleUnauthorizedSaveClick}
@@ -93,14 +90,13 @@ export default function NewsCard({
         {((location.pathname === "/" && !isLoggedIn) ||
           location.pathname === "/saved-news") && (
           // <div className="card__label card__label_type_sign-in">
-          <div className={`card__label ${isHover && 'card__label_type_sign-in'}`}>
-
+          <div
+            className={`card__label ${isHover && "card__label_type_sign-in"}`}
+          >
             <p className="card__label-text">
-            {location.pathname === '/' ? (
-                'Sign in to save articles'
-              ) : (
-                'Remove from saved'
-              )}
+              {location.pathname === "/"
+                ? "Sign in to save articles"
+                : "Remove from saved"}
             </p>
           </div>
         )}
