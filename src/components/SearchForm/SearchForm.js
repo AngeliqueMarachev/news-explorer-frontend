@@ -21,6 +21,7 @@ export default function SearchForm({ onSearch, keyword, setKeyword }) {
               autoComplete="off"
               onChange={handleChange}
               value={keyword || ""}
+              required
             />
             <button className="search-form__submit" type="submit">
               Search

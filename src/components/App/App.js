@@ -96,9 +96,7 @@ export default function App() {
         }
       })
       .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .finally(() => setIsLoading(false));
   };
 
   // POPUP STATES
@@ -198,6 +196,7 @@ export default function App() {
                 isLoggedIn={isLoggedIn}
                 onSigninClick={handleSigninClick}
                 isLoading={isLoading}
+                setIsLoading={setIsLoading}
                 articles={articles}
                 onLogout={handleLogout}
                 setArticles={setArticles}
@@ -253,6 +252,3 @@ export default function App() {
     </CurrentUserContext.Provider>
   );
 }
-
-// TODO:
-// 1. change all url to link everywhere

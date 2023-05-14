@@ -13,4 +13,4 @@ React and JS Functionality
 
 - React JS
 
-[Link to deployed version](https://https://angelique.worldnews.mooo.com/)
+[Link to deployed version](https://angelique.worldnews.mooo.com/)
