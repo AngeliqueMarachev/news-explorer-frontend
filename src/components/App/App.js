@@ -208,6 +208,7 @@ export default function App() {
                 onDelete={handleDelete}
                 wasSearch={wasSearch}
                 onUnauthorizedClick={handleUnauthorizedSaveClick}
+                savedArticles={savedArticles}
               />
             }
           />

@@ -24,7 +24,10 @@ export default function NewsCard({
   function handleSaveClick(e) {
     e.preventDefault();
     setIsSaved((state) => !state);
-    if (isSaved) {
+
+    const articleSaved = isSaved;
+
+    if (articleSaved) {
       onDelete(savedArticles.find((article) => article.link === card.url));
     } else {
       onSave(card);
