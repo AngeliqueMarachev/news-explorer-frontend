@@ -22,8 +22,9 @@
   margin-left: 56px;
   margin-top: 131px;
 }
+
 .about__title {
-  font-family: "Roboto Slab", 'Times New Roman', sans-serif;
+  font-family: "Roboto Slab", "Times New Roman", sans-serif;
   color: #1a1b22;
   font-size: 40px;
   font-weight: 400;
@@ -45,10 +46,10 @@
 }
 
 @media screen and (max-width: 1200px) {
-.about__image {
-  max-width: 3500px;
-  max-height: 350px;
-}
+  .about__image {
+    max-width: 3500px;
+    max-height: 350px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -72,7 +73,7 @@
   }
 
   .about__text {
-   margin-right: 0;
+    margin-right: 0;
   }
 }
 
@@ -103,19 +104,18 @@
     flex-direction: column;
     row-gap: 24px;
   }
-  
- .about__image {
-  max-height: 272px;
-  max-width: 272px;
-  margin: 0 24px;
- }
 
- .about__text {
-  margin: 0;
- }
+  .about__image {
+    max-height: 272px;
+    max-width: 272px;
+    margin: 0 24px;
+  }
 
- .about__content {
-  margin: 0 16px;
- }
+  .about__text {
+    margin: 0;
+  }
+
+  .about__content {
+    margin: 0 16px;
+  }
 }
-  

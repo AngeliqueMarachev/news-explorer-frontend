@@ -1,37 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
-import { news } from '../../utils/temp_articles.js';
+import { v4 as uuidv4 } from "uuid";
 
-export default function NewsCardList() {
+export default function NewsCardList({
+  articles,
+  isLoggedIn,
+  onSave,
+  savedArticles,
+  onDelete,
+  onUnauthorizedClick,
+}) {
+  const [showMore, setShowMore] = useState(3);
+
+  const handleShowMoreClick = () => {
+    setShowMore((prevShowMore) => prevShowMore + 3);
+  };
+
   return (
     <>
       <section className="news-list">
         <h4 className="news-list__title">Search results</h4>
-       
-        <div className="news-list__articles">
-          {news.map((article, index) => {
-            return (
-              <NewsCard
-                key={index}
-                image={article.image}
-                date={article.date}
-                title={article.title}
-                text={article.text}
-                source={article.source}
-              />
-            );
-          })}
+
+        <ul className="news-list__articles">
+          {articles &&
+            articles.slice(0, showMore).map((article, index) => {
+              console.log(article);
+              return (
+                <li key={uuidv4()}>
+                  <NewsCard
+                    card={article}
+                    image={article.image}
+                    date={article.date}
+                    title={article.title}
+                    text={article.text}
+                    source={article.source}
+                    isLoggedIn={isLoggedIn}
+                    onSave={onSave}
+                    savedArticles={savedArticles}
+                    onDelete={onDelete}
+                    onUnauthorizedClick={onUnauthorizedClick}
+                  />
+                </li>
+              );
+            })}
+        </ul>
+
+        <div className="news-list__more">
+          {articles.length && (
+            <button
+              className="news-list__more-button"
+              type="button"
+              onClick={handleShowMoreClick}
+            >
+              Show more
+            </button>
+          )}
         </div>
-        
-      
       </section>
-      <div className="new-list__more">
-        <button className="news-list__more-button" type="button">
-          Show more
-        </button>
-      </div>
     </>
   );
 }
-

@@ -7,23 +7,33 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Hero({
   isLoggedIn,
-  username,
-  onSigninClick
+  onSigninClick, 
+  onLogout,
+  onSearch,
+  setArticles, 
+  keyword,
+  setKeyword
 }) {
   return (
     <div className="hero">
       <Navigation
         isLoggedIn={isLoggedIn}
-        userame={username}
         onSigninClick={onSigninClick}
+        onLogout={onLogout}
       />
       <MobileMenu
         isLoggedIn={isLoggedIn}
-        userame={username}
         onSigninClick={onSigninClick}
+        onLogout={onLogout}
       />
       <Header />
-      <SearchForm />
+      <SearchForm
+        onSearch={onSearch}
+        setArticles={setArticles}
+        keyword={keyword}
+        setKeyword={setKeyword}
+      />
     </div>
   );
 }
+

@@ -23,9 +23,11 @@
   column-gap: 16px;
   min-height: 576px;
   max-width: 400px;
+  list-style: none;
+  padding: 0;
 }
 
-.new-list__more {
+.news-list__more {
   display: flex;
   justify-content: center;
   padding-bottom: 80px;
@@ -72,18 +74,13 @@
     max-width: 224px;
     gap: 8px;
   }
-
-  .new-list__more {
-    padding-top: unset;
-  }
 }
 
 @media screen and (max-width: 768px) {
   .news-list {
     margin: 0 auto;
     width: calc(768px - 80px);
-    height: 558px;
-    padding-bottom: 32px;
+    min-height: 420px;
   }
 
   .news-list__title {
@@ -93,9 +90,10 @@
   .news-list__articles {
     max-width: 224px;
     gap: 8px;
+    min-height: 420px;
   }
 
-  .new-list__more {
+  .news-list__more {
     padding-top: 32px;
     padding-bottom: 40px;
   }

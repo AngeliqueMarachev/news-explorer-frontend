@@ -2,16 +2,17 @@ import React from "react";
 import "./Footer.css";
 import githubPath from "../../images/github_icon.svg";
 import facebookPath from "../../images/facebook_icon.svg";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__copy">©️ 2023 Supersite Powered by News API</p>
+      <p className="footer__copy">©️ {new Date().getFullYear()} Supersite Powered by News API</p>
       <div className="footer__links">
         <div className="footer__text-links">
-          <a className="footer__link footer__link-text" href="#practicum">
+          <Link to="/" className="footer__link footer__link-text">
             Home
-          </a>
+          </Link>
           <a
             className="footer__link footer__link-text"
             href="https://practicum.com/en-isr"

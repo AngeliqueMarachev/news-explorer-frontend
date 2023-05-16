@@ -1,22 +1,26 @@
-import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import { useEffect } from "react";
+import useFormWithValidation from "../../utils/FormValidation";
 
 export default function Login({
   isOpen,
   onClose,
-  onRegisterClick
+  onRegisterClick,
+  onLogin,
+  isCommonError,
 }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { values, handleChange, errors, isValid, resetForm, setValues } =
+    useFormWithValidation({ email: "", password: "" });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const userData = {
-  //     email,
-  //     password,
-  //   };
-  //   onSubmit(userData);
-  // };
+  useEffect(() => {
+    resetForm();
+    setValues({ email: "", password: "" });
+  }, [isOpen, resetForm, setValues]);
+  // }, [isOpen]);
+
+  function handleSubmit() {
+    onLogin(values);
+  }
 
   return (
     <PopupWithForm
@@ -24,26 +28,51 @@ export default function Login({
       isOpen={isOpen}
       onClose={onClose}
       onRegisterClick={onRegisterClick}
+      onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <label className="form__label">Email</label>
       <input
         className="form__input"
         placeholder="Enter email"
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        name="email"
+        onChange={handleChange}
+        value={values.email}
+        required
       ></input>
-      <span className="form__error">Invalid email address</span>
+      <span
+        className={`form__error email-error  ${
+          errors["email"] && "form__error_visible"
+        }`}
+      >
+        Invalid email address
+      </span>
       <label className="form__label">Password</label>
       <input
         className="form__input"
         placeholder="Enter Password"
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        name="password"
+        onChange={handleChange}
+        value={values.password}
+        minLength="8"
+        required
       ></input>
-       <span className="form__error">Invalid password</span>
+      <span
+        className={`form__error password-error ${
+          errors["password"] && "form__error_visible"
+        }`}
+      >
+        Invalid password
+      </span>
+      <span
+        className={`form__error form__error_general ${
+          isCommonError && "form__error_visible"
+        }`}
+      >
+        Incorrect email or password
+      </span>
     </PopupWithForm>
   );
 }
-

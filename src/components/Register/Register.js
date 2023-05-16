@@ -1,54 +1,101 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import { useState } from "react";
+import { useEffect } from "react";
+import useFormWithValidation from "../../utils/FormValidation";
 
-export default function Register({ isOpen, onClose, onSigninClick }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+export default function Register({
+  isOpen,
+  onClose,
+  onSigninClick,
+  onRegister,
+  isCommonError,
+  setIsSuccessPopupOpen,
+  setIsRegisterPopupOpen
+}) {
+  const { values, handleChange, errors, isValid, resetForm, setValues } =
+    useFormWithValidation({ email: "", password: "", name: "" });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const userData = {
-  //     email,
-  //     password,
-  //   };
-  //   handleSubmit(userData);
-  // };
+  // reset form values when isOpen and/or values change, or resetForm() is triggered
+  useEffect(() => {
+    resetForm();
+    setValues({ email: "", password: "", name: "" });
+  }, [isOpen, resetForm, setValues]);
+
+  function handleSubmit() {
+    onRegister(values);
+    setIsSuccessPopupOpen(true);
+    setIsRegisterPopupOpen(false);
+  }
 
   return (
     <PopupWithForm
       name="Sign up"
       isOpen={isOpen}
+      onClose={onClose}
       onSigninClick={onSigninClick}
-      onClose={onClose}>
+      onSubmit={handleSubmit}
+      isValid={isValid}
+    >
       <label className="form__label">Email</label>
       <input
         className="form__input"
         placeholder="Enter email"
         type="email"
-        value={email || ""}
-        onChange={(e) => setEmail(e.target.value)}
+        name="email"
+        onChange={handleChange}
+        value={values.email}
+        required
       ></input>
-      {/* <span className="form__error">Invalid email</span> */}
+      <span
+        className={`form__error email-error  ${
+          errors["email"] && "form__error_visible"
+        }`}
+      >
+        Invalid email
+      </span>
+
       <label className="form__label">Password</label>
       <input
         className="form__input"
         placeholder="Enter password"
         type="password"
-        value={password || ""}
-        onChange={(e) => setPassword(e.target.value)}
+        name="password"
+        onChange={handleChange}
+        value={values.password}
+        minLength="8"
+        required
       ></input>
-      {/* <span className="form__error">Invalid password</span> */}
+      <span
+        className={`form__error password-error ${
+          errors["password"] && "form__error_visible"
+        }`}
+      >
+        Invalid password
+      </span>
+
       <label className="form__label">Username</label>
       <input
         className="form__input"
         placeholder="Enter your username"
         type="text"
-        value={username || ""}
-        onChange={(e) => setUsername(e.target.value)}
+        name="name"
+        onChange={handleChange}
+        value={values.name}
+        minLength="3"
+        required
       ></input>
-      {/* <span className="form__error">Invalid username</span> */}
-      <span className="form__error form__error-general">
+      <span
+        className={`form__error name-error ${
+          errors["name"] && "form__error_visible"
+        }`}
+      >
+        Invalid username
+      </span>
+
+      <span
+        className={`form__error form__error_general ${
+          isCommonError && "form__error_visible"
+        }`}
+      >
         This email is not available
       </span>
     </PopupWithForm>
