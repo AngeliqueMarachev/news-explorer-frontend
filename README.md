@@ -1,10 +1,11 @@
-# News Explorer Final Project:
+# News Explorer Final Project
 
 ## Overview
 
-* Intro
+* Introduction
 * Technologies & Techniques
 * How to Get Started
+* Useful Links
 
 ## Introduction
 
@@ -25,9 +26,11 @@ This is the Frontend of a News Explorer Application, which allows users to login
 
 ## How to Get Started
 Clone
+
 `$ git clone https://github.com/Chen-Abudi/news-explorer-frontend.git`
 
 Install
+
 `$ cd news-explorer-frontend`
 
 `$ npm i or npm install`
@@ -35,3 +38,5 @@ Install
 Launch
 `$ npm run start`
 
+## Useful Links
+[Backend repo](https://github.com/AngeliqueMarachev/news-explorer-api)
