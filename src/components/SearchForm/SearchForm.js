@@ -5,6 +5,8 @@ export default function SearchForm({ onSearch, keyword, setKeyword }) {
     setKeyword(e.target.value);
   }
 
+  // Adding an easter egg 28-07-2026
+
   return (
     <div className="search-form">
       <div className="search-form__container">
